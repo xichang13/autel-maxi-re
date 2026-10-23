@@ -1,14 +1,24 @@
 {
-  "host": "127.0.0.1:2199",
+  "host": "127.0.0.1:9527",
   "mode": "open-before-trace",
   "frida_version": "12.11.12",
-  "started_unix": 1792748116.666656,
+  "started_unix": 1792750089.0154474,
   "created_pids": [
-    10111,
-    10117
+    24378,
+    24384
   ],
   "messages": [],
   "logs": [
+    {
+      "script": "production",
+      "level": "info",
+      "text": "[*] TracerPid hook: readlink"
+    },
+    {
+      "script": "production",
+      "level": "info",
+      "text": "[*] TracerPid hook: readlinkat"
+    },
     {
       "script": "production",
       "level": "info",
@@ -37,12 +47,12 @@
     {
       "script": "production",
       "level": "info",
-      "text": "[*] TracerPid 已归零: /proc/10111/status"
+      "text": "[*] 进程状态已处理: /proc/24378/status"
     },
     {
       "script": "production",
       "level": "info",
-      "text": "[*] TracerPid 已归零: /proc/10111/task/10116/status"
+      "text": "[*] 进程状态已处理: /proc/24378/task/24383/status"
     }
   ],
   "cases": [
@@ -51,11 +61,11 @@
       "kind": "open",
       "chunk": 4096,
       "result": {
-        "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t10111\nNgid:\t0\nPid:\t10111\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154536 kB\nVmSize:\t  154452 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16484 kB\nVmRSS:\t   16480 kB\nRssAnon:\t    7772 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28180 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t18\n",
-        "length": 934,
+        "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t24378\nNgid:\t0\nPid:\t24378\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154600 kB\nVmSize:\t  154516 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16408 kB\nVmRSS:\t   16404 kB\nRssAnon:\t    7768 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28252 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t5\n",
+        "length": 933,
         "reads": 1,
         "lengths": [
-          934
+          933
         ],
         "flags": {
           "descriptor": 1,
@@ -65,18 +75,19 @@
           "descriptor": 1,
           "status": 133120
         }
-      }
+      },
+      "raw_name": "\tsleep",
+      "expected_name": "\tsleep"
     },
     {
       "path": "/proc/self/status",
       "kind": "open",
       "chunk": 1,
       "result": {
-        "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t10111\nNgid:\t0\nPid:\t10111\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154536 kB\nVmSize:\t  154452 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16488 kB\nVmRSS:\t   16480 kB\nRssAnon:\t    7772 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28180 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t18\n",
-        "length": 934,
-        "reads": 934,
+        "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t24378\nNgid:\t0\nPid:\t24378\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154600 kB\nVmSize:\t  154516 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16412 kB\nVmRSS:\t   16404 kB\nRssAnon:\t    7768 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28252 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t5\n",
+        "length": 933,
+        "reads": 933,
         "lengths": [
-          1,
           1,
           1,
           1,
@@ -1019,15 +1030,17 @@
           "descriptor": 1,
           "status": 133120
         }
-      }
+      },
+      "raw_name": "\tsleep",
+      "expected_name": "\tsleep"
     },
     {
       "path": "/proc/self/status",
       "kind": "open",
       "chunk": 7,
       "result": {
-        "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t10111\nNgid:\t0\nPid:\t10111\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154580 kB\nVmSize:\t  154580 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16488 kB\nVmRSS:\t   16480 kB\nRssAnon:\t    7772 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28308 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t18\n",
-        "length": 934,
+        "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t24378\nNgid:\t0\nPid:\t24378\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154644 kB\nVmSize:\t  154644 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16412 kB\nVmRSS:\t   16404 kB\nRssAnon:\t    7768 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28380 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t5\n",
+        "length": 933,
         "reads": 134,
         "lengths": [
           7,
@@ -1163,7 +1176,7 @@
           7,
           7,
           7,
-          3
+          2
         ],
         "flags": {
           "descriptor": 1,
@@ -1173,15 +1186,17 @@
           "descriptor": 1,
           "status": 133120
         }
-      }
+      },
+      "raw_name": "\tsleep",
+      "expected_name": "\tsleep"
     },
     {
       "path": "/proc/self/status",
       "kind": "openat",
       "chunk": 13,
       "result": {
-        "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t10111\nNgid:\t0\nPid:\t10111\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154580 kB\nVmSize:\t  154580 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16536 kB\nVmRSS:\t   16528 kB\nRssAnon:\t    7820 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28308 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t18\n",
-        "length": 934,
+        "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t24378\nNgid:\t0\nPid:\t24378\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154644 kB\nVmSize:\t  154644 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16484 kB\nVmRSS:\t   16476 kB\nRssAnon:\t    7840 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28380 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t5\n",
+        "length": 933,
         "reads": 72,
         "lengths": [
           13,
@@ -1255,7 +1270,7 @@
           13,
           13,
           13,
-          11
+          10
         ],
         "flags": {
           "descriptor": 1,
@@ -1265,15 +1280,17 @@
           "descriptor": 1,
           "status": 133120
         }
-      }
+      },
+      "raw_name": "\tsleep",
+      "expected_name": "\tsleep"
     },
     {
       "path": "/proc/self/status",
       "kind": "openat-relative",
       "chunk": 17,
       "result": {
-        "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t10111\nNgid:\t0\nPid:\t10111\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154580 kB\nVmSize:\t  154580 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16536 kB\nVmRSS:\t   16528 kB\nRssAnon:\t    7820 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28308 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t18\n",
-        "length": 934,
+        "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t24378\nNgid:\t0\nPid:\t24378\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154644 kB\nVmSize:\t  154644 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16484 kB\nVmRSS:\t   16476 kB\nRssAnon:\t    7840 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28380 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t5\n",
+        "length": 933,
         "reads": 55,
         "lengths": [
           17,
@@ -1330,7 +1347,7 @@
           17,
           17,
           17,
-          16
+          15
         ],
         "flags": {
           "descriptor": 1,
@@ -1340,15 +1357,17 @@
           "descriptor": 1,
           "status": 133120
         }
-      }
+      },
+      "raw_name": "\tsleep",
+      "expected_name": "\tsleep"
     },
     {
       "path": "/proc/self/status",
       "kind": "dup",
       "chunk": 7,
       "result": {
-        "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t10111\nNgid:\t0\nPid:\t10111\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154580 kB\nVmSize:\t  154580 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16536 kB\nVmRSS:\t   16528 kB\nRssAnon:\t    7820 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28308 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t18\n",
-        "length": 934,
+        "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t24378\nNgid:\t0\nPid:\t24378\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154644 kB\nVmSize:\t  154644 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16484 kB\nVmRSS:\t   16476 kB\nRssAnon:\t    7840 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28380 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t5\n",
+        "length": 933,
         "reads": 134,
         "lengths": [
           7,
@@ -1484,7 +1503,7 @@
           7,
           7,
           7,
-          3
+          2
         ],
         "flags": {
           "descriptor": 0,
@@ -1494,16 +1513,18 @@
           "descriptor": 1,
           "status": 133120
         }
-      }
+      },
+      "raw_name": "\tsleep",
+      "expected_name": "\tsleep"
     },
     {
       "path": "/proc/self/status",
       "kind": "pread",
       "chunk": 3,
       "result": {
-        "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t10111\nNgid:\t0\nPid:\t10111\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154580 kB\nVmSize:\t  154580 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16536 kB\nVmRSS:\t   16528 kB\nRssAnon:\t    7820 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28308 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t18\n",
-        "length": 934,
-        "reads": 312,
+        "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t24378\nNgid:\t0\nPid:\t24378\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154644 kB\nVmSize:\t  154644 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16484 kB\nVmRSS:\t   16476 kB\nRssAnon:\t    7840 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28380 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t5\n",
+        "length": 933,
+        "reads": 311,
         "lengths": [
           3,
           3,
@@ -1815,8 +1836,7 @@
           3,
           3,
           3,
-          3,
-          1
+          3
         ],
         "flags": {
           "descriptor": 1,
@@ -1826,18 +1846,19 @@
           "descriptor": 1,
           "status": 133120
         }
-      }
+      },
+      "raw_name": "\tsleep",
+      "expected_name": "\tsleep"
     },
     {
       "path": "/proc/self/status",
       "kind": "fgets",
       "chunk": 2,
       "result": {
-        "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t10111\nNgid:\t0\nPid:\t10111\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154580 kB\nVmSize:\t  154580 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16536 kB\nVmRSS:\t   16528 kB\nRssAnon:\t    7820 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28308 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t18\n",
-        "length": 934,
-        "reads": 934,
+        "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t24378\nNgid:\t0\nPid:\t24378\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154644 kB\nVmSize:\t  154644 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16484 kB\nVmRSS:\t   16476 kB\nRssAnon:\t    7840 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28380 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t5\n",
+        "length": 933,
+        "reads": 933,
         "lengths": [
-          1,
           1,
           1,
           1,
@@ -2776,16 +2797,18 @@
           "descriptor": 1,
           "status": 131072
         }
-      }
+      },
+      "raw_name": "\tsleep",
+      "expected_name": "\tsleep"
     },
     {
       "path": "/proc/self/status",
       "kind": "fgets",
       "chunk": 11,
       "result": {
-        "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t10111\nNgid:\t0\nPid:\t10111\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154580 kB\nVmSize:\t  154580 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16536 kB\nVmRSS:\t   16528 kB\nRssAnon:\t    7820 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28308 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t18\n",
-        "length": 934,
-        "reads": 116,
+        "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t24378\nNgid:\t0\nPid:\t24378\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154644 kB\nVmSize:\t  154644 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16488 kB\nVmRSS:\t   16480 kB\nRssAnon:\t    7844 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28380 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t5\n",
+        "length": 933,
+        "reads": 115,
         "lengths": [
           10,
           2,
@@ -2901,22 +2924,23 @@
           7,
           10,
           10,
-          10,
-          1
+          10
         ],
         "flags": {
           "descriptor": 1,
           "status": 131072
         }
-      }
+      },
+      "raw_name": "\tsleep",
+      "expected_name": "\tsleep"
     },
     {
       "path": "/proc/self/status",
       "kind": "fread",
       "chunk": 17,
       "result": {
-        "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t10111\nNgid:\t0\nPid:\t10111\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154580 kB\nVmSize:\t  154580 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16564 kB\nVmRSS:\t   16556 kB\nRssAnon:\t    7848 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28308 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t18\n",
-        "length": 934,
+        "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t24378\nNgid:\t0\nPid:\t24378\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154644 kB\nVmSize:\t  154644 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16536 kB\nVmRSS:\t   16528 kB\nRssAnon:\t    7892 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28380 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t5\n",
+        "length": 933,
         "reads": 55,
         "lengths": [
           17,
@@ -2973,24 +2997,26 @@
           17,
           17,
           17,
-          16
+          15
         ],
         "flags": {
           "descriptor": 1,
           "status": 131072
         }
-      }
+      },
+      "raw_name": "\tsleep",
+      "expected_name": "\tsleep"
     },
     {
-      "path": "/proc/10111/status",
+      "path": "/proc/24378/status",
       "kind": "open",
       "chunk": 4096,
       "result": {
-        "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t10111\nNgid:\t0\nPid:\t10111\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154580 kB\nVmSize:\t  154580 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16564 kB\nVmRSS:\t   16556 kB\nRssAnon:\t    7848 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28308 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t18\n",
-        "length": 934,
+        "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t24378\nNgid:\t0\nPid:\t24378\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154644 kB\nVmSize:\t  154644 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16536 kB\nVmRSS:\t   16528 kB\nRssAnon:\t    7892 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28380 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t5\n",
+        "length": 933,
         "reads": 1,
         "lengths": [
-          934
+          933
         ],
         "flags": {
           "descriptor": 1,
@@ -3000,18 +3026,19 @@
           "descriptor": 1,
           "status": 133120
         }
-      }
+      },
+      "raw_name": "\tsleep",
+      "expected_name": "\tsleep"
     },
     {
-      "path": "/proc/10111/status",
+      "path": "/proc/24378/status",
       "kind": "open",
       "chunk": 1,
       "result": {
-        "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t10111\nNgid:\t0\nPid:\t10111\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154580 kB\nVmSize:\t  154580 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16564 kB\nVmRSS:\t   16556 kB\nRssAnon:\t    7848 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28308 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t18\n",
-        "length": 934,
-        "reads": 934,
+        "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t24378\nNgid:\t0\nPid:\t24378\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154644 kB\nVmSize:\t  154644 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16536 kB\nVmRSS:\t   16528 kB\nRssAnon:\t    7892 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28380 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t5\n",
+        "length": 933,
+        "reads": 933,
         "lengths": [
-          1,
           1,
           1,
           1,
@@ -3954,15 +3981,17 @@
           "descriptor": 1,
           "status": 133120
         }
-      }
+      },
+      "raw_name": "\tsleep",
+      "expected_name": "\tsleep"
     },
     {
-      "path": "/proc/10111/status",
+      "path": "/proc/24378/status",
       "kind": "open",
       "chunk": 7,
       "result": {
-        "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t10111\nNgid:\t0\nPid:\t10111\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154644 kB\nVmSize:\t  154644 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16564 kB\nVmRSS:\t   16556 kB\nRssAnon:\t    7848 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28372 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t18\n",
-        "length": 934,
+        "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t24378\nNgid:\t0\nPid:\t24378\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154708 kB\nVmSize:\t  154708 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16536 kB\nVmRSS:\t   16528 kB\nRssAnon:\t    7892 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28444 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t5\n",
+        "length": 933,
         "reads": 134,
         "lengths": [
           7,
@@ -4098,7 +4127,7 @@
           7,
           7,
           7,
-          3
+          2
         ],
         "flags": {
           "descriptor": 1,
@@ -4108,15 +4137,17 @@
           "descriptor": 1,
           "status": 133120
         }
-      }
+      },
+      "raw_name": "\tsleep",
+      "expected_name": "\tsleep"
     },
     {
-      "path": "/proc/10111/status",
+      "path": "/proc/24378/status",
       "kind": "openat",
       "chunk": 13,
       "result": {
-        "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t10111\nNgid:\t0\nPid:\t10111\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154644 kB\nVmSize:\t  154644 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16592 kB\nVmRSS:\t   16584 kB\nRssAnon:\t    7876 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28372 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t18\n",
-        "length": 934,
+        "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t24378\nNgid:\t0\nPid:\t24378\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154708 kB\nVmSize:\t  154708 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16552 kB\nVmRSS:\t   16544 kB\nRssAnon:\t    7908 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28444 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t5\n",
+        "length": 933,
         "reads": 72,
         "lengths": [
           13,
@@ -4190,7 +4221,7 @@
           13,
           13,
           13,
-          11
+          10
         ],
         "flags": {
           "descriptor": 1,
@@ -4200,15 +4231,17 @@
           "descriptor": 1,
           "status": 133120
         }
-      }
+      },
+      "raw_name": "\tsleep",
+      "expected_name": "\tsleep"
     },
     {
-      "path": "/proc/10111/status",
+      "path": "/proc/24378/status",
       "kind": "openat-relative",
       "chunk": 17,
       "result": {
-        "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t10111\nNgid:\t0\nPid:\t10111\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154644 kB\nVmSize:\t  154644 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16592 kB\nVmRSS:\t   16584 kB\nRssAnon:\t    7876 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28372 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t18\n",
-        "length": 934,
+        "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t24378\nNgid:\t0\nPid:\t24378\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154708 kB\nVmSize:\t  154708 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16552 kB\nVmRSS:\t   16544 kB\nRssAnon:\t    7908 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28444 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t5\n",
+        "length": 933,
         "reads": 55,
         "lengths": [
           17,
@@ -4265,7 +4298,7 @@
           17,
           17,
           17,
-          16
+          15
         ],
         "flags": {
           "descriptor": 1,
@@ -4275,15 +4308,17 @@
           "descriptor": 1,
           "status": 133120
         }
-      }
+      },
+      "raw_name": "\tsleep",
+      "expected_name": "\tsleep"
     },
     {
-      "path": "/proc/10111/status",
+      "path": "/proc/24378/status",
       "kind": "dup",
       "chunk": 7,
       "result": {
-        "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t10111\nNgid:\t0\nPid:\t10111\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154644 kB\nVmSize:\t  154644 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16592 kB\nVmRSS:\t   16584 kB\nRssAnon:\t    7876 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28372 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t18\n",
-        "length": 934,
+        "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t24378\nNgid:\t0\nPid:\t24378\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154708 kB\nVmSize:\t  154708 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16552 kB\nVmRSS:\t   16544 kB\nRssAnon:\t    7908 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28444 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t5\n",
+        "length": 933,
         "reads": 134,
         "lengths": [
           7,
@@ -4419,7 +4454,7 @@
           7,
           7,
           7,
-          3
+          2
         ],
         "flags": {
           "descriptor": 0,
@@ -4429,16 +4464,18 @@
           "descriptor": 1,
           "status": 133120
         }
-      }
+      },
+      "raw_name": "\tsleep",
+      "expected_name": "\tsleep"
     },
     {
-      "path": "/proc/10111/status",
+      "path": "/proc/24378/status",
       "kind": "pread",
       "chunk": 3,
       "result": {
-        "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t10111\nNgid:\t0\nPid:\t10111\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154644 kB\nVmSize:\t  154644 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16592 kB\nVmRSS:\t   16584 kB\nRssAnon:\t    7876 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28372 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t18\n",
-        "length": 934,
-        "reads": 312,
+        "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t24378\nNgid:\t0\nPid:\t24378\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154708 kB\nVmSize:\t  154708 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16552 kB\nVmRSS:\t   16544 kB\nRssAnon:\t    7908 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28444 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t5\n",
+        "length": 933,
+        "reads": 311,
         "lengths": [
           3,
           3,
@@ -4750,8 +4787,7 @@
           3,
           3,
           3,
-          3,
-          1
+          3
         ],
         "flags": {
           "descriptor": 1,
@@ -4761,18 +4797,19 @@
           "descriptor": 1,
           "status": 133120
         }
-      }
+      },
+      "raw_name": "\tsleep",
+      "expected_name": "\tsleep"
     },
     {
-      "path": "/proc/10111/status",
+      "path": "/proc/24378/status",
       "kind": "fgets",
       "chunk": 2,
       "result": {
-        "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t10111\nNgid:\t0\nPid:\t10111\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154644 kB\nVmSize:\t  154644 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16592 kB\nVmRSS:\t   16584 kB\nRssAnon:\t    7876 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28372 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t18\n",
-        "length": 934,
-        "reads": 934,
+        "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t24378\nNgid:\t0\nPid:\t24378\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154708 kB\nVmSize:\t  154708 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16552 kB\nVmRSS:\t   16544 kB\nRssAnon:\t    7908 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28444 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t5\n",
+        "length": 933,
+        "reads": 933,
         "lengths": [
-          1,
           1,
           1,
           1,
@@ -5711,16 +5748,18 @@
           "descriptor": 1,
           "status": 131072
         }
-      }
+      },
+      "raw_name": "\tsleep",
+      "expected_name": "\tsleep"
     },
     {
-      "path": "/proc/10111/status",
+      "path": "/proc/24378/status",
       "kind": "fgets",
       "chunk": 11,
       "result": {
-        "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t10111\nNgid:\t0\nPid:\t10111\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154644 kB\nVmSize:\t  154644 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16592 kB\nVmRSS:\t   16584 kB\nRssAnon:\t    7876 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28372 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t18\n",
-        "length": 934,
-        "reads": 116,
+        "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t24378\nNgid:\t0\nPid:\t24378\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154708 kB\nVmSize:\t  154708 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16552 kB\nVmRSS:\t   16544 kB\nRssAnon:\t    7908 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28444 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t5\n",
+        "length": 933,
+        "reads": 115,
         "lengths": [
           10,
           2,
@@ -5836,22 +5875,23 @@
           7,
           10,
           10,
-          10,
-          1
+          10
         ],
         "flags": {
           "descriptor": 1,
           "status": 131072
         }
-      }
+      },
+      "raw_name": "\tsleep",
+      "expected_name": "\tsleep"
     },
     {
-      "path": "/proc/10111/status",
+      "path": "/proc/24378/status",
       "kind": "fread",
       "chunk": 17,
       "result": {
-        "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t10111\nNgid:\t0\nPid:\t10111\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154644 kB\nVmSize:\t  154644 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16632 kB\nVmRSS:\t   16624 kB\nRssAnon:\t    7916 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28372 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t18\n",
-        "length": 934,
+        "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t24378\nNgid:\t0\nPid:\t24378\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154708 kB\nVmSize:\t  154708 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16600 kB\nVmRSS:\t   16592 kB\nRssAnon:\t    7956 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28444 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t5\n",
+        "length": 933,
         "reads": 55,
         "lengths": [
           17,
@@ -5908,20 +5948,22 @@
           17,
           17,
           17,
-          16
+          15
         ],
         "flags": {
           "descriptor": 1,
           "status": 131072
         }
-      }
+      },
+      "raw_name": "\tsleep",
+      "expected_name": "\tsleep"
     },
     {
       "path": "/proc/thread-self/status",
       "kind": "open",
       "chunk": 4096,
       "result": {
-        "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t10111\nNgid:\t0\nPid:\t10116\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154644 kB\nVmSize:\t  154644 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16632 kB\nVmRSS:\t   16624 kB\nRssAnon:\t    7916 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28372 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t41\nnonvoluntary_ctxt_switches:\t50\n",
+        "text": "Name:\tpool-worker\nUmask:\t0000\nState:\tR (running)\nTgid:\t24378\nNgid:\t0\nPid:\t24383\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154708 kB\nVmSize:\t  154708 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16600 kB\nVmRSS:\t   16592 kB\nRssAnon:\t    7956 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28444 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t43\nnonvoluntary_ctxt_switches:\t38\n",
         "length": 940,
         "reads": 1,
         "lengths": [
@@ -5935,14 +5977,16 @@
           "descriptor": 1,
           "status": 133120
         }
-      }
+      },
+      "raw_name": "\tgum-js-loop",
+      "expected_name": "\tpool-worker"
     },
     {
       "path": "/proc/thread-self/status",
       "kind": "open",
       "chunk": 1,
       "result": {
-        "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t10111\nNgid:\t0\nPid:\t10116\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154644 kB\nVmSize:\t  154644 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16632 kB\nVmRSS:\t   16624 kB\nRssAnon:\t    7916 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28372 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t42\nnonvoluntary_ctxt_switches:\t56\n",
+        "text": "Name:\tpool-worker\nUmask:\t0000\nState:\tR (running)\nTgid:\t24378\nNgid:\t0\nPid:\t24383\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154708 kB\nVmSize:\t  154708 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16600 kB\nVmRSS:\t   16592 kB\nRssAnon:\t    7956 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28444 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t44\nnonvoluntary_ctxt_switches:\t38\n",
         "length": 940,
         "reads": 940,
         "lengths": [
@@ -6895,14 +6939,16 @@
           "descriptor": 1,
           "status": 133120
         }
-      }
+      },
+      "raw_name": "\tgum-js-loop",
+      "expected_name": "\tpool-worker"
     },
     {
       "path": "/proc/thread-self/status",
       "kind": "open",
       "chunk": 7,
       "result": {
-        "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t10111\nNgid:\t0\nPid:\t10116\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154708 kB\nVmSize:\t  154708 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16632 kB\nVmRSS:\t   16624 kB\nRssAnon:\t    7916 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28436 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t43\nnonvoluntary_ctxt_switches:\t74\n",
+        "text": "Name:\tpool-worker\nUmask:\t0000\nState:\tR (running)\nTgid:\t24378\nNgid:\t0\nPid:\t24383\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154772 kB\nVmSize:\t  154772 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16600 kB\nVmRSS:\t   16592 kB\nRssAnon:\t    7956 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28508 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t45\nnonvoluntary_ctxt_switches:\t39\n",
         "length": 940,
         "reads": 135,
         "lengths": [
@@ -7050,14 +7096,16 @@
           "descriptor": 1,
           "status": 133120
         }
-      }
+      },
+      "raw_name": "\tgum-js-loop",
+      "expected_name": "\tpool-worker"
     },
     {
       "path": "/proc/thread-self/status",
       "kind": "openat",
       "chunk": 13,
       "result": {
-        "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t10111\nNgid:\t0\nPid:\t10116\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154708 kB\nVmSize:\t  154708 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16648 kB\nVmRSS:\t   16640 kB\nRssAnon:\t    7932 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28436 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t44\nnonvoluntary_ctxt_switches:\t75\n",
+        "text": "Name:\tpool-worker\nUmask:\t0000\nState:\tR (running)\nTgid:\t24378\nNgid:\t0\nPid:\t24383\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154772 kB\nVmSize:\t  154772 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16620 kB\nVmRSS:\t   16612 kB\nRssAnon:\t    7976 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28508 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t46\nnonvoluntary_ctxt_switches:\t42\n",
         "length": 940,
         "reads": 73,
         "lengths": [
@@ -7143,14 +7191,16 @@
           "descriptor": 1,
           "status": 133120
         }
-      }
+      },
+      "raw_name": "\tgum-js-loop",
+      "expected_name": "\tpool-worker"
     },
     {
       "path": "/proc/thread-self/status",
       "kind": "openat-relative",
       "chunk": 17,
       "result": {
-        "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t10111\nNgid:\t0\nPid:\t10116\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154708 kB\nVmSize:\t  154708 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16648 kB\nVmRSS:\t   16640 kB\nRssAnon:\t    7932 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28436 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t45\nnonvoluntary_ctxt_switches:\t80\n",
+        "text": "Name:\tpool-worker\nUmask:\t0000\nState:\tR (running)\nTgid:\t24378\nNgid:\t0\nPid:\t24383\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154772 kB\nVmSize:\t  154772 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16620 kB\nVmRSS:\t   16612 kB\nRssAnon:\t    7976 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28508 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t47\nnonvoluntary_ctxt_switches:\t42\n",
         "length": 940,
         "reads": 56,
         "lengths": [
@@ -7219,14 +7269,16 @@
           "descriptor": 1,
           "status": 133120
         }
-      }
+      },
+      "raw_name": "\tgum-js-loop",
+      "expected_name": "\tpool-worker"
     },
     {
       "path": "/proc/thread-self/status",
       "kind": "dup",
       "chunk": 7,
       "result": {
-        "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t10111\nNgid:\t0\nPid:\t10116\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154708 kB\nVmSize:\t  154708 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16648 kB\nVmRSS:\t   16640 kB\nRssAnon:\t    7932 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28436 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t46\nnonvoluntary_ctxt_switches:\t80\n",
+        "text": "Name:\tpool-worker\nUmask:\t0000\nState:\tR (running)\nTgid:\t24378\nNgid:\t0\nPid:\t24383\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154772 kB\nVmSize:\t  154772 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16620 kB\nVmRSS:\t   16612 kB\nRssAnon:\t    7976 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28508 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t48\nnonvoluntary_ctxt_switches:\t45\n",
         "length": 940,
         "reads": 135,
         "lengths": [
@@ -7374,14 +7426,16 @@
           "descriptor": 1,
           "status": 133120
         }
-      }
+      },
+      "raw_name": "\tgum-js-loop",
+      "expected_name": "\tpool-worker"
     },
     {
       "path": "/proc/thread-self/status",
       "kind": "pread",
       "chunk": 3,
       "result": {
-        "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t10111\nNgid:\t0\nPid:\t10116\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154708 kB\nVmSize:\t  154708 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16680 kB\nVmRSS:\t   16672 kB\nRssAnon:\t    7964 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28436 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t47\nnonvoluntary_ctxt_switches:\t81\n",
+        "text": "Name:\tpool-worker\nUmask:\t0000\nState:\tR (running)\nTgid:\t24378\nNgid:\t0\nPid:\t24383\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154772 kB\nVmSize:\t  154772 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16620 kB\nVmRSS:\t   16612 kB\nRssAnon:\t    7976 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28508 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t49\nnonvoluntary_ctxt_switches:\t46\n",
         "length": 940,
         "reads": 314,
         "lengths": [
@@ -7708,14 +7762,16 @@
           "descriptor": 1,
           "status": 133120
         }
-      }
+      },
+      "raw_name": "\tgum-js-loop",
+      "expected_name": "\tpool-worker"
     },
     {
       "path": "/proc/thread-self/status",
       "kind": "fgets",
       "chunk": 2,
       "result": {
-        "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t10111\nNgid:\t0\nPid:\t10116\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154708 kB\nVmSize:\t  154708 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16696 kB\nVmRSS:\t   16688 kB\nRssAnon:\t    7980 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28436 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t48\nnonvoluntary_ctxt_switches:\t81\n",
+        "text": "Name:\tpool-worker\nUmask:\t0000\nState:\tR (running)\nTgid:\t24378\nNgid:\t0\nPid:\t24383\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154772 kB\nVmSize:\t  154772 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16620 kB\nVmRSS:\t   16612 kB\nRssAnon:\t    7976 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28508 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t50\nnonvoluntary_ctxt_switches:\t49\n",
         "length": 940,
         "reads": 940,
         "lengths": [
@@ -8664,14 +8720,16 @@
           "descriptor": 1,
           "status": 131072
         }
-      }
+      },
+      "raw_name": "\tgum-js-loop",
+      "expected_name": "\tpool-worker"
     },
     {
       "path": "/proc/thread-self/status",
       "kind": "fgets",
       "chunk": 11,
       "result": {
-        "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t10111\nNgid:\t0\nPid:\t10116\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154772 kB\nVmSize:\t  154772 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16696 kB\nVmRSS:\t   16688 kB\nRssAnon:\t    7980 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28500 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t49\nnonvoluntary_ctxt_switches:\t81\n",
+        "text": "Name:\tpool-worker\nUmask:\t0000\nState:\tR (running)\nTgid:\t24378\nNgid:\t0\nPid:\t24383\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154836 kB\nVmSize:\t  154836 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16632 kB\nVmRSS:\t   16624 kB\nRssAnon:\t    7988 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28572 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t51\nnonvoluntary_ctxt_switches:\t49\n",
         "length": 940,
         "reads": 116,
         "lengths": [
@@ -8796,14 +8854,16 @@
           "descriptor": 1,
           "status": 131072
         }
-      }
+      },
+      "raw_name": "\tgum-js-loop",
+      "expected_name": "\tpool-worker"
     },
     {
       "path": "/proc/thread-self/status",
       "kind": "fread",
       "chunk": 17,
       "result": {
-        "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t10111\nNgid:\t0\nPid:\t10116\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154772 kB\nVmSize:\t  154772 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16716 kB\nVmRSS:\t   16708 kB\nRssAnon:\t    8000 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28500 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t50\nnonvoluntary_ctxt_switches:\t81\n",
+        "text": "Name:\tpool-worker\nUmask:\t0000\nState:\tR (running)\nTgid:\t24378\nNgid:\t0\nPid:\t24383\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154836 kB\nVmSize:\t  154836 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16676 kB\nVmRSS:\t   16668 kB\nRssAnon:\t    8032 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28572 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t52\nnonvoluntary_ctxt_switches:\t50\n",
         "length": 940,
         "reads": 56,
         "lengths": [
@@ -8868,14 +8928,16 @@
           "descriptor": 1,
           "status": 131072
         }
-      }
+      },
+      "raw_name": "\tgum-js-loop",
+      "expected_name": "\tpool-worker"
     },
     {
-      "path": "/proc/self/task/10116/status",
+      "path": "/proc/self/task/24383/status",
       "kind": "open",
       "chunk": 4096,
       "result": {
-        "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t10111\nNgid:\t0\nPid:\t10116\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154772 kB\nVmSize:\t  154772 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16716 kB\nVmRSS:\t   16708 kB\nRssAnon:\t    8000 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28500 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t52\nnonvoluntary_ctxt_switches:\t81\n",
+        "text": "Name:\tpool-worker\nUmask:\t0000\nState:\tR (running)\nTgid:\t24378\nNgid:\t0\nPid:\t24383\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154836 kB\nVmSize:\t  154836 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16676 kB\nVmRSS:\t   16668 kB\nRssAnon:\t    8032 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28572 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t54\nnonvoluntary_ctxt_switches:\t50\n",
         "length": 940,
         "reads": 1,
         "lengths": [
@@ -8889,14 +8951,16 @@
           "descriptor": 1,
           "status": 133120
         }
-      }
+      },
+      "raw_name": "\tgum-js-loop",
+      "expected_name": "\tpool-worker"
     },
     {
-      "path": "/proc/self/task/10116/status",
+      "path": "/proc/self/task/24383/status",
       "kind": "open",
       "chunk": 1,
       "result": {
-        "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t10111\nNgid:\t0\nPid:\t10116\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154772 kB\nVmSize:\t  154772 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16716 kB\nVmRSS:\t   16708 kB\nRssAnon:\t    8000 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28500 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t53\nnonvoluntary_ctxt_switches:\t81\n",
+        "text": "Name:\tpool-worker\nUmask:\t0000\nState:\tR (running)\nTgid:\t24378\nNgid:\t0\nPid:\t24383\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154836 kB\nVmSize:\t  154836 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16676 kB\nVmRSS:\t   16668 kB\nRssAnon:\t    8032 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28572 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t55\nnonvoluntary_ctxt_switches:\t50\n",
         "length": 940,
         "reads": 940,
         "lengths": [
@@ -9849,14 +9913,16 @@
           "descriptor": 1,
           "status": 133120
         }
-      }
+      },
+      "raw_name": "\tgum-js-loop",
+      "expected_name": "\tpool-worker"
     },
     {
-      "path": "/proc/self/task/10116/status",
+      "path": "/proc/self/task/24383/status",
       "kind": "open",
       "chunk": 7,
       "result": {
-        "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t10111\nNgid:\t0\nPid:\t10116\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154772 kB\nVmSize:\t  154772 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16716 kB\nVmRSS:\t   16708 kB\nRssAnon:\t    8000 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28500 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t54\nnonvoluntary_ctxt_switches:\t82\n",
+        "text": "Name:\tpool-worker\nUmask:\t0000\nState:\tR (running)\nTgid:\t24378\nNgid:\t0\nPid:\t24383\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154836 kB\nVmSize:\t  154836 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16676 kB\nVmRSS:\t   16668 kB\nRssAnon:\t    8032 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28572 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t56\nnonvoluntary_ctxt_switches:\t52\n",
         "length": 940,
         "reads": 135,
         "lengths": [
@@ -10004,14 +10070,16 @@
           "descriptor": 1,
           "status": 133120
         }
-      }
+      },
+      "raw_name": "\tgum-js-loop",
+      "expected_name": "\tpool-worker"
     },
     {
-      "path": "/proc/self/task/10116/status",
+      "path": "/proc/self/task/24383/status",
       "kind": "openat",
       "chunk": 13,
       "result": {
-        "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t10111\nNgid:\t0\nPid:\t10116\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154772 kB\nVmSize:\t  154772 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16752 kB\nVmRSS:\t   16744 kB\nRssAnon:\t    8036 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28500 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t55\nnonvoluntary_ctxt_switches:\t82\n",
+        "text": "Name:\tpool-worker\nUmask:\t0000\nState:\tR (running)\nTgid:\t24378\nNgid:\t0\nPid:\t24383\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154836 kB\nVmSize:\t  154836 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16720 kB\nVmRSS:\t   16712 kB\nRssAnon:\t    8076 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28572 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t57\nnonvoluntary_ctxt_switches:\t52\n",
         "length": 940,
         "reads": 73,
         "lengths": [
@@ -10097,14 +10165,16 @@
           "descriptor": 1,
           "status": 133120
         }
-      }
+      },
+      "raw_name": "\tgum-js-loop",
+      "expected_name": "\tpool-worker"
     },
     {
-      "path": "/proc/self/task/10116/status",
+      "path": "/proc/self/task/24383/status",
       "kind": "openat-relative",
       "chunk": 17,
       "result": {
-        "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t10111\nNgid:\t0\nPid:\t10116\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154772 kB\nVmSize:\t  154772 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16760 kB\nVmRSS:\t   16752 kB\nRssAnon:\t    8044 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28500 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t56\nnonvoluntary_ctxt_switches:\t83\n",
+        "text": "Name:\tpool-worker\nUmask:\t0000\nState:\tR (running)\nTgid:\t24378\nNgid:\t0\nPid:\t24383\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154836 kB\nVmSize:\t  154836 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16720 kB\nVmRSS:\t   16712 kB\nRssAnon:\t    8076 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28572 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t58\nnonvoluntary_ctxt_switches:\t54\n",
         "length": 940,
         "reads": 56,
         "lengths": [
@@ -10173,14 +10243,16 @@
           "descriptor": 1,
           "status": 133120
         }
-      }
+      },
+      "raw_name": "\tgum-js-loop",
+      "expected_name": "\tpool-worker"
     },
     {
-      "path": "/proc/self/task/10116/status",
+      "path": "/proc/self/task/24383/status",
       "kind": "dup",
       "chunk": 7,
       "result": {
-        "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t10111\nNgid:\t0\nPid:\t10116\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154772 kB\nVmSize:\t  154772 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16760 kB\nVmRSS:\t   16752 kB\nRssAnon:\t    8044 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28500 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t57\nnonvoluntary_ctxt_switches:\t83\n",
+        "text": "Name:\tpool-worker\nUmask:\t0000\nState:\tR (running)\nTgid:\t24378\nNgid:\t0\nPid:\t24383\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154900 kB\nVmSize:\t  154900 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16720 kB\nVmRSS:\t   16712 kB\nRssAnon:\t    8076 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28636 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t59\nnonvoluntary_ctxt_switches:\t64\n",
         "length": 940,
         "reads": 135,
         "lengths": [
@@ -10328,14 +10400,16 @@
           "descriptor": 1,
           "status": 133120
         }
-      }
+      },
+      "raw_name": "\tgum-js-loop",
+      "expected_name": "\tpool-worker"
     },
     {
-      "path": "/proc/self/task/10116/status",
+      "path": "/proc/self/task/24383/status",
       "kind": "pread",
       "chunk": 3,
       "result": {
-        "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t10111\nNgid:\t0\nPid:\t10116\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154836 kB\nVmSize:\t  154836 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16760 kB\nVmRSS:\t   16752 kB\nRssAnon:\t    8044 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28564 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t58\nnonvoluntary_ctxt_switches:\t83\n",
+        "text": "Name:\tpool-worker\nUmask:\t0000\nState:\tR (running)\nTgid:\t24378\nNgid:\t0\nPid:\t24383\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154900 kB\nVmSize:\t  154900 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16720 kB\nVmRSS:\t   16712 kB\nRssAnon:\t    8076 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28636 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t60\nnonvoluntary_ctxt_switches:\t66\n",
         "length": 940,
         "reads": 314,
         "lengths": [
@@ -10662,14 +10736,16 @@
           "descriptor": 1,
           "status": 133120
         }
-      }
+      },
+      "raw_name": "\tgum-js-loop",
+      "expected_name": "\tpool-worker"
     },
     {
-      "path": "/proc/self/task/10116/status",
+      "path": "/proc/self/task/24383/status",
       "kind": "fgets",
       "chunk": 2,
       "result": {
-        "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t10111\nNgid:\t0\nPid:\t10116\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154836 kB\nVmSize:\t  154836 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16760 kB\nVmRSS:\t   16752 kB\nRssAnon:\t    8044 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28564 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t59\nnonvoluntary_ctxt_switches:\t83\n",
+        "text": "Name:\tpool-worker\nUmask:\t0000\nState:\tR (running)\nTgid:\t24378\nNgid:\t0\nPid:\t24383\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154900 kB\nVmSize:\t  154900 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16732 kB\nVmRSS:\t   16724 kB\nRssAnon:\t    8088 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28636 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t61\nnonvoluntary_ctxt_switches:\t69\n",
         "length": 940,
         "reads": 940,
         "lengths": [
@@ -11618,14 +11694,16 @@
           "descriptor": 1,
           "status": 131072
         }
-      }
+      },
+      "raw_name": "\tgum-js-loop",
+      "expected_name": "\tpool-worker"
     },
     {
-      "path": "/proc/self/task/10116/status",
+      "path": "/proc/self/task/24383/status",
       "kind": "fgets",
       "chunk": 11,
       "result": {
-        "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t10111\nNgid:\t0\nPid:\t10116\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154836 kB\nVmSize:\t  154836 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16764 kB\nVmRSS:\t   16756 kB\nRssAnon:\t    8048 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28564 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t60\nnonvoluntary_ctxt_switches:\t83\n",
+        "text": "Name:\tpool-worker\nUmask:\t0000\nState:\tR (running)\nTgid:\t24378\nNgid:\t0\nPid:\t24383\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154900 kB\nVmSize:\t  154900 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16768 kB\nVmRSS:\t   16760 kB\nRssAnon:\t    8124 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28636 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t62\nnonvoluntary_ctxt_switches:\t69\n",
         "length": 940,
         "reads": 116,
         "lengths": [
@@ -11750,14 +11828,16 @@
           "descriptor": 1,
           "status": 131072
         }
-      }
+      },
+      "raw_name": "\tgum-js-loop",
+      "expected_name": "\tpool-worker"
     },
     {
-      "path": "/proc/self/task/10116/status",
+      "path": "/proc/self/task/24383/status",
       "kind": "fread",
       "chunk": 17,
       "result": {
-        "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t10111\nNgid:\t0\nPid:\t10116\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154836 kB\nVmSize:\t  154836 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16764 kB\nVmRSS:\t   16756 kB\nRssAnon:\t    8048 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28564 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t61\nnonvoluntary_ctxt_switches:\t83\n",
+        "text": "Name:\tpool-worker\nUmask:\t0000\nState:\tR (running)\nTgid:\t24378\nNgid:\t0\nPid:\t24383\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154900 kB\nVmSize:\t  154900 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16768 kB\nVmRSS:\t   16760 kB\nRssAnon:\t    8124 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28636 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t63\nnonvoluntary_ctxt_switches:\t69\n",
         "length": 940,
         "reads": 56,
         "lengths": [
@@ -11822,14 +11902,16 @@
           "descriptor": 1,
           "status": 131072
         }
-      }
+      },
+      "raw_name": "\tgum-js-loop",
+      "expected_name": "\tpool-worker"
     },
     {
-      "path": "/proc/10111/task/10116/status",
+      "path": "/proc/24378/task/24383/status",
       "kind": "open",
       "chunk": 4096,
       "result": {
-        "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t10111\nNgid:\t0\nPid:\t10116\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154836 kB\nVmSize:\t  154836 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16764 kB\nVmRSS:\t   16756 kB\nRssAnon:\t    8048 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28564 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t63\nnonvoluntary_ctxt_switches:\t83\n",
+        "text": "Name:\tpool-worker\nUmask:\t0000\nState:\tR (running)\nTgid:\t24378\nNgid:\t0\nPid:\t24383\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154900 kB\nVmSize:\t  154900 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16768 kB\nVmRSS:\t   16760 kB\nRssAnon:\t    8124 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28636 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t65\nnonvoluntary_ctxt_switches:\t70\n",
         "length": 940,
         "reads": 1,
         "lengths": [
@@ -11843,14 +11925,16 @@
           "descriptor": 1,
           "status": 133120
         }
-      }
+      },
+      "raw_name": "\tgum-js-loop",
+      "expected_name": "\tpool-worker"
     },
     {
-      "path": "/proc/10111/task/10116/status",
+      "path": "/proc/24378/task/24383/status",
       "kind": "open",
       "chunk": 1,
       "result": {
-        "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t10111\nNgid:\t0\nPid:\t10116\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154836 kB\nVmSize:\t  154836 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16764 kB\nVmRSS:\t   16756 kB\nRssAnon:\t    8048 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28564 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t64\nnonvoluntary_ctxt_switches:\t83\n",
+        "text": "Name:\tpool-worker\nUmask:\t0000\nState:\tR (running)\nTgid:\t24378\nNgid:\t0\nPid:\t24383\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154900 kB\nVmSize:\t  154900 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16768 kB\nVmRSS:\t   16760 kB\nRssAnon:\t    8124 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28636 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t66\nnonvoluntary_ctxt_switches:\t70\n",
         "length": 940,
         "reads": 940,
         "lengths": [
@@ -12803,14 +12887,16 @@
           "descriptor": 1,
           "status": 133120
         }
-      }
+      },
+      "raw_name": "\tgum-js-loop",
+      "expected_name": "\tpool-worker"
     },
     {
-      "path": "/proc/10111/task/10116/status",
+      "path": "/proc/24378/task/24383/status",
       "kind": "open",
       "chunk": 7,
       "result": {
-        "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t10111\nNgid:\t0\nPid:\t10116\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154836 kB\nVmSize:\t  154836 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16764 kB\nVmRSS:\t   16756 kB\nRssAnon:\t    8048 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28564 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t65\nnonvoluntary_ctxt_switches:\t83\n",
+        "text": "Name:\tpool-worker\nUmask:\t0000\nState:\tR (running)\nTgid:\t24378\nNgid:\t0\nPid:\t24383\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154900 kB\nVmSize:\t  154900 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16768 kB\nVmRSS:\t   16760 kB\nRssAnon:\t    8124 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28636 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t67\nnonvoluntary_ctxt_switches:\t80\n",
         "length": 940,
         "reads": 135,
         "lengths": [
@@ -12958,14 +13044,16 @@
           "descriptor": 1,
           "status": 133120
         }
-      }
+      },
+      "raw_name": "\tgum-js-loop",
+      "expected_name": "\tpool-worker"
     },
     {
-      "path": "/proc/10111/task/10116/status",
+      "path": "/proc/24378/task/24383/status",
       "kind": "openat",
       "chunk": 13,
       "result": {
-        "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t10111\nNgid:\t0\nPid:\t10116\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154836 kB\nVmSize:\t  154836 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16764 kB\nVmRSS:\t   16756 kB\nRssAnon:\t    8048 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28564 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t66\nnonvoluntary_ctxt_switches:\t83\n",
+        "text": "Name:\tpool-worker\nUmask:\t0000\nState:\tR (running)\nTgid:\t24378\nNgid:\t0\nPid:\t24383\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154900 kB\nVmSize:\t  154900 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16768 kB\nVmRSS:\t   16760 kB\nRssAnon:\t    8124 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28636 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t68\nnonvoluntary_ctxt_switches:\t80\n",
         "length": 940,
         "reads": 73,
         "lengths": [
@@ -13051,14 +13139,16 @@
           "descriptor": 1,
           "status": 133120
         }
-      }
+      },
+      "raw_name": "\tgum-js-loop",
+      "expected_name": "\tpool-worker"
     },
     {
-      "path": "/proc/10111/task/10116/status",
+      "path": "/proc/24378/task/24383/status",
       "kind": "openat-relative",
       "chunk": 17,
       "result": {
-        "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t10111\nNgid:\t0\nPid:\t10116\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154836 kB\nVmSize:\t  154836 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16764 kB\nVmRSS:\t   16756 kB\nRssAnon:\t    8048 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28564 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t67\nnonvoluntary_ctxt_switches:\t83\n",
+        "text": "Name:\tpool-worker\nUmask:\t0000\nState:\tR (running)\nTgid:\t24378\nNgid:\t0\nPid:\t24383\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154900 kB\nVmSize:\t  154900 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16768 kB\nVmRSS:\t   16760 kB\nRssAnon:\t    8124 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28636 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t69\nnonvoluntary_ctxt_switches:\t80\n",
         "length": 940,
         "reads": 56,
         "lengths": [
@@ -13127,14 +13217,16 @@
           "descriptor": 1,
           "status": 133120
         }
-      }
+      },
+      "raw_name": "\tgum-js-loop",
+      "expected_name": "\tpool-worker"
     },
     {
-      "path": "/proc/10111/task/10116/status",
+      "path": "/proc/24378/task/24383/status",
       "kind": "dup",
       "chunk": 7,
       "result": {
-        "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t10111\nNgid:\t0\nPid:\t10116\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154836 kB\nVmSize:\t  154836 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16764 kB\nVmRSS:\t   16756 kB\nRssAnon:\t    8048 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28564 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t68\nnonvoluntary_ctxt_switches:\t83\n",
+        "text": "Name:\tpool-worker\nUmask:\t0000\nState:\tR (running)\nTgid:\t24378\nNgid:\t0\nPid:\t24383\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154900 kB\nVmSize:\t  154900 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16768 kB\nVmRSS:\t   16760 kB\nRssAnon:\t    8124 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28636 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t70\nnonvoluntary_ctxt_switches:\t80\n",
         "length": 940,
         "reads": 135,
         "lengths": [
@@ -13282,14 +13374,16 @@
           "descriptor": 1,
           "status": 133120
         }
-      }
+      },
+      "raw_name": "\tgum-js-loop",
+      "expected_name": "\tpool-worker"
     },
     {
-      "path": "/proc/10111/task/10116/status",
+      "path": "/proc/24378/task/24383/status",
       "kind": "pread",
       "chunk": 3,
       "result": {
-        "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t10111\nNgid:\t0\nPid:\t10116\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154836 kB\nVmSize:\t  154836 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16764 kB\nVmRSS:\t   16756 kB\nRssAnon:\t    8048 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28564 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t69\nnonvoluntary_ctxt_switches:\t83\n",
+        "text": "Name:\tpool-worker\nUmask:\t0000\nState:\tR (running)\nTgid:\t24378\nNgid:\t0\nPid:\t24383\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154900 kB\nVmSize:\t  154900 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16768 kB\nVmRSS:\t   16760 kB\nRssAnon:\t    8124 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28636 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t72\nnonvoluntary_ctxt_switches:\t80\n",
         "length": 940,
         "reads": 314,
         "lengths": [
@@ -13616,14 +13710,16 @@
           "descriptor": 1,
           "status": 133120
         }
-      }
+      },
+      "raw_name": "\tgum-js-loop",
+      "expected_name": "\tpool-worker"
     },
     {
-      "path": "/proc/10111/task/10116/status",
+      "path": "/proc/24378/task/24383/status",
       "kind": "fgets",
       "chunk": 2,
       "result": {
-        "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t10111\nNgid:\t0\nPid:\t10116\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154836 kB\nVmSize:\t  154836 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16764 kB\nVmRSS:\t   16756 kB\nRssAnon:\t    8048 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28564 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t70\nnonvoluntary_ctxt_switches:\t83\n",
+        "text": "Name:\tpool-worker\nUmask:\t0000\nState:\tR (running)\nTgid:\t24378\nNgid:\t0\nPid:\t24383\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154900 kB\nVmSize:\t  154900 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16768 kB\nVmRSS:\t   16760 kB\nRssAnon:\t    8124 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28636 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t73\nnonvoluntary_ctxt_switches:\t81\n",
         "length": 940,
         "reads": 940,
         "lengths": [
@@ -14572,14 +14668,16 @@
           "descriptor": 1,
           "status": 131072
         }
-      }
+      },
+      "raw_name": "\tgum-js-loop",
+      "expected_name": "\tpool-worker"
     },
     {
-      "path": "/proc/10111/task/10116/status",
+      "path": "/proc/24378/task/24383/status",
       "kind": "fgets",
       "chunk": 11,
       "result": {
-        "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t10111\nNgid:\t0\nPid:\t10116\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154836 kB\nVmSize:\t  154836 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16764 kB\nVmRSS:\t   16756 kB\nRssAnon:\t    8048 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28564 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t71\nnonvoluntary_ctxt_switches:\t83\n",
+        "text": "Name:\tpool-worker\nUmask:\t0000\nState:\tR (running)\nTgid:\t24378\nNgid:\t0\nPid:\t24383\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154900 kB\nVmSize:\t  154900 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16768 kB\nVmRSS:\t   16760 kB\nRssAnon:\t    8124 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28636 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t74\nnonvoluntary_ctxt_switches:\t83\n",
         "length": 940,
         "reads": 116,
         "lengths": [
@@ -14704,14 +14802,16 @@
           "descriptor": 1,
           "status": 131072
         }
-      }
+      },
+      "raw_name": "\tgum-js-loop",
+      "expected_name": "\tpool-worker"
     },
     {
-      "path": "/proc/10111/task/10116/status",
+      "path": "/proc/24378/task/24383/status",
       "kind": "fread",
       "chunk": 17,
       "result": {
-        "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t10111\nNgid:\t0\nPid:\t10116\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154836 kB\nVmSize:\t  154836 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16812 kB\nVmRSS:\t   16804 kB\nRssAnon:\t    8096 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28564 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t72\nnonvoluntary_ctxt_switches:\t83\n",
+        "text": "Name:\tpool-worker\nUmask:\t0000\nState:\tR (running)\nTgid:\t24378\nNgid:\t0\nPid:\t24383\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154900 kB\nVmSize:\t  154900 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16768 kB\nVmRSS:\t   16760 kB\nRssAnon:\t    8124 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28636 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t76\nnonvoluntary_ctxt_switches:\t83\n",
         "length": 940,
         "reads": 56,
         "lengths": [
@@ -14776,72 +14876,78 @@
           "descriptor": 1,
           "status": 131072
         }
-      }
+      },
+      "raw_name": "\tgum-js-loop",
+      "expected_name": "\tpool-worker"
     }
   ],
   "cleanup": [
     {
-      "pid": 10117,
+      "pid": 24384,
       "killed": true
     },
     {
-      "pid": 10111,
+      "pid": 24378,
       "killed": true
     }
   ],
   "passed": true,
   "target": {
-    "pid": 10111,
-    "tid": 10116,
+    "pid": 24378,
+    "tid": 24383,
     "arch": "arm64",
     "pointerSize": 8,
     "exports": {
-      "open": "0x7f60cee0f0",
-      "openat": "0x7f60cee290",
-      "close": "0x7f60ce7c6c",
-      "read": "0x7f60d32e30",
-      "pread": "0x7f60d32d30",
-      "lseek": "0x7f60d32ad0",
-      "dup": "0x7f60d324d0",
-      "fcntl": "0x7f60d32610",
-      "fopen": "0x7f60d3fa00",
-      "fclose": "0x7f60d40148",
-      "fileno": "0x7f60d403a0",
-      "fgets": "0x7f60d41228",
-      "fread": "0x7f60d43128",
-      "ferror": "0x7f60d40584",
-      "ptrace": "0x7f60cef030",
-      "opendir": "0x7f60ce5f5c",
-      "readdir": "0x7f60ce5fdc",
-      "closedir": "0x7f60ce61bc",
-      "__errno": "0x7f60ce4004"
+      "open": "0x7d379220f0",
+      "openat": "0x7d37922290",
+      "close": "0x7d3791bc6c",
+      "read": "0x7d37966e30",
+      "pread": "0x7d37966d30",
+      "lseek": "0x7d37966ad0",
+      "dup": "0x7d379664d0",
+      "fcntl": "0x7d37966610",
+      "fopen": "0x7d37973a00",
+      "fclose": "0x7d37974148",
+      "fileno": "0x7d379743a0",
+      "fgets": "0x7d37975228",
+      "fread": "0x7d37977128",
+      "ferror": "0x7d37974584",
+      "ptrace": "0x7d37923030",
+      "opendir": "0x7d37919f5c",
+      "readdir": "0x7d37919fdc",
+      "closedir": "0x7d3791a1bc",
+      "__errno": "0x7d37918004",
+      "readlink": "0x7d379237c8",
+      "readlinkat": "0x7d37966e70"
     }
   },
   "tracer": {
-    "pid": 10117,
-    "tid": 10123,
+    "pid": 24384,
+    "tid": 24389,
     "arch": "arm64",
     "pointerSize": 8,
     "exports": {
-      "open": "0x7f38c130f0",
-      "openat": "0x7f38c13290",
-      "close": "0x7f38c0cc6c",
-      "read": "0x7f38c57e30",
-      "pread": "0x7f38c57d30",
-      "lseek": "0x7f38c57ad0",
-      "dup": "0x7f38c574d0",
-      "fcntl": "0x7f38c57610",
-      "fopen": "0x7f38c64a00",
-      "fclose": "0x7f38c65148",
-      "fileno": "0x7f38c653a0",
-      "fgets": "0x7f38c66228",
-      "fread": "0x7f38c68128",
-      "ferror": "0x7f38c65584",
-      "ptrace": "0x7f38c14030",
-      "opendir": "0x7f38c0af5c",
-      "readdir": "0x7f38c0afdc",
-      "closedir": "0x7f38c0b1bc",
-      "__errno": "0x7f38c09004"
+      "open": "0x774aaa50f0",
+      "openat": "0x774aaa5290",
+      "close": "0x774aa9ec6c",
+      "read": "0x774aae9e30",
+      "pread": "0x774aae9d30",
+      "lseek": "0x774aae9ad0",
+      "dup": "0x774aae94d0",
+      "fcntl": "0x774aae9610",
+      "fopen": "0x774aaf6a00",
+      "fclose": "0x774aaf7148",
+      "fileno": "0x774aaf73a0",
+      "fgets": "0x774aaf8228",
+      "fread": "0x774aafa128",
+      "ferror": "0x774aaf7584",
+      "ptrace": "0x774aaa6030",
+      "opendir": "0x774aa9cf5c",
+      "readdir": "0x774aa9cfdc",
+      "closedir": "0x774aa9d1bc",
+      "__errno": "0x774aa9b004",
+      "readlink": "0x774aaa67c8",
+      "readlinkat": "0x774aae9e70"
     }
   },
   "comm_before": {
@@ -14862,11 +14968,11 @@
     }
   },
   "untraced": {
-    "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t10111\nNgid:\t0\nPid:\t10111\nPPid:\t4565\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  149792 kB\nVmSize:\t  149512 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   10876 kB\nVmRSS:\t   10864 kB\nRssAnon:\t    2948 kB\nRssFile:\t    7772 kB\nRssShmem:\t     144 kB\nVmData:\t   23236 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22024 kB\nVmPTE:\t     112 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t18\n",
-    "length": 930,
+    "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t24378\nNgid:\t0\nPid:\t24378\nPPid:\t4565\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  149792 kB\nVmSize:\t  149576 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   10788 kB\nVmRSS:\t   10776 kB\nRssAnon:\t    2932 kB\nRssFile:\t    7700 kB\nRssShmem:\t     144 kB\nVmData:\t   23300 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22024 kB\nVmPTE:\t     116 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t5\n",
+    "length": 929,
     "reads": 1,
     "lengths": [
-      930
+      929
     ],
     "flags": {
       "descriptor": 1,
@@ -14886,7 +14992,7 @@
       3,
       4,
       8,
-      11,
+      10,
       16,
       32,
       33,
@@ -14904,25 +15010,25 @@
   },
   "seize": [
     {
-      "target": 10111,
+      "target": 24378,
       "value": 0,
       "errno": 0,
-      "tracerTid": 10123
+      "tracerTid": 24389
     },
     {
-      "target": 10116,
+      "target": 24383,
       "value": 0,
       "errno": 0,
-      "tracerTid": 10123
+      "tracerTid": 24389
     }
   ],
   "baseline": {
     "/proc/self/status": {
-      "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t10111\nNgid:\t0\nPid:\t10111\nPPid:\t4565\nTracerPid:\t10123\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154536 kB\nVmSize:\t  154444 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16484 kB\nVmRSS:\t   16476 kB\nRssAnon:\t    7768 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28176 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t18\n",
-      "length": 934,
+      "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t24378\nNgid:\t0\nPid:\t24378\nPPid:\t4565\nTracerPid:\t24389\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154600 kB\nVmSize:\t  154508 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16408 kB\nVmRSS:\t   16400 kB\nRssAnon:\t    7764 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28248 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t5\n",
+      "length": 933,
       "reads": 1,
       "lengths": [
-        934
+        933
       ],
       "flags": {
         "descriptor": 1,
@@ -14933,12 +15039,12 @@
         "status": 133120
       }
     },
-    "/proc/10111/status": {
-      "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t10111\nNgid:\t0\nPid:\t10111\nPPid:\t4565\nTracerPid:\t10123\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154536 kB\nVmSize:\t  154444 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16484 kB\nVmRSS:\t   16480 kB\nRssAnon:\t    7772 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28176 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t18\n",
-      "length": 934,
+    "/proc/24378/status": {
+      "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t24378\nNgid:\t0\nPid:\t24378\nPPid:\t4565\nTracerPid:\t24389\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154600 kB\nVmSize:\t  154508 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16408 kB\nVmRSS:\t   16404 kB\nRssAnon:\t    7768 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28248 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t5\n",
+      "length": 933,
       "reads": 1,
       "lengths": [
-        934
+        933
       ],
       "flags": {
         "descriptor": 1,
@@ -14950,7 +15056,7 @@
       }
     },
     "/proc/thread-self/status": {
-      "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t10111\nNgid:\t0\nPid:\t10116\nPPid:\t4565\nTracerPid:\t10123\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154536 kB\nVmSize:\t  154444 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16484 kB\nVmRSS:\t   16480 kB\nRssAnon:\t    7772 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28176 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t12\nnonvoluntary_ctxt_switches:\t17\n",
+      "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t24378\nNgid:\t0\nPid:\t24383\nPPid:\t4565\nTracerPid:\t24389\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154600 kB\nVmSize:\t  154508 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16408 kB\nVmRSS:\t   16404 kB\nRssAnon:\t    7768 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28248 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t12\nnonvoluntary_ctxt_switches:\t22\n",
       "length": 940,
       "reads": 1,
       "lengths": [
@@ -14965,8 +15071,8 @@
         "status": 133120
       }
     },
-    "/proc/self/task/10116/status": {
-      "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t10111\nNgid:\t0\nPid:\t10116\nPPid:\t4565\nTracerPid:\t10123\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154536 kB\nVmSize:\t  154444 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16484 kB\nVmRSS:\t   16480 kB\nRssAnon:\t    7772 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28176 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t13\nnonvoluntary_ctxt_switches:\t17\n",
+    "/proc/self/task/24383/status": {
+      "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t24378\nNgid:\t0\nPid:\t24383\nPPid:\t4565\nTracerPid:\t24389\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154600 kB\nVmSize:\t  154508 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16408 kB\nVmRSS:\t   16404 kB\nRssAnon:\t    7768 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28248 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t13\nnonvoluntary_ctxt_switches:\t22\n",
       "length": 940,
       "reads": 1,
       "lengths": [
@@ -14981,8 +15087,8 @@
         "status": 133120
       }
     },
-    "/proc/10111/task/10116/status": {
-      "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t10111\nNgid:\t0\nPid:\t10116\nPPid:\t4565\nTracerPid:\t10123\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154536 kB\nVmSize:\t  154444 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16484 kB\nVmRSS:\t   16480 kB\nRssAnon:\t    7772 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28176 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t14\nnonvoluntary_ctxt_switches:\t17\n",
+    "/proc/24378/task/24383/status": {
+      "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t24378\nNgid:\t0\nPid:\t24383\nPPid:\t4565\nTracerPid:\t24389\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154600 kB\nVmSize:\t  154508 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16408 kB\nVmRSS:\t   16404 kB\nRssAnon:\t    7768 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28248 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t14\nnonvoluntary_ctxt_switches:\t22\n",
       "length": 940,
       "reads": 1,
       "lengths": [
@@ -14999,8 +15105,8 @@
     }
   },
   "held_after_trace": {
-    "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t10111\nNgid:\t0\nPid:\t10111\nPPid:\t4565\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154536 kB\nVmSize:\t  154452 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16456 kB\nVmRSS:\t   16456 kB\nRssAnon:\t    7748 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28180 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t18\n",
-    "length": 930,
+    "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t24378\nNgid:\t0\nPid:\t24378\nPPid:\t4565\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154600 kB\nVmSize:\t  154516 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16380 kB\nVmRSS:\t   16380 kB\nRssAnon:\t    7744 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28252 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t5\n",
+    "length": 929,
     "reads": 133,
     "lengths": [
       7,
@@ -15135,7 +15241,7 @@
       7,
       7,
       7,
-      6
+      5
     ],
     "flags": {
       "descriptor": 1,
@@ -15152,7 +15258,7 @@
       3,
       4,
       8,
-      11,
+      10,
       16,
       32,
       33,
@@ -15170,7 +15276,7 @@
       3,
       4,
       8,
-      11,
+      10,
       16,
       32,
       33,
@@ -15181,8 +15287,8 @@
   },
   "kernel_after": {
     "/proc/self/status": {
-      "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t10111\nNgid:\t0\nPid:\t10111\nPPid:\t4565\nTracerPid:\t10123\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154580 kB\nVmSize:\t  154564 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16564 kB\nVmRSS:\t   16556 kB\nRssAnon:\t    7848 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28300 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t18\n",
-      "length": 934,
+      "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t24378\nNgid:\t0\nPid:\t24378\nPPid:\t4565\nTracerPid:\t24389\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154644 kB\nVmSize:\t  154628 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16536 kB\nVmRSS:\t   16528 kB\nRssAnon:\t    7892 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28372 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t5\n",
+      "length": 933,
       "reads": 31,
       "lengths": [
         31,
@@ -15215,7 +15321,7 @@
         31,
         31,
         31,
-        4
+        3
       ],
       "flags": {
         "descriptor": 1,
@@ -15226,9 +15332,9 @@
         "status": 133120
       }
     },
-    "/proc/10111/status": {
-      "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t10111\nNgid:\t0\nPid:\t10111\nPPid:\t4565\nTracerPid:\t10123\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154644 kB\nVmSize:\t  154628 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16632 kB\nVmRSS:\t   16624 kB\nRssAnon:\t    7916 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28364 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t18\n",
-      "length": 934,
+    "/proc/24378/status": {
+      "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t24378\nNgid:\t0\nPid:\t24378\nPPid:\t4565\nTracerPid:\t24389\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154708 kB\nVmSize:\t  154692 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16600 kB\nVmRSS:\t   16592 kB\nRssAnon:\t    7956 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28436 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t5\n",
+      "length": 933,
       "reads": 31,
       "lengths": [
         31,
@@ -15261,7 +15367,7 @@
         31,
         31,
         31,
-        4
+        3
       ],
       "flags": {
         "descriptor": 1,
@@ -15273,7 +15379,7 @@
       }
     },
     "/proc/thread-self/status": {
-      "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t10111\nNgid:\t0\nPid:\t10116\nPPid:\t4565\nTracerPid:\t10123\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154772 kB\nVmSize:\t  154756 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16716 kB\nVmRSS:\t   16708 kB\nRssAnon:\t    8000 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28492 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t51\nnonvoluntary_ctxt_switches:\t81\n",
+      "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t24378\nNgid:\t0\nPid:\t24383\nPPid:\t4565\nTracerPid:\t24389\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154836 kB\nVmSize:\t  154820 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16676 kB\nVmRSS:\t   16668 kB\nRssAnon:\t    8032 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28564 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t53\nnonvoluntary_ctxt_switches:\t50\n",
       "length": 940,
       "reads": 31,
       "lengths": [
@@ -15318,8 +15424,8 @@
         "status": 133120
       }
     },
-    "/proc/self/task/10116/status": {
-      "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t10111\nNgid:\t0\nPid:\t10116\nPPid:\t4565\nTracerPid:\t10123\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154836 kB\nVmSize:\t  154820 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16764 kB\nVmRSS:\t   16756 kB\nRssAnon:\t    8048 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28556 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t62\nnonvoluntary_ctxt_switches:\t83\n",
+    "/proc/self/task/24383/status": {
+      "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t24378\nNgid:\t0\nPid:\t24383\nPPid:\t4565\nTracerPid:\t24389\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154900 kB\nVmSize:\t  154884 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16768 kB\nVmRSS:\t   16760 kB\nRssAnon:\t    8124 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28628 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t64\nnonvoluntary_ctxt_switches:\t70\n",
       "length": 940,
       "reads": 31,
       "lengths": [
@@ -15364,8 +15470,8 @@
         "status": 133120
       }
     },
-    "/proc/10111/task/10116/status": {
-      "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t10111\nNgid:\t0\nPid:\t10116\nPPid:\t4565\nTracerPid:\t10123\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154836 kB\nVmSize:\t  154820 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16812 kB\nVmRSS:\t   16804 kB\nRssAnon:\t    8096 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28556 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t73\nnonvoluntary_ctxt_switches:\t83\n",
+    "/proc/24378/task/24383/status": {
+      "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t24378\nNgid:\t0\nPid:\t24383\nPPid:\t4565\nTracerPid:\t24389\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154900 kB\nVmSize:\t  154884 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16768 kB\nVmRSS:\t   16760 kB\nRssAnon:\t    8124 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28628 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t77\nnonvoluntary_ctxt_switches:\t84\n",
       "length": 940,
       "reads": 31,
       "lengths": [
@@ -15412,8 +15518,8 @@
     }
   },
   "file_semantics": {
-    "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t10111\nNgid:\t0\nPid:\t10111\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154836 kB\nVmSize:\t  154836 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16812 kB\nVmRSS:\t   16804 kB\nRssAnon:\t    8096 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28564 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t18\n",
-    "length": 934,
+    "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t24378\nNgid:\t0\nPid:\t24378\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154900 kB\nVmSize:\t  154900 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16768 kB\nVmRSS:\t   16760 kB\nRssAnon:\t    8124 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28636 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t5\n",
+    "length": 933,
     "seek": 7,
     "seekText": "leep\nUmask:\t0000\nSt",
     "seekCount": 19,
@@ -15421,7 +15527,7 @@
     "preadCount": 19,
     "positionBefore": 26,
     "positionAfter": 26,
-    "rereadText": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t10111\nNgid:\t0\nPid:\t10111\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154836 kB\nVmSize:\t  154836 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16812 kB\nVmRSS:\t   16804 kB\nRssAnon:\t    8096 kB\nRssFile:\t    8564 kB\nRssShmem:\t     144 kB\nVmData:\t   28564 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22016 kB\nVmPTE:\t     124 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t3/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t18\n",
+    "rereadText": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t24378\nNgid:\t0\nPid:\t24378\nPPid:\t4565\nTracerPid:\t00000\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  154900 kB\nVmSize:\t  154900 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   16768 kB\nVmRSS:\t   16760 kB\nRssAnon:\t    8124 kB\nRssFile:\t    8492 kB\nRssShmem:\t     144 kB\nVmData:\t   28636 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22008 kB\nVmPTE:\t     128 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t5\n",
     "flags": {
       "descriptor": 1,
       "status": 133120
@@ -15467,7 +15573,7 @@
       3,
       4,
       8,
-      11,
+      10,
       16,
       32,
       33,
@@ -15476,5 +15582,5 @@
       36
     ]
   },
-  "finished_unix": 1792748118.7518392
+  "finished_unix": 1792750092.0221474
 }

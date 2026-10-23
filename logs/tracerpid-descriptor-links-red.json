@@ -1,0 +1,6970 @@
+{
+  "host": "127.0.0.1:9527",
+  "mode": "descriptor-links",
+  "frida_version": "12.11.12",
+  "started_unix": 1792749952.2675927,
+  "created_pids": [
+    23493
+  ],
+  "messages": [],
+  "logs": [
+    {
+      "script": "production",
+      "level": "info",
+      "text": "[*] TracerPid hook: open"
+    },
+    {
+      "script": "production",
+      "level": "info",
+      "text": "[*] TracerPid hook: __open_2"
+    },
+    {
+      "script": "production",
+      "level": "info",
+      "text": "[*] TracerPid hook: openat"
+    },
+    {
+      "script": "production",
+      "level": "info",
+      "text": "[*] TracerPid hook: __openat_2"
+    },
+    {
+      "script": "production",
+      "level": "info",
+      "text": "[*] TracerPid hook: fopen"
+    }
+  ],
+  "cases": [
+    {
+      "path": "/proc/self/fd/4",
+      "kind": "readlink",
+      "capacity": 4096,
+      "result": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/fd/4",
+      "kind": "readlinkat",
+      "capacity": 4096,
+      "result": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/fd/4",
+      "kind": "readlinkat-relative",
+      "capacity": 4096,
+      "result": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/fd/4",
+      "kind": "readlink",
+      "capacity": 1,
+      "result": {
+        "value": 1,
+        "errno": 0,
+        "text": "/",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 1,
+        "errno": 0,
+        "text": "/",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/fd/4",
+      "kind": "readlinkat",
+      "capacity": 1,
+      "result": {
+        "value": 1,
+        "errno": 0,
+        "text": "/",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 1,
+        "errno": 0,
+        "text": "/",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/fd/4",
+      "kind": "readlinkat-relative",
+      "capacity": 1,
+      "result": {
+        "value": 1,
+        "errno": 0,
+        "text": "/",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 1,
+        "errno": 0,
+        "text": "/",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/fd/4",
+      "kind": "readlink",
+      "capacity": 7,
+      "result": {
+        "value": 7,
+        "errno": 0,
+        "text": "/memfd:",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 7,
+        "errno": 0,
+        "text": "/memfd:",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/fd/4",
+      "kind": "readlinkat",
+      "capacity": 7,
+      "result": {
+        "value": 7,
+        "errno": 0,
+        "text": "/memfd:",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 7,
+        "errno": 0,
+        "text": "/memfd:",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/fd/4",
+      "kind": "readlinkat-relative",
+      "capacity": 7,
+      "result": {
+        "value": 7,
+        "errno": 0,
+        "text": "/memfd:",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 7,
+        "errno": 0,
+        "text": "/memfd:",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/fd/4",
+      "kind": "readlink",
+      "capacity": 8,
+      "result": {
+        "value": 8,
+        "errno": 0,
+        "text": "/memfd:l",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 8,
+        "errno": 0,
+        "text": "/memfd:l",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/fd/4",
+      "kind": "readlinkat",
+      "capacity": 8,
+      "result": {
+        "value": 8,
+        "errno": 0,
+        "text": "/memfd:l",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 8,
+        "errno": 0,
+        "text": "/memfd:l",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/fd/4",
+      "kind": "readlinkat-relative",
+      "capacity": 8,
+      "result": {
+        "value": 8,
+        "errno": 0,
+        "text": "/memfd:l",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 8,
+        "errno": 0,
+        "text": "/memfd:l",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/fd/4",
+      "kind": "readlink",
+      "capacity": 15,
+      "result": {
+        "value": 15,
+        "errno": 0,
+        "text": "/memfd:linjecto",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 15,
+        "errno": 0,
+        "text": "/memfd:linjecto",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/fd/4",
+      "kind": "readlinkat",
+      "capacity": 15,
+      "result": {
+        "value": 15,
+        "errno": 0,
+        "text": "/memfd:linjecto",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 15,
+        "errno": 0,
+        "text": "/memfd:linjecto",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/fd/4",
+      "kind": "readlinkat-relative",
+      "capacity": 15,
+      "result": {
+        "value": 15,
+        "errno": 0,
+        "text": "/memfd:linjecto",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 15,
+        "errno": 0,
+        "text": "/memfd:linjecto",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/fd/4",
+      "kind": "readlink",
+      "capacity": 16,
+      "result": {
+        "value": 16,
+        "errno": 0,
+        "text": "/memfd:linjector",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 16,
+        "errno": 0,
+        "text": "/memfd:linjector",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/fd/4",
+      "kind": "readlinkat",
+      "capacity": 16,
+      "result": {
+        "value": 16,
+        "errno": 0,
+        "text": "/memfd:linjector",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 16,
+        "errno": 0,
+        "text": "/memfd:linjector",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/fd/4",
+      "kind": "readlinkat-relative",
+      "capacity": 16,
+      "result": {
+        "value": 16,
+        "errno": 0,
+        "text": "/memfd:linjector",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 16,
+        "errno": 0,
+        "text": "/memfd:linjector",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/fd/4",
+      "kind": "readlink",
+      "capacity": 32,
+      "result": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/fd/4",
+      "kind": "readlinkat",
+      "capacity": 32,
+      "result": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/fd/4",
+      "kind": "readlinkat-relative",
+      "capacity": 32,
+      "result": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/fd/4",
+      "kind": "readlink",
+      "capacity": 4096,
+      "result": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/fd/4",
+      "kind": "readlinkat",
+      "capacity": 4096,
+      "result": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/fd/4",
+      "kind": "readlinkat-relative",
+      "capacity": 4096,
+      "result": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/fd/4",
+      "kind": "readlink",
+      "capacity": 1,
+      "result": {
+        "value": 1,
+        "errno": 0,
+        "text": "/",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 1,
+        "errno": 0,
+        "text": "/",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/fd/4",
+      "kind": "readlinkat",
+      "capacity": 1,
+      "result": {
+        "value": 1,
+        "errno": 0,
+        "text": "/",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 1,
+        "errno": 0,
+        "text": "/",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/fd/4",
+      "kind": "readlinkat-relative",
+      "capacity": 1,
+      "result": {
+        "value": 1,
+        "errno": 0,
+        "text": "/",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 1,
+        "errno": 0,
+        "text": "/",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/fd/4",
+      "kind": "readlink",
+      "capacity": 7,
+      "result": {
+        "value": 7,
+        "errno": 0,
+        "text": "/memfd:",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 7,
+        "errno": 0,
+        "text": "/memfd:",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/fd/4",
+      "kind": "readlinkat",
+      "capacity": 7,
+      "result": {
+        "value": 7,
+        "errno": 0,
+        "text": "/memfd:",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 7,
+        "errno": 0,
+        "text": "/memfd:",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/fd/4",
+      "kind": "readlinkat-relative",
+      "capacity": 7,
+      "result": {
+        "value": 7,
+        "errno": 0,
+        "text": "/memfd:",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 7,
+        "errno": 0,
+        "text": "/memfd:",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/fd/4",
+      "kind": "readlink",
+      "capacity": 8,
+      "result": {
+        "value": 8,
+        "errno": 0,
+        "text": "/memfd:l",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 8,
+        "errno": 0,
+        "text": "/memfd:l",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/fd/4",
+      "kind": "readlinkat",
+      "capacity": 8,
+      "result": {
+        "value": 8,
+        "errno": 0,
+        "text": "/memfd:l",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 8,
+        "errno": 0,
+        "text": "/memfd:l",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/fd/4",
+      "kind": "readlinkat-relative",
+      "capacity": 8,
+      "result": {
+        "value": 8,
+        "errno": 0,
+        "text": "/memfd:l",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 8,
+        "errno": 0,
+        "text": "/memfd:l",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/fd/4",
+      "kind": "readlink",
+      "capacity": 15,
+      "result": {
+        "value": 15,
+        "errno": 0,
+        "text": "/memfd:linjecto",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 15,
+        "errno": 0,
+        "text": "/memfd:linjecto",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/fd/4",
+      "kind": "readlinkat",
+      "capacity": 15,
+      "result": {
+        "value": 15,
+        "errno": 0,
+        "text": "/memfd:linjecto",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 15,
+        "errno": 0,
+        "text": "/memfd:linjecto",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/fd/4",
+      "kind": "readlinkat-relative",
+      "capacity": 15,
+      "result": {
+        "value": 15,
+        "errno": 0,
+        "text": "/memfd:linjecto",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 15,
+        "errno": 0,
+        "text": "/memfd:linjecto",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/fd/4",
+      "kind": "readlink",
+      "capacity": 16,
+      "result": {
+        "value": 16,
+        "errno": 0,
+        "text": "/memfd:linjector",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 16,
+        "errno": 0,
+        "text": "/memfd:linjector",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/fd/4",
+      "kind": "readlinkat",
+      "capacity": 16,
+      "result": {
+        "value": 16,
+        "errno": 0,
+        "text": "/memfd:linjector",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 16,
+        "errno": 0,
+        "text": "/memfd:linjector",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/fd/4",
+      "kind": "readlinkat-relative",
+      "capacity": 16,
+      "result": {
+        "value": 16,
+        "errno": 0,
+        "text": "/memfd:linjector",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 16,
+        "errno": 0,
+        "text": "/memfd:linjector",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/fd/4",
+      "kind": "readlink",
+      "capacity": 32,
+      "result": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/fd/4",
+      "kind": "readlinkat",
+      "capacity": 32,
+      "result": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/fd/4",
+      "kind": "readlinkat-relative",
+      "capacity": 32,
+      "result": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/thread-self/fd/4",
+      "kind": "readlink",
+      "capacity": 4096,
+      "result": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/thread-self/fd/4",
+      "kind": "readlinkat",
+      "capacity": 4096,
+      "result": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/thread-self/fd/4",
+      "kind": "readlinkat-relative",
+      "capacity": 4096,
+      "result": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/thread-self/fd/4",
+      "kind": "readlink",
+      "capacity": 1,
+      "result": {
+        "value": 1,
+        "errno": 0,
+        "text": "/",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 1,
+        "errno": 0,
+        "text": "/",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/thread-self/fd/4",
+      "kind": "readlinkat",
+      "capacity": 1,
+      "result": {
+        "value": 1,
+        "errno": 0,
+        "text": "/",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 1,
+        "errno": 0,
+        "text": "/",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/thread-self/fd/4",
+      "kind": "readlinkat-relative",
+      "capacity": 1,
+      "result": {
+        "value": 1,
+        "errno": 0,
+        "text": "/",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 1,
+        "errno": 0,
+        "text": "/",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/thread-self/fd/4",
+      "kind": "readlink",
+      "capacity": 7,
+      "result": {
+        "value": 7,
+        "errno": 0,
+        "text": "/memfd:",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 7,
+        "errno": 0,
+        "text": "/memfd:",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/thread-self/fd/4",
+      "kind": "readlinkat",
+      "capacity": 7,
+      "result": {
+        "value": 7,
+        "errno": 0,
+        "text": "/memfd:",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 7,
+        "errno": 0,
+        "text": "/memfd:",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/thread-self/fd/4",
+      "kind": "readlinkat-relative",
+      "capacity": 7,
+      "result": {
+        "value": 7,
+        "errno": 0,
+        "text": "/memfd:",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 7,
+        "errno": 0,
+        "text": "/memfd:",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/thread-self/fd/4",
+      "kind": "readlink",
+      "capacity": 8,
+      "result": {
+        "value": 8,
+        "errno": 0,
+        "text": "/memfd:l",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 8,
+        "errno": 0,
+        "text": "/memfd:l",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/thread-self/fd/4",
+      "kind": "readlinkat",
+      "capacity": 8,
+      "result": {
+        "value": 8,
+        "errno": 0,
+        "text": "/memfd:l",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 8,
+        "errno": 0,
+        "text": "/memfd:l",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/thread-self/fd/4",
+      "kind": "readlinkat-relative",
+      "capacity": 8,
+      "result": {
+        "value": 8,
+        "errno": 0,
+        "text": "/memfd:l",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 8,
+        "errno": 0,
+        "text": "/memfd:l",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/thread-self/fd/4",
+      "kind": "readlink",
+      "capacity": 15,
+      "result": {
+        "value": 15,
+        "errno": 0,
+        "text": "/memfd:linjecto",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 15,
+        "errno": 0,
+        "text": "/memfd:linjecto",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/thread-self/fd/4",
+      "kind": "readlinkat",
+      "capacity": 15,
+      "result": {
+        "value": 15,
+        "errno": 0,
+        "text": "/memfd:linjecto",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 15,
+        "errno": 0,
+        "text": "/memfd:linjecto",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/thread-self/fd/4",
+      "kind": "readlinkat-relative",
+      "capacity": 15,
+      "result": {
+        "value": 15,
+        "errno": 0,
+        "text": "/memfd:linjecto",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 15,
+        "errno": 0,
+        "text": "/memfd:linjecto",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/thread-self/fd/4",
+      "kind": "readlink",
+      "capacity": 16,
+      "result": {
+        "value": 16,
+        "errno": 0,
+        "text": "/memfd:linjector",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 16,
+        "errno": 0,
+        "text": "/memfd:linjector",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/thread-self/fd/4",
+      "kind": "readlinkat",
+      "capacity": 16,
+      "result": {
+        "value": 16,
+        "errno": 0,
+        "text": "/memfd:linjector",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 16,
+        "errno": 0,
+        "text": "/memfd:linjector",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/thread-self/fd/4",
+      "kind": "readlinkat-relative",
+      "capacity": 16,
+      "result": {
+        "value": 16,
+        "errno": 0,
+        "text": "/memfd:linjector",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 16,
+        "errno": 0,
+        "text": "/memfd:linjector",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/thread-self/fd/4",
+      "kind": "readlink",
+      "capacity": 32,
+      "result": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/thread-self/fd/4",
+      "kind": "readlinkat",
+      "capacity": 32,
+      "result": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/thread-self/fd/4",
+      "kind": "readlinkat-relative",
+      "capacity": 32,
+      "result": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/task/23498/fd/4",
+      "kind": "readlink",
+      "capacity": 4096,
+      "result": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/task/23498/fd/4",
+      "kind": "readlinkat",
+      "capacity": 4096,
+      "result": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/task/23498/fd/4",
+      "kind": "readlinkat-relative",
+      "capacity": 4096,
+      "result": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/task/23498/fd/4",
+      "kind": "readlink",
+      "capacity": 1,
+      "result": {
+        "value": 1,
+        "errno": 0,
+        "text": "/",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 1,
+        "errno": 0,
+        "text": "/",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/task/23498/fd/4",
+      "kind": "readlinkat",
+      "capacity": 1,
+      "result": {
+        "value": 1,
+        "errno": 0,
+        "text": "/",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 1,
+        "errno": 0,
+        "text": "/",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/task/23498/fd/4",
+      "kind": "readlinkat-relative",
+      "capacity": 1,
+      "result": {
+        "value": 1,
+        "errno": 0,
+        "text": "/",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 1,
+        "errno": 0,
+        "text": "/",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/task/23498/fd/4",
+      "kind": "readlink",
+      "capacity": 7,
+      "result": {
+        "value": 7,
+        "errno": 0,
+        "text": "/memfd:",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 7,
+        "errno": 0,
+        "text": "/memfd:",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/task/23498/fd/4",
+      "kind": "readlinkat",
+      "capacity": 7,
+      "result": {
+        "value": 7,
+        "errno": 0,
+        "text": "/memfd:",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 7,
+        "errno": 0,
+        "text": "/memfd:",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/task/23498/fd/4",
+      "kind": "readlinkat-relative",
+      "capacity": 7,
+      "result": {
+        "value": 7,
+        "errno": 0,
+        "text": "/memfd:",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 7,
+        "errno": 0,
+        "text": "/memfd:",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/task/23498/fd/4",
+      "kind": "readlink",
+      "capacity": 8,
+      "result": {
+        "value": 8,
+        "errno": 0,
+        "text": "/memfd:l",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 8,
+        "errno": 0,
+        "text": "/memfd:l",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/task/23498/fd/4",
+      "kind": "readlinkat",
+      "capacity": 8,
+      "result": {
+        "value": 8,
+        "errno": 0,
+        "text": "/memfd:l",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 8,
+        "errno": 0,
+        "text": "/memfd:l",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/task/23498/fd/4",
+      "kind": "readlinkat-relative",
+      "capacity": 8,
+      "result": {
+        "value": 8,
+        "errno": 0,
+        "text": "/memfd:l",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 8,
+        "errno": 0,
+        "text": "/memfd:l",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/task/23498/fd/4",
+      "kind": "readlink",
+      "capacity": 15,
+      "result": {
+        "value": 15,
+        "errno": 0,
+        "text": "/memfd:linjecto",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 15,
+        "errno": 0,
+        "text": "/memfd:linjecto",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/task/23498/fd/4",
+      "kind": "readlinkat",
+      "capacity": 15,
+      "result": {
+        "value": 15,
+        "errno": 0,
+        "text": "/memfd:linjecto",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 15,
+        "errno": 0,
+        "text": "/memfd:linjecto",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/task/23498/fd/4",
+      "kind": "readlinkat-relative",
+      "capacity": 15,
+      "result": {
+        "value": 15,
+        "errno": 0,
+        "text": "/memfd:linjecto",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 15,
+        "errno": 0,
+        "text": "/memfd:linjecto",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/task/23498/fd/4",
+      "kind": "readlink",
+      "capacity": 16,
+      "result": {
+        "value": 16,
+        "errno": 0,
+        "text": "/memfd:linjector",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 16,
+        "errno": 0,
+        "text": "/memfd:linjector",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/task/23498/fd/4",
+      "kind": "readlinkat",
+      "capacity": 16,
+      "result": {
+        "value": 16,
+        "errno": 0,
+        "text": "/memfd:linjector",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 16,
+        "errno": 0,
+        "text": "/memfd:linjector",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/task/23498/fd/4",
+      "kind": "readlinkat-relative",
+      "capacity": 16,
+      "result": {
+        "value": 16,
+        "errno": 0,
+        "text": "/memfd:linjector",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 16,
+        "errno": 0,
+        "text": "/memfd:linjector",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/task/23498/fd/4",
+      "kind": "readlink",
+      "capacity": 32,
+      "result": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/task/23498/fd/4",
+      "kind": "readlinkat",
+      "capacity": 32,
+      "result": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/self/task/23498/fd/4",
+      "kind": "readlinkat-relative",
+      "capacity": 32,
+      "result": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/task/23498/fd/4",
+      "kind": "readlink",
+      "capacity": 4096,
+      "result": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/task/23498/fd/4",
+      "kind": "readlinkat",
+      "capacity": 4096,
+      "result": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/task/23498/fd/4",
+      "kind": "readlinkat-relative",
+      "capacity": 4096,
+      "result": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/task/23498/fd/4",
+      "kind": "readlink",
+      "capacity": 1,
+      "result": {
+        "value": 1,
+        "errno": 0,
+        "text": "/",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 1,
+        "errno": 0,
+        "text": "/",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/task/23498/fd/4",
+      "kind": "readlinkat",
+      "capacity": 1,
+      "result": {
+        "value": 1,
+        "errno": 0,
+        "text": "/",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 1,
+        "errno": 0,
+        "text": "/",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/task/23498/fd/4",
+      "kind": "readlinkat-relative",
+      "capacity": 1,
+      "result": {
+        "value": 1,
+        "errno": 0,
+        "text": "/",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 1,
+        "errno": 0,
+        "text": "/",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/task/23498/fd/4",
+      "kind": "readlink",
+      "capacity": 7,
+      "result": {
+        "value": 7,
+        "errno": 0,
+        "text": "/memfd:",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 7,
+        "errno": 0,
+        "text": "/memfd:",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/task/23498/fd/4",
+      "kind": "readlinkat",
+      "capacity": 7,
+      "result": {
+        "value": 7,
+        "errno": 0,
+        "text": "/memfd:",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 7,
+        "errno": 0,
+        "text": "/memfd:",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/task/23498/fd/4",
+      "kind": "readlinkat-relative",
+      "capacity": 7,
+      "result": {
+        "value": 7,
+        "errno": 0,
+        "text": "/memfd:",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 7,
+        "errno": 0,
+        "text": "/memfd:",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/task/23498/fd/4",
+      "kind": "readlink",
+      "capacity": 8,
+      "result": {
+        "value": 8,
+        "errno": 0,
+        "text": "/memfd:l",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 8,
+        "errno": 0,
+        "text": "/memfd:l",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/task/23498/fd/4",
+      "kind": "readlinkat",
+      "capacity": 8,
+      "result": {
+        "value": 8,
+        "errno": 0,
+        "text": "/memfd:l",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 8,
+        "errno": 0,
+        "text": "/memfd:l",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/task/23498/fd/4",
+      "kind": "readlinkat-relative",
+      "capacity": 8,
+      "result": {
+        "value": 8,
+        "errno": 0,
+        "text": "/memfd:l",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 8,
+        "errno": 0,
+        "text": "/memfd:l",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/task/23498/fd/4",
+      "kind": "readlink",
+      "capacity": 15,
+      "result": {
+        "value": 15,
+        "errno": 0,
+        "text": "/memfd:linjecto",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 15,
+        "errno": 0,
+        "text": "/memfd:linjecto",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/task/23498/fd/4",
+      "kind": "readlinkat",
+      "capacity": 15,
+      "result": {
+        "value": 15,
+        "errno": 0,
+        "text": "/memfd:linjecto",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 15,
+        "errno": 0,
+        "text": "/memfd:linjecto",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/task/23498/fd/4",
+      "kind": "readlinkat-relative",
+      "capacity": 15,
+      "result": {
+        "value": 15,
+        "errno": 0,
+        "text": "/memfd:linjecto",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 15,
+        "errno": 0,
+        "text": "/memfd:linjecto",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/task/23498/fd/4",
+      "kind": "readlink",
+      "capacity": 16,
+      "result": {
+        "value": 16,
+        "errno": 0,
+        "text": "/memfd:linjector",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 16,
+        "errno": 0,
+        "text": "/memfd:linjector",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/task/23498/fd/4",
+      "kind": "readlinkat",
+      "capacity": 16,
+      "result": {
+        "value": 16,
+        "errno": 0,
+        "text": "/memfd:linjector",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 16,
+        "errno": 0,
+        "text": "/memfd:linjector",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/task/23498/fd/4",
+      "kind": "readlinkat-relative",
+      "capacity": 16,
+      "result": {
+        "value": 16,
+        "errno": 0,
+        "text": "/memfd:linjector",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 16,
+        "errno": 0,
+        "text": "/memfd:linjector",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/task/23498/fd/4",
+      "kind": "readlink",
+      "capacity": 32,
+      "result": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/task/23498/fd/4",
+      "kind": "readlinkat",
+      "capacity": 32,
+      "result": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "path": "/proc/23493/task/23498/fd/4",
+      "kind": "readlinkat-relative",
+      "capacity": 32,
+      "result": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": 32,
+        "errno": 0,
+        "text": "/memfd:linjector-check (deleted)",
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "kind": "readlink",
+      "capacity": 32,
+      "result": {
+        "value": -1,
+        "errno": 2,
+        "text": null,
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": -1,
+        "errno": 2,
+        "text": null,
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "kind": "readlinkat",
+      "capacity": 32,
+      "result": {
+        "value": -1,
+        "errno": 2,
+        "text": null,
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": -1,
+        "errno": 2,
+        "text": null,
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    },
+    {
+      "kind": "readlinkat-relative",
+      "capacity": 32,
+      "result": {
+        "value": -1,
+        "errno": 2,
+        "text": null,
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      },
+      "kernel": {
+        "value": -1,
+        "errno": 2,
+        "text": null,
+        "guardBefore": 165,
+        "guardAfter": 165,
+        "tailUntouched": true
+      }
+    }
+  ],
+  "cleanup": [
+    {
+      "pid": 23493,
+      "killed": true
+    }
+  ],
+  "passed": false,
+  "target": {
+    "pid": 23493,
+    "tid": 23498,
+    "arch": "arm64",
+    "pointerSize": 8,
+    "exports": {
+      "open": "0x77448cd0f0",
+      "openat": "0x77448cd290",
+      "close": "0x77448c6c6c",
+      "read": "0x7744911e30",
+      "pread": "0x7744911d30",
+      "lseek": "0x7744911ad0",
+      "dup": "0x77449114d0",
+      "fcntl": "0x7744911610",
+      "fopen": "0x774491ea00",
+      "fclose": "0x774491f148",
+      "fileno": "0x774491f3a0",
+      "fgets": "0x7744920228",
+      "fread": "0x7744922128",
+      "ferror": "0x774491f584",
+      "ptrace": "0x77448ce030",
+      "opendir": "0x77448c4f5c",
+      "readdir": "0x77448c4fdc",
+      "closedir": "0x77448c51bc",
+      "__errno": "0x77448c3004",
+      "readlink": "0x77448ce7c8",
+      "readlinkat": "0x7744911e70"
+    }
+  },
+  "descriptors_before_link_baseline": {
+    "count": 12,
+    "descriptors": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      8,
+      11,
+      32,
+      33,
+      34,
+      35,
+      36
+    ]
+  },
+  "descriptor_links_baseline": {
+    "fd": 4,
+    "kernel": {
+      "value": 32,
+      "errno": 0,
+      "text": "/memfd:linjector-check (deleted)",
+      "guardBefore": 165,
+      "guardAfter": 165,
+      "tailUntouched": true
+    },
+    "cases": [
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlink",
+        "capacity": 4096,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlinkat",
+        "capacity": 4096,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 4096,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlink",
+        "capacity": 1,
+        "result": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlinkat",
+        "capacity": 1,
+        "result": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 1,
+        "result": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlink",
+        "capacity": 7,
+        "result": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlinkat",
+        "capacity": 7,
+        "result": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 7,
+        "result": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlink",
+        "capacity": 8,
+        "result": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlinkat",
+        "capacity": 8,
+        "result": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 8,
+        "result": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlink",
+        "capacity": 15,
+        "result": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlinkat",
+        "capacity": 15,
+        "result": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 15,
+        "result": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlink",
+        "capacity": 16,
+        "result": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlinkat",
+        "capacity": 16,
+        "result": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 16,
+        "result": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlink",
+        "capacity": 32,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlinkat",
+        "capacity": 32,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 32,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlink",
+        "capacity": 4096,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlinkat",
+        "capacity": 4096,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 4096,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlink",
+        "capacity": 1,
+        "result": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlinkat",
+        "capacity": 1,
+        "result": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 1,
+        "result": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlink",
+        "capacity": 7,
+        "result": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlinkat",
+        "capacity": 7,
+        "result": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 7,
+        "result": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlink",
+        "capacity": 8,
+        "result": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlinkat",
+        "capacity": 8,
+        "result": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 8,
+        "result": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlink",
+        "capacity": 15,
+        "result": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlinkat",
+        "capacity": 15,
+        "result": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 15,
+        "result": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlink",
+        "capacity": 16,
+        "result": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlinkat",
+        "capacity": 16,
+        "result": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 16,
+        "result": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlink",
+        "capacity": 32,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlinkat",
+        "capacity": 32,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 32,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlink",
+        "capacity": 4096,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlinkat",
+        "capacity": 4096,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 4096,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlink",
+        "capacity": 1,
+        "result": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlinkat",
+        "capacity": 1,
+        "result": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 1,
+        "result": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlink",
+        "capacity": 7,
+        "result": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlinkat",
+        "capacity": 7,
+        "result": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 7,
+        "result": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlink",
+        "capacity": 8,
+        "result": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlinkat",
+        "capacity": 8,
+        "result": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 8,
+        "result": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlink",
+        "capacity": 15,
+        "result": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlinkat",
+        "capacity": 15,
+        "result": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 15,
+        "result": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlink",
+        "capacity": 16,
+        "result": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlinkat",
+        "capacity": 16,
+        "result": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 16,
+        "result": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlink",
+        "capacity": 32,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlinkat",
+        "capacity": 32,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 32,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlink",
+        "capacity": 4096,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlinkat",
+        "capacity": 4096,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 4096,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlink",
+        "capacity": 1,
+        "result": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlinkat",
+        "capacity": 1,
+        "result": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 1,
+        "result": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlink",
+        "capacity": 7,
+        "result": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlinkat",
+        "capacity": 7,
+        "result": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 7,
+        "result": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlink",
+        "capacity": 8,
+        "result": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlinkat",
+        "capacity": 8,
+        "result": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 8,
+        "result": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlink",
+        "capacity": 15,
+        "result": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlinkat",
+        "capacity": 15,
+        "result": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 15,
+        "result": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlink",
+        "capacity": 16,
+        "result": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlinkat",
+        "capacity": 16,
+        "result": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 16,
+        "result": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlink",
+        "capacity": 32,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlinkat",
+        "capacity": 32,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 32,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlink",
+        "capacity": 4096,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlinkat",
+        "capacity": 4096,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 4096,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlink",
+        "capacity": 1,
+        "result": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlinkat",
+        "capacity": 1,
+        "result": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 1,
+        "result": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlink",
+        "capacity": 7,
+        "result": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlinkat",
+        "capacity": 7,
+        "result": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 7,
+        "result": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlink",
+        "capacity": 8,
+        "result": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlinkat",
+        "capacity": 8,
+        "result": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 8,
+        "result": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlink",
+        "capacity": 15,
+        "result": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlinkat",
+        "capacity": 15,
+        "result": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 15,
+        "result": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlink",
+        "capacity": 16,
+        "result": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlinkat",
+        "capacity": 16,
+        "result": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 16,
+        "result": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlink",
+        "capacity": 32,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlinkat",
+        "capacity": 32,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 32,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      }
+    ],
+    "errors": [
+      {
+        "kind": "readlink",
+        "capacity": 32,
+        "result": {
+          "value": -1,
+          "errno": 2,
+          "text": null,
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": -1,
+          "errno": 2,
+          "text": null,
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "kind": "readlinkat",
+        "capacity": 32,
+        "result": {
+          "value": -1,
+          "errno": 2,
+          "text": null,
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": -1,
+          "errno": 2,
+          "text": null,
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "kind": "readlinkat-relative",
+        "capacity": 32,
+        "result": {
+          "value": -1,
+          "errno": 2,
+          "text": null,
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": -1,
+          "errno": 2,
+          "text": null,
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      }
+    ]
+  },
+  "descriptors_after_link_baseline": {
+    "count": 12,
+    "descriptors": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      8,
+      11,
+      32,
+      33,
+      34,
+      35,
+      36
+    ]
+  },
+  "descriptors_before_link_hooked": {
+    "count": 12,
+    "descriptors": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      8,
+      11,
+      32,
+      33,
+      34,
+      35,
+      36
+    ]
+  },
+  "descriptor_links_hooked": {
+    "fd": 4,
+    "kernel": {
+      "value": 32,
+      "errno": 0,
+      "text": "/memfd:linjector-check (deleted)",
+      "guardBefore": 165,
+      "guardAfter": 165,
+      "tailUntouched": true
+    },
+    "cases": [
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlink",
+        "capacity": 4096,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlinkat",
+        "capacity": 4096,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 4096,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlink",
+        "capacity": 1,
+        "result": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlinkat",
+        "capacity": 1,
+        "result": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 1,
+        "result": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlink",
+        "capacity": 7,
+        "result": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlinkat",
+        "capacity": 7,
+        "result": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 7,
+        "result": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlink",
+        "capacity": 8,
+        "result": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlinkat",
+        "capacity": 8,
+        "result": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 8,
+        "result": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlink",
+        "capacity": 15,
+        "result": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlinkat",
+        "capacity": 15,
+        "result": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 15,
+        "result": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlink",
+        "capacity": 16,
+        "result": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlinkat",
+        "capacity": 16,
+        "result": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 16,
+        "result": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlink",
+        "capacity": 32,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlinkat",
+        "capacity": 32,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 32,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlink",
+        "capacity": 4096,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlinkat",
+        "capacity": 4096,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 4096,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlink",
+        "capacity": 1,
+        "result": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlinkat",
+        "capacity": 1,
+        "result": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 1,
+        "result": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlink",
+        "capacity": 7,
+        "result": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlinkat",
+        "capacity": 7,
+        "result": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 7,
+        "result": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlink",
+        "capacity": 8,
+        "result": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlinkat",
+        "capacity": 8,
+        "result": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 8,
+        "result": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlink",
+        "capacity": 15,
+        "result": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlinkat",
+        "capacity": 15,
+        "result": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 15,
+        "result": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlink",
+        "capacity": 16,
+        "result": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlinkat",
+        "capacity": 16,
+        "result": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 16,
+        "result": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlink",
+        "capacity": 32,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlinkat",
+        "capacity": 32,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 32,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlink",
+        "capacity": 4096,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlinkat",
+        "capacity": 4096,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 4096,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlink",
+        "capacity": 1,
+        "result": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlinkat",
+        "capacity": 1,
+        "result": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 1,
+        "result": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlink",
+        "capacity": 7,
+        "result": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlinkat",
+        "capacity": 7,
+        "result": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 7,
+        "result": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlink",
+        "capacity": 8,
+        "result": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlinkat",
+        "capacity": 8,
+        "result": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 8,
+        "result": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlink",
+        "capacity": 15,
+        "result": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlinkat",
+        "capacity": 15,
+        "result": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 15,
+        "result": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlink",
+        "capacity": 16,
+        "result": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlinkat",
+        "capacity": 16,
+        "result": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 16,
+        "result": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlink",
+        "capacity": 32,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlinkat",
+        "capacity": 32,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/thread-self/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 32,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlink",
+        "capacity": 4096,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlinkat",
+        "capacity": 4096,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 4096,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlink",
+        "capacity": 1,
+        "result": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlinkat",
+        "capacity": 1,
+        "result": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 1,
+        "result": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlink",
+        "capacity": 7,
+        "result": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlinkat",
+        "capacity": 7,
+        "result": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 7,
+        "result": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlink",
+        "capacity": 8,
+        "result": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlinkat",
+        "capacity": 8,
+        "result": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 8,
+        "result": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlink",
+        "capacity": 15,
+        "result": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlinkat",
+        "capacity": 15,
+        "result": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 15,
+        "result": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlink",
+        "capacity": 16,
+        "result": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlinkat",
+        "capacity": 16,
+        "result": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 16,
+        "result": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlink",
+        "capacity": 32,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlinkat",
+        "capacity": 32,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/self/task/23498/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 32,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlink",
+        "capacity": 4096,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlinkat",
+        "capacity": 4096,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 4096,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlink",
+        "capacity": 1,
+        "result": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlinkat",
+        "capacity": 1,
+        "result": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 1,
+        "result": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 1,
+          "errno": 0,
+          "text": "/",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlink",
+        "capacity": 7,
+        "result": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlinkat",
+        "capacity": 7,
+        "result": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 7,
+        "result": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 7,
+          "errno": 0,
+          "text": "/memfd:",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlink",
+        "capacity": 8,
+        "result": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlinkat",
+        "capacity": 8,
+        "result": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 8,
+        "result": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 8,
+          "errno": 0,
+          "text": "/memfd:l",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlink",
+        "capacity": 15,
+        "result": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlinkat",
+        "capacity": 15,
+        "result": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 15,
+        "result": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 15,
+          "errno": 0,
+          "text": "/memfd:linjecto",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlink",
+        "capacity": 16,
+        "result": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlinkat",
+        "capacity": 16,
+        "result": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 16,
+        "result": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 16,
+          "errno": 0,
+          "text": "/memfd:linjector",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlink",
+        "capacity": 32,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlinkat",
+        "capacity": 32,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "path": "/proc/23493/task/23498/fd/4",
+        "kind": "readlinkat-relative",
+        "capacity": 32,
+        "result": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": 32,
+          "errno": 0,
+          "text": "/memfd:linjector-check (deleted)",
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      }
+    ],
+    "errors": [
+      {
+        "kind": "readlink",
+        "capacity": 32,
+        "result": {
+          "value": -1,
+          "errno": 2,
+          "text": null,
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": -1,
+          "errno": 2,
+          "text": null,
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "kind": "readlinkat",
+        "capacity": 32,
+        "result": {
+          "value": -1,
+          "errno": 2,
+          "text": null,
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": -1,
+          "errno": 2,
+          "text": null,
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      },
+      {
+        "kind": "readlinkat-relative",
+        "capacity": 32,
+        "result": {
+          "value": -1,
+          "errno": 2,
+          "text": null,
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        },
+        "kernel": {
+          "value": -1,
+          "errno": 2,
+          "text": null,
+          "guardBefore": 165,
+          "guardAfter": 165,
+          "tailUntouched": true
+        }
+      }
+    ]
+  },
+  "descriptors_after_link_hooked": {
+    "count": 12,
+    "descriptors": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      8,
+      11,
+      32,
+      33,
+      34,
+      35,
+      36
+    ]
+  },
+  "failure": "AssertionError: /proc/self/fd/4 readlink capacity=4096 链接文本不符合精确期望",
+  "finished_unix": 1792749953.590727
+}

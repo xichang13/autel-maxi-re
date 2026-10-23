@@ -144,6 +144,63 @@ function installTracerPidBypass() {
             }
         }
 
+        function attachDescriptor(name, relative) {
+            var address = Module.findExportByName('libc.so', name);
+            if (address === null || addresses[address.toString()]) return;
+            var listener = Interceptor.attach(address, {
+                onEnter: function (args) {
+                    this.descriptorPath = null;
+                    var savedErrno = this.errno;
+                    try {
+                        var path = Memory.readUtf8String(args[relative ? 1 : 0]);
+                        if (relative && path.charAt(0) !== '/') {
+                            var dirfd = args[0].toInt32();
+                            var directory = Memory.alloc(4096);
+                            var link = dirfd === -100 ? '/proc/self/cwd' : '/proc/self/fd/' + dirfd;
+                            var length = Number(readlink(Memory.allocUtf8String(link), directory, 4096).value);
+                            if (length <= 0 || length >= 4096) return;
+                            path = Memory.readUtf8String(directory, length) + '/' + path;
+                        }
+                        if (isProcDescriptorPath(path)) {
+                            this.descriptorPath = path;
+                            this.descriptorBuffer = args[relative ? 2 : 1];
+                            this.descriptorCapacity = parseInt(args[relative ? 3 : 2].toString(), 16);
+                        }
+                    } catch (e) { /* 无效输入交由原函数产生错误 */ }
+                    finally { this.errno = savedErrno; }
+                },
+                onLeave: function (retval) {
+                    if (this.descriptorPath === null) return;
+                    var savedErrno = this.errno;
+                    try {
+                        var count = retval.toInt32();
+                        if (count <= 0 || count > this.descriptorCapacity || count > 1024 * 1024) return;
+                        var bytes = new Uint8Array(Memory.readByteArray(this.descriptorBuffer, count));
+                        var text = '';
+                        for (var i = 0; i < bytes.length; i++) text += String.fromCharCode(bytes[i]);
+                        var masked = maskDescriptorLink(text);
+                        if (masked === text) return;
+                        for (var j = 0; j < bytes.length; j++) bytes[j] = masked.charCodeAt(j);
+                        Memory.writeByteArray(this.descriptorBuffer, bytes.buffer);
+                        var key = 'descriptor:' + this.descriptorPath;
+                        if (!reported[key]) {
+                            reported[key] = true;
+                            console.log('[*] 描述符链接已处理: ' + this.descriptorPath);
+                        }
+                    } catch (e) {
+                        var key = 'error:' + e;
+                        if (!reported[key]) {
+                            reported[key] = true;
+                            console.log('[!] TracerPid 处理失败: ' + e);
+                        }
+                    } finally { this.errno = savedErrno; }
+                }
+            });
+            addresses[address.toString()] = true;
+            listeners.push(listener);
+            console.log('[*] TracerPid hook: ' + name);
+        }
+
         function attach(name, stream) {
             var address = Module.findExportByName('libc.so', name);
             if (address === null || addresses[address.toString()]) return;
@@ -171,6 +228,8 @@ function installTracerPidBypass() {
             listeners.push(listener);
             console.log('[*] TracerPid hook: ' + name);
         }
+        attachDescriptor('readlink', false);
+        attachDescriptor('readlinkat', true);
         ['open', 'open64', '__open_2', 'openat', 'openat64', '__openat_2'].forEach(function (name) {
             attach(name, false);
         });

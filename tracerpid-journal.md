@@ -71,3 +71,14 @@
 - 独立的 RVA 0xa9a64 检查线程 State 的停止/跟踪状态及 PPid/TracerPid。异常链可自毁到 PC=0x790、X8=0xb6a287d6，或通过 inline kill(SVC #0，x8=129) 发信号9；因此只监听 libc kill/exit 无法收齐退出链。
 - 新增 Name 精确等长处理已先看到两项测试失败，再 Node 7/7 通过。实际应用复测仍在 0.609 秒退出，但这次 Crash 明确 X8=0xb6a287f2 / PC=0x7b0，与 FD 分支一致，见 `logs/tracerpid-watch-full-name.json`。据此继续为 FD 返回内容编写失败回归，而非猜测追加退出拦截。
 - FD 纯函数和路径测试先失败后通过；原生 readlink/readlinkat 处理尚未安装，当前持续存活目标仍未达成。
+
+## 持续退出修复与验收
+
+- 真实 memfd 描述符回归先失败：成功加载脚本后 readlink 仍返回 `/memfd:linjector-check (deleted)`，与期望的等长屏蔽不符；内核对照与原始 105 案例均有效，见 `logs/tracerpid-descriptor-links-red.json`。
+- 安装 readlink/readlinkat 处理后，首轮 108 案例通过；补入三种 API 的普通 symlink 范围外负例后共 111 案例通过。范围外仍原样返回 linjector，并保持真实 errno=11、长度、哨兵和无 NUL 越界写入，见 `logs/tracerpid-descriptor-links-scope-green.json`。
+- 实际应用完整脚本持续验证：PID 24003，60.063 秒，58 次 poll 全部存活，0 替代 PID、0 崩溃；结束仅由 harness 主动 detach。原生与 Java hook 都就绪，且日志实际命中两个线程 status 和 linjector FD 74。
+- 按 Chang 原 CLI 命令再次验证：主机客户端 PID 33736，应用 PID 25044，同一进程持续附加 202.327 秒。已保存命令、客户端启动时间、校验时刻及生产脚本 SHA256，见 `logs/tracerpid-cli-verification.json`；之后发送 exit 主动结束测试，应用 PID 25044 仍存活。
+- 本轮生产脚本 SHA256 为 f4137a095d7b3918583af3f0e0043fc0f03854a33f0c7ed598274b9641b00b2d，与持续 watch 和 CLI 证据一致。
+- Node 9/9、原状态文件普通 50/50、先打开后跟踪 50/50、关闭失败清理回归全部通过；JS/Python 语法检查通过。
+- 独立审查确认 readlink errno 分两阶段保存、有效字节范围修改、Latin1 保持、地址去重均正确。watch 完成条件已收紧为已记录 elapsed 达到目标，避免报告写入延迟导致边界误判；本次 60.063 秒结果本来就满足该条件。
+- gmain/gdbus 的替换已通过纯函数测试，当前真机状态回归实际覆盖 gum-js-loop 与 sleep，不将这些证据混为全部名称的真机覆盖。

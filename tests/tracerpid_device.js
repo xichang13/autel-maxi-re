@@ -40,12 +40,18 @@ var libc = {
     opendir: native('opendir', 'pointer', ['pointer']),
     readdir: native('readdir', 'pointer', ['pointer']),
     closedir: native('closedir', 'int', ['pointer']),
-    errno: native('__errno', 'pointer', [])
+    errno: native('__errno', 'pointer', []),
+    readlink: native('readlink', 'long', ['pointer', 'pointer', 'ulong']),
+    readlinkat: native('readlinkat', 'long', ['int', 'pointer', 'pointer', 'ulong']),
+    symlink: native('symlink', 'int', ['pointer', 'pointer']),
+    unlink: native('unlink', 'int', ['pointer'])
 };
 var syscallAddress = Module.findExportByName('libc.so', 'syscall');
 if (syscallAddress === null) throw new Error('缺少 libc 导出: syscall');
 var syscallOpen = new SystemFunction(syscallAddress, 'long', ['long', 'int', 'pointer', 'int', 'int']);
 var syscallRead = new SystemFunction(syscallAddress, 'long', ['long', 'int', 'pointer', 'ulong']);
+var syscallMemfd = new SystemFunction(syscallAddress, 'long', ['long', 'pointer', 'uint']);
+var syscallReadlinkat = new SystemFunction(syscallAddress, 'long', ['long', 'int', 'pointer', 'pointer', 'ulong']);
 
 function number(value) {
     return typeof value === 'number' ? value : value.toNumber();
@@ -223,6 +229,109 @@ function descriptorCount() {
     }
 }
 
+function readDescriptorLink(path, kind, capacity, directory, initialErrno) {
+    var buffer = Memory.alloc(capacity + 2);
+    var initial = new Uint8Array(capacity + 2);
+    for (var i = 0; i < initial.length; i++) initial[i] = 0xa5;
+    Memory.writeByteArray(buffer, initial.buffer);
+    var pathPointer = Memory.allocUtf8String(path);
+    if (initialErrno !== undefined) Memory.writeS32(libc.errno().value, initialErrno);
+    var result;
+    if (kind === 'syscall') result = syscallReadlinkat(78, AT_FDCWD, pathPointer, buffer.add(1), capacity);
+    else if (kind === 'readlink') result = libc.readlink(pathPointer, buffer.add(1), capacity);
+    else result = libc.readlinkat(directory, pathPointer, buffer.add(1), capacity);
+    var count = number(result.value);
+    if (count > capacity) throw new Error('readlink 返回长度超过容量');
+    var contents = new Uint8Array(Memory.readByteArray(buffer, capacity + 2));
+    var tailUntouched = true;
+    for (var j = count < 0 ? 0 : count; j < capacity; j++) {
+        if (contents[j + 1] !== 0xa5) tailUntouched = false;
+    }
+    return {
+        value: count, errno: result.errno,
+        text: count >= 0 ? bytes(buffer.add(1), count) : null,
+        guardBefore: contents[0], guardAfter: contents[capacity + 1],
+        tailUntouched: tailUntouched
+    };
+}
+
+function descriptorLinks() {
+    var fd = checked(syscallMemfd(279, Memory.allocUtf8String('linjector-check'), 1), 'memfd_create(linjector-check)');
+    var ordinaryPath = '/data/local/tmp/tracerpid-link-' + Process.id;
+    var ordinaryLinkCreated = false;
+    try {
+        var paths = [
+            '/proc/self/fd/' + fd,
+            '/proc/' + Process.id + '/fd/' + fd,
+            '/proc/thread-self/fd/' + fd,
+            '/proc/self/task/' + Process.getCurrentThreadId() + '/fd/' + fd,
+            '/proc/' + Process.id + '/task/' + Process.getCurrentThreadId() + '/fd/' + fd
+        ];
+        var kernel = readDescriptorLink(paths[0], 'syscall', 4096, AT_FDCWD);
+        if (kernel.value < 0 || kernel.text.indexOf('linjector') < 0) throw new Error('真实内核 memfd 链接没有 linjector 标记');
+        var start = kernel.text.indexOf('linjector');
+        var capacities = [4096, 1, start, start + 1, start + 8, start + 9, kernel.value];
+        capacities = capacities.filter(function (capacity, index) { return capacity > 0 && capacities.indexOf(capacity) === index; });
+        var cases = [];
+        for (var i = 0; i < paths.length; i++) {
+            var slash = paths[i].lastIndexOf('/');
+            var directory = checked(libc.open(Memory.allocUtf8String(paths[i].slice(0, slash)), O_DIRECTORY | 0x80000), 'open(fd directory)');
+            try {
+                for (var j = 0; j < capacities.length; j++) {
+                    var capacity = capacities[j];
+                    ['readlink', 'readlinkat', 'readlinkat-relative'].forEach(function (kind) {
+                        var relative = kind === 'readlinkat-relative';
+                        cases.push({
+                            scope: 'proc-fd', path: paths[i], kind: kind, capacity: capacity,
+                            result: readDescriptorLink(relative ? paths[i].slice(slash + 1) : paths[i], kind, capacity, relative ? directory : AT_FDCWD),
+                            kernel: readDescriptorLink(paths[i], 'syscall', capacity, AT_FDCWD)
+                        });
+                    });
+                }
+            } finally {
+                checked(libc.close(directory), 'close(fd directory)');
+            }
+        }
+        checked(libc.symlink(Memory.allocUtf8String(kernel.text), Memory.allocUtf8String(ordinaryPath)), 'symlink(link fixture)');
+        ordinaryLinkCreated = true;
+        var ordinaryDirectory = checked(libc.open(Memory.allocUtf8String('/data/local/tmp'), O_DIRECTORY | 0x80000), 'open(link fixture directory)');
+        try {
+            ['readlink', 'readlinkat', 'readlinkat-relative'].forEach(function (kind) {
+                var relative = kind === 'readlinkat-relative';
+                cases.push({
+                    scope: 'other', path: ordinaryPath, kind: kind, capacity: 4096, initialErrno: 11,
+                    result: readDescriptorLink(relative ? 'tracerpid-link-' + Process.id : ordinaryPath, kind, 4096, relative ? ordinaryDirectory : AT_FDCWD, 11),
+                    kernel: readDescriptorLink(ordinaryPath, 'syscall', 4096, AT_FDCWD, 11)
+                });
+            });
+        } finally {
+            checked(libc.close(ordinaryDirectory), 'close(link fixture directory)');
+        }
+        var missing = '/proc/self/fd/2147483647';
+        var errorDirectory = checked(libc.open(Memory.allocUtf8String('/proc/self/fd'), O_DIRECTORY | 0x80000), 'open(error directory)');
+        var errors = [];
+        try {
+            ['readlink', 'readlinkat', 'readlinkat-relative'].forEach(function (kind) {
+                var relative = kind === 'readlinkat-relative';
+                errors.push({
+                    scope: 'proc-fd', kind: kind, capacity: 32,
+                    result: readDescriptorLink(relative ? '2147483647' : missing, kind, 32, relative ? errorDirectory : AT_FDCWD),
+                    kernel: readDescriptorLink(missing, 'syscall', 32, AT_FDCWD)
+                });
+            });
+        } finally {
+            checked(libc.close(errorDirectory), 'close(error directory)');
+        }
+        return { fd: fd, kernel: kernel, cases: cases, errors: errors };
+    } finally {
+        try {
+            if (ordinaryLinkCreated) checked(libc.unlink(Memory.allocUtf8String(ordinaryPath)), 'unlink(link fixture)');
+        } finally {
+            checked(libc.close(fd), 'close(linjector-check)');
+        }
+    }
+}
+
 rpc.exports = {
     info: function () {
         if (Process.arch !== 'arm64') throw new Error('该真机测试仅支持当前 arm64 设备，实际为 ' + Process.arch);
@@ -240,6 +349,7 @@ rpc.exports = {
     readPath: readPath,
     fileSemantics: fileSemantics,
     descriptorCount: descriptorCount,
+    descriptorLinks: descriptorLinks,
     holdStatus: function (path) {
         var fd = openDescriptor(path, 'open');
         heldDescriptors[fd] = true;

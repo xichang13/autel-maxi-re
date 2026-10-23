@@ -1,0 +1,1301 @@
+{
+  "passed": true,
+  "stage": "complete",
+  "mode": "full",
+  "host": "127.0.0.1:9527",
+  "package": "com.autel.update",
+  "requested_pid": null,
+  "requested_duration_seconds": 60.0,
+  "poll_interval_seconds": 1.0,
+  "frida_client_version": "12.11.12",
+  "started_unix": 1792750040.2707682,
+  "events": [
+    {
+      "sequence": 1,
+      "kind": "stage",
+      "unix": 1792750040.2720904,
+      "elapsed_seconds": 0.0,
+      "payload": {
+        "value": "connecting"
+      }
+    },
+    {
+      "sequence": 2,
+      "kind": "stage",
+      "unix": 1792750040.3524454,
+      "elapsed_seconds": 0.078,
+      "payload": {
+        "value": "attaching"
+      }
+    },
+    {
+      "sequence": 3,
+      "kind": "stage",
+      "unix": 1792750040.5709682,
+      "elapsed_seconds": 0.296,
+      "payload": {
+        "value": "loading"
+      }
+    },
+    {
+      "sequence": 4,
+      "kind": "script-log",
+      "unix": 1792750040.6915228,
+      "elapsed_seconds": 0.421,
+      "payload": {
+        "level": "info",
+        "text": "[*] TracerPid hook: readlink"
+      }
+    },
+    {
+      "sequence": 5,
+      "kind": "script-log",
+      "unix": 1792750040.7009048,
+      "elapsed_seconds": 0.437,
+      "payload": {
+        "level": "info",
+        "text": "[*] TracerPid hook: readlinkat"
+      }
+    },
+    {
+      "sequence": 6,
+      "kind": "script-log",
+      "unix": 1792750040.7083137,
+      "elapsed_seconds": 0.437,
+      "payload": {
+        "level": "info",
+        "text": "[*] TracerPid hook: open"
+      }
+    },
+    {
+      "sequence": 7,
+      "kind": "script-log",
+      "unix": 1792750040.725304,
+      "elapsed_seconds": 0.453,
+      "payload": {
+        "level": "info",
+        "text": "[*] TracerPid hook: __open_2"
+      }
+    },
+    {
+      "sequence": 8,
+      "kind": "script-log",
+      "unix": 1792750040.7330856,
+      "elapsed_seconds": 0.468,
+      "payload": {
+        "level": "info",
+        "text": "[*] TracerPid hook: openat"
+      }
+    },
+    {
+      "sequence": 9,
+      "kind": "script-log",
+      "unix": 1792750040.7482464,
+      "elapsed_seconds": 0.484,
+      "payload": {
+        "level": "info",
+        "text": "[*] TracerPid hook: __openat_2"
+      }
+    },
+    {
+      "sequence": 10,
+      "kind": "script-log",
+      "unix": 1792750040.7565086,
+      "elapsed_seconds": 0.484,
+      "payload": {
+        "level": "info",
+        "text": "[*] TracerPid hook: fopen"
+      }
+    },
+    {
+      "sequence": 11,
+      "kind": "script-log",
+      "unix": 1792750041.095443,
+      "elapsed_seconds": 0.828,
+      "payload": {
+        "level": "info",
+        "text": "[*] 默认 classloader 命中 com.autel.utils.EncryptionJni"
+      }
+    },
+    {
+      "sequence": 12,
+      "kind": "script-log",
+      "unix": 1792750041.099332,
+      "elapsed_seconds": 0.828,
+      "payload": {
+        "level": "info",
+        "text": "[*] com.autel.utils.EncryptionJni.JniEncryptData overload 数量=1"
+      }
+    },
+    {
+      "sequence": 13,
+      "kind": "script-log",
+      "unix": 1792750041.099332,
+      "elapsed_seconds": 0.828,
+      "payload": {
+        "level": "info",
+        "text": "    [overload#0] args=(int, [B) ret=[B"
+      }
+    },
+    {
+      "sequence": 14,
+      "kind": "script-log",
+      "unix": 1792750041.107915,
+      "elapsed_seconds": 0.843,
+      "payload": {
+        "level": "info",
+        "text": "[*] hook 已安装, 等待 JniEncryptData 被调用..."
+      }
+    },
+    {
+      "sequence": 15,
+      "kind": "script-log",
+      "unix": 1792750041.107915,
+      "elapsed_seconds": 0.843,
+      "payload": {
+        "level": "info",
+        "text": "[*] 提示: 在 REPL 里可主动调用, 例如  callEnc(1, \"0102030405\")"
+      }
+    },
+    {
+      "sequence": 16,
+      "kind": "stage",
+      "unix": 1792750041.107915,
+      "elapsed_seconds": 0.843,
+      "payload": {
+        "value": "watching"
+      }
+    },
+    {
+      "sequence": 17,
+      "kind": "poll",
+      "unix": 1792750041.1406848,
+      "elapsed_seconds": 0.875,
+      "payload": {
+        "unix": 1792750041.1406848,
+        "watched_seconds": 0.032,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 18,
+      "kind": "script-log",
+      "unix": 1792750042.0123594,
+      "elapsed_seconds": 1.734,
+      "payload": {
+        "level": "info",
+        "text": "[*] 进程状态已处理: /proc/24003/task/24064/status"
+      }
+    },
+    {
+      "sequence": 19,
+      "kind": "script-log",
+      "unix": 1792750042.0550756,
+      "elapsed_seconds": 1.781,
+      "payload": {
+        "level": "info",
+        "text": "[*] 进程状态已处理: /proc/24003/task/24066/status"
+      }
+    },
+    {
+      "sequence": 20,
+      "kind": "poll",
+      "unix": 1792750042.1988113,
+      "elapsed_seconds": 1.921,
+      "payload": {
+        "unix": 1792750042.1988113,
+        "watched_seconds": 1.078,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 21,
+      "kind": "script-log",
+      "unix": 1792750042.2233183,
+      "elapsed_seconds": 1.953,
+      "payload": {
+        "level": "info",
+        "text": "[*] 描述符链接已处理: /proc/self/fd/74"
+      }
+    },
+    {
+      "sequence": 22,
+      "kind": "poll",
+      "unix": 1792750043.2767036,
+      "elapsed_seconds": 3.0,
+      "payload": {
+        "unix": 1792750043.2767036,
+        "watched_seconds": 2.157,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 23,
+      "kind": "poll",
+      "unix": 1792750044.3264017,
+      "elapsed_seconds": 4.062,
+      "payload": {
+        "unix": 1792750044.3264017,
+        "watched_seconds": 3.219,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 24,
+      "kind": "poll",
+      "unix": 1792750045.3730528,
+      "elapsed_seconds": 5.109,
+      "payload": {
+        "unix": 1792750045.3730528,
+        "watched_seconds": 4.266,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 25,
+      "kind": "poll",
+      "unix": 1792750046.4562628,
+      "elapsed_seconds": 6.187,
+      "payload": {
+        "unix": 1792750046.4562628,
+        "watched_seconds": 5.344,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 26,
+      "kind": "poll",
+      "unix": 1792750047.513328,
+      "elapsed_seconds": 7.25,
+      "payload": {
+        "unix": 1792750047.513328,
+        "watched_seconds": 6.407,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 27,
+      "kind": "poll",
+      "unix": 1792750048.5586047,
+      "elapsed_seconds": 8.281,
+      "payload": {
+        "unix": 1792750048.5586047,
+        "watched_seconds": 7.438,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 28,
+      "kind": "poll",
+      "unix": 1792750049.6242158,
+      "elapsed_seconds": 9.359,
+      "payload": {
+        "unix": 1792750049.6229382,
+        "watched_seconds": 8.516,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 29,
+      "kind": "poll",
+      "unix": 1792750050.688686,
+      "elapsed_seconds": 10.421,
+      "payload": {
+        "unix": 1792750050.688686,
+        "watched_seconds": 9.578,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 30,
+      "kind": "poll",
+      "unix": 1792750051.7626958,
+      "elapsed_seconds": 11.484,
+      "payload": {
+        "unix": 1792750051.7626958,
+        "watched_seconds": 10.641,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 31,
+      "kind": "poll",
+      "unix": 1792750052.836442,
+      "elapsed_seconds": 12.562,
+      "payload": {
+        "unix": 1792750052.836442,
+        "watched_seconds": 11.719,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 32,
+      "kind": "poll",
+      "unix": 1792750053.8887165,
+      "elapsed_seconds": 13.625,
+      "payload": {
+        "unix": 1792750053.8887165,
+        "watched_seconds": 12.782,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 33,
+      "kind": "poll",
+      "unix": 1792750054.961174,
+      "elapsed_seconds": 14.687,
+      "payload": {
+        "unix": 1792750054.961174,
+        "watched_seconds": 13.844,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 34,
+      "kind": "poll",
+      "unix": 1792750056.027405,
+      "elapsed_seconds": 15.75,
+      "payload": {
+        "unix": 1792750056.027405,
+        "watched_seconds": 14.907,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 35,
+      "kind": "poll",
+      "unix": 1792750057.1084325,
+      "elapsed_seconds": 16.843,
+      "payload": {
+        "unix": 1792750057.1084325,
+        "watched_seconds": 16.0,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 36,
+      "kind": "poll",
+      "unix": 1792750058.1667902,
+      "elapsed_seconds": 17.89,
+      "payload": {
+        "unix": 1792750058.1667902,
+        "watched_seconds": 17.047,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 37,
+      "kind": "poll",
+      "unix": 1792750059.2284124,
+      "elapsed_seconds": 18.953,
+      "payload": {
+        "unix": 1792750059.2284124,
+        "watched_seconds": 18.11,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 38,
+      "kind": "poll",
+      "unix": 1792750060.2709427,
+      "elapsed_seconds": 20.0,
+      "payload": {
+        "unix": 1792750060.2709427,
+        "watched_seconds": 19.157,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 39,
+      "kind": "poll",
+      "unix": 1792750061.31888,
+      "elapsed_seconds": 21.046,
+      "payload": {
+        "unix": 1792750061.31888,
+        "watched_seconds": 20.203,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 40,
+      "kind": "poll",
+      "unix": 1792750062.382879,
+      "elapsed_seconds": 22.109,
+      "payload": {
+        "unix": 1792750062.382879,
+        "watched_seconds": 21.266,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 41,
+      "kind": "poll",
+      "unix": 1792750063.4519718,
+      "elapsed_seconds": 23.187,
+      "payload": {
+        "unix": 1792750063.4519718,
+        "watched_seconds": 22.344,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 42,
+      "kind": "poll",
+      "unix": 1792750064.5114086,
+      "elapsed_seconds": 24.234,
+      "payload": {
+        "unix": 1792750064.5114086,
+        "watched_seconds": 23.391,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 43,
+      "kind": "poll",
+      "unix": 1792750065.575964,
+      "elapsed_seconds": 25.312,
+      "payload": {
+        "unix": 1792750065.575964,
+        "watched_seconds": 24.469,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 44,
+      "kind": "poll",
+      "unix": 1792750066.6578696,
+      "elapsed_seconds": 26.39,
+      "payload": {
+        "unix": 1792750066.6578696,
+        "watched_seconds": 25.547,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 45,
+      "kind": "poll",
+      "unix": 1792750067.735821,
+      "elapsed_seconds": 27.468,
+      "payload": {
+        "unix": 1792750067.735821,
+        "watched_seconds": 26.625,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 46,
+      "kind": "poll",
+      "unix": 1792750068.7955987,
+      "elapsed_seconds": 28.531,
+      "payload": {
+        "unix": 1792750068.7955987,
+        "watched_seconds": 27.688,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 47,
+      "kind": "poll",
+      "unix": 1792750069.8673265,
+      "elapsed_seconds": 29.593,
+      "payload": {
+        "unix": 1792750069.8673265,
+        "watched_seconds": 28.75,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 48,
+      "kind": "poll",
+      "unix": 1792750070.9355118,
+      "elapsed_seconds": 30.671,
+      "payload": {
+        "unix": 1792750070.9355118,
+        "watched_seconds": 29.828,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 49,
+      "kind": "poll",
+      "unix": 1792750072.009616,
+      "elapsed_seconds": 31.734,
+      "payload": {
+        "unix": 1792750072.009616,
+        "watched_seconds": 30.891,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 50,
+      "kind": "poll",
+      "unix": 1792750073.0710185,
+      "elapsed_seconds": 32.796,
+      "payload": {
+        "unix": 1792750073.0710185,
+        "watched_seconds": 31.953,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 51,
+      "kind": "poll",
+      "unix": 1792750074.1320448,
+      "elapsed_seconds": 33.859,
+      "payload": {
+        "unix": 1792750074.1320448,
+        "watched_seconds": 33.016,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 52,
+      "kind": "poll",
+      "unix": 1792750075.1946514,
+      "elapsed_seconds": 34.921,
+      "payload": {
+        "unix": 1792750075.1946514,
+        "watched_seconds": 34.078,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 53,
+      "kind": "poll",
+      "unix": 1792750076.249669,
+      "elapsed_seconds": 35.984,
+      "payload": {
+        "unix": 1792750076.249669,
+        "watched_seconds": 35.141,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 54,
+      "kind": "poll",
+      "unix": 1792750077.295391,
+      "elapsed_seconds": 37.031,
+      "payload": {
+        "unix": 1792750077.295391,
+        "watched_seconds": 36.188,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 55,
+      "kind": "poll",
+      "unix": 1792750078.3764348,
+      "elapsed_seconds": 38.109,
+      "payload": {
+        "unix": 1792750078.3764348,
+        "watched_seconds": 37.266,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 56,
+      "kind": "poll",
+      "unix": 1792750079.4358835,
+      "elapsed_seconds": 39.171,
+      "payload": {
+        "unix": 1792750079.4358835,
+        "watched_seconds": 38.328,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 57,
+      "kind": "poll",
+      "unix": 1792750080.496335,
+      "elapsed_seconds": 40.218,
+      "payload": {
+        "unix": 1792750080.496335,
+        "watched_seconds": 39.375,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 58,
+      "kind": "poll",
+      "unix": 1792750081.552956,
+      "elapsed_seconds": 41.281,
+      "payload": {
+        "unix": 1792750081.552956,
+        "watched_seconds": 40.438,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 59,
+      "kind": "poll",
+      "unix": 1792750082.6213093,
+      "elapsed_seconds": 42.343,
+      "payload": {
+        "unix": 1792750082.6213093,
+        "watched_seconds": 41.5,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 60,
+      "kind": "poll",
+      "unix": 1792750083.6830986,
+      "elapsed_seconds": 43.406,
+      "payload": {
+        "unix": 1792750083.6830986,
+        "watched_seconds": 42.563,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 61,
+      "kind": "poll",
+      "unix": 1792750084.757418,
+      "elapsed_seconds": 44.484,
+      "payload": {
+        "unix": 1792750084.757418,
+        "watched_seconds": 43.641,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 62,
+      "kind": "poll",
+      "unix": 1792750085.816022,
+      "elapsed_seconds": 45.546,
+      "payload": {
+        "unix": 1792750085.816022,
+        "watched_seconds": 44.703,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 63,
+      "kind": "poll",
+      "unix": 1792750086.8694918,
+      "elapsed_seconds": 46.593,
+      "payload": {
+        "unix": 1792750086.8694918,
+        "watched_seconds": 45.75,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 64,
+      "kind": "poll",
+      "unix": 1792750087.944675,
+      "elapsed_seconds": 47.671,
+      "payload": {
+        "unix": 1792750087.944675,
+        "watched_seconds": 46.828,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 65,
+      "kind": "poll",
+      "unix": 1792750089.0059862,
+      "elapsed_seconds": 48.734,
+      "payload": {
+        "unix": 1792750089.0059862,
+        "watched_seconds": 47.891,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 66,
+      "kind": "poll",
+      "unix": 1792750090.0577207,
+      "elapsed_seconds": 49.781,
+      "payload": {
+        "unix": 1792750090.0562139,
+        "watched_seconds": 48.938,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 67,
+      "kind": "poll",
+      "unix": 1792750091.1159887,
+      "elapsed_seconds": 50.843,
+      "payload": {
+        "unix": 1792750091.1159887,
+        "watched_seconds": 50.0,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 68,
+      "kind": "poll",
+      "unix": 1792750092.165609,
+      "elapsed_seconds": 51.89,
+      "payload": {
+        "unix": 1792750092.165609,
+        "watched_seconds": 51.047,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 69,
+      "kind": "poll",
+      "unix": 1792750093.2198615,
+      "elapsed_seconds": 52.953,
+      "payload": {
+        "unix": 1792750093.2198615,
+        "watched_seconds": 52.11,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 70,
+      "kind": "poll",
+      "unix": 1792750094.303979,
+      "elapsed_seconds": 54.031,
+      "payload": {
+        "unix": 1792750094.303979,
+        "watched_seconds": 53.188,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 71,
+      "kind": "poll",
+      "unix": 1792750095.3559365,
+      "elapsed_seconds": 55.078,
+      "payload": {
+        "unix": 1792750095.3554037,
+        "watched_seconds": 54.235,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 72,
+      "kind": "poll",
+      "unix": 1792750096.4073513,
+      "elapsed_seconds": 56.14,
+      "payload": {
+        "unix": 1792750096.4073513,
+        "watched_seconds": 55.297,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 73,
+      "kind": "poll",
+      "unix": 1792750097.4568186,
+      "elapsed_seconds": 57.187,
+      "payload": {
+        "unix": 1792750097.4568186,
+        "watched_seconds": 56.344,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 74,
+      "kind": "poll",
+      "unix": 1792750098.5061107,
+      "elapsed_seconds": 58.234,
+      "payload": {
+        "unix": 1792750098.5061107,
+        "watched_seconds": 57.391,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 75,
+      "kind": "poll",
+      "unix": 1792750099.556804,
+      "elapsed_seconds": 59.281,
+      "payload": {
+        "unix": 1792750099.556804,
+        "watched_seconds": 58.438,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 76,
+      "kind": "poll",
+      "unix": 1792750100.6237984,
+      "elapsed_seconds": 60.359,
+      "payload": {
+        "unix": 1792750100.6237984,
+        "watched_seconds": 59.516,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 77,
+      "kind": "poll",
+      "unix": 1792750101.174742,
+      "elapsed_seconds": 60.906,
+      "payload": {
+        "unix": 1792750101.174742,
+        "watched_seconds": 60.063,
+        "alive": true,
+        "replacement_processes": []
+      }
+    },
+    {
+      "sequence": 78,
+      "kind": "detached",
+      "unix": 1792750101.3100886,
+      "elapsed_seconds": 61.046,
+      "payload": {
+        "reason": "application-requested",
+        "crash": null,
+        "raw_arguments": [
+          "application-requested",
+          null
+        ],
+        "requested_by_harness": true
+      }
+    }
+  ],
+  "polls": [
+    {
+      "unix": 1792750041.1406848,
+      "watched_seconds": 0.032,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750042.1988113,
+      "watched_seconds": 1.078,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750043.2767036,
+      "watched_seconds": 2.157,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750044.3264017,
+      "watched_seconds": 3.219,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750045.3730528,
+      "watched_seconds": 4.266,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750046.4562628,
+      "watched_seconds": 5.344,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750047.513328,
+      "watched_seconds": 6.407,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750048.5586047,
+      "watched_seconds": 7.438,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750049.6229382,
+      "watched_seconds": 8.516,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750050.688686,
+      "watched_seconds": 9.578,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750051.7626958,
+      "watched_seconds": 10.641,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750052.836442,
+      "watched_seconds": 11.719,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750053.8887165,
+      "watched_seconds": 12.782,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750054.961174,
+      "watched_seconds": 13.844,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750056.027405,
+      "watched_seconds": 14.907,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750057.1084325,
+      "watched_seconds": 16.0,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750058.1667902,
+      "watched_seconds": 17.047,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750059.2284124,
+      "watched_seconds": 18.11,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750060.2709427,
+      "watched_seconds": 19.157,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750061.31888,
+      "watched_seconds": 20.203,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750062.382879,
+      "watched_seconds": 21.266,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750063.4519718,
+      "watched_seconds": 22.344,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750064.5114086,
+      "watched_seconds": 23.391,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750065.575964,
+      "watched_seconds": 24.469,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750066.6578696,
+      "watched_seconds": 25.547,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750067.735821,
+      "watched_seconds": 26.625,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750068.7955987,
+      "watched_seconds": 27.688,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750069.8673265,
+      "watched_seconds": 28.75,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750070.9355118,
+      "watched_seconds": 29.828,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750072.009616,
+      "watched_seconds": 30.891,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750073.0710185,
+      "watched_seconds": 31.953,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750074.1320448,
+      "watched_seconds": 33.016,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750075.1946514,
+      "watched_seconds": 34.078,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750076.249669,
+      "watched_seconds": 35.141,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750077.295391,
+      "watched_seconds": 36.188,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750078.3764348,
+      "watched_seconds": 37.266,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750079.4358835,
+      "watched_seconds": 38.328,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750080.496335,
+      "watched_seconds": 39.375,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750081.552956,
+      "watched_seconds": 40.438,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750082.6213093,
+      "watched_seconds": 41.5,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750083.6830986,
+      "watched_seconds": 42.563,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750084.757418,
+      "watched_seconds": 43.641,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750085.816022,
+      "watched_seconds": 44.703,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750086.8694918,
+      "watched_seconds": 45.75,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750087.944675,
+      "watched_seconds": 46.828,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750089.0059862,
+      "watched_seconds": 47.891,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750090.0562139,
+      "watched_seconds": 48.938,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750091.1159887,
+      "watched_seconds": 50.0,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750092.165609,
+      "watched_seconds": 51.047,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750093.2198615,
+      "watched_seconds": 52.11,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750094.303979,
+      "watched_seconds": 53.188,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750095.3554037,
+      "watched_seconds": 54.235,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750096.4073513,
+      "watched_seconds": 55.297,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750097.4568186,
+      "watched_seconds": 56.344,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750098.5061107,
+      "watched_seconds": 57.391,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750099.556804,
+      "watched_seconds": 58.438,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750100.6237984,
+      "watched_seconds": 59.516,
+      "alive": true,
+      "replacement_processes": []
+    },
+    {
+      "unix": 1792750101.174742,
+      "watched_seconds": 60.063,
+      "alive": true,
+      "replacement_processes": []
+    }
+  ],
+  "detached": [
+    {
+      "reason": "application-requested",
+      "crash": null,
+      "raw_arguments": [
+        "application-requested",
+        null
+      ],
+      "requested_by_harness": true
+    }
+  ],
+  "crashes": [],
+  "cleanup": [
+    {
+      "session_detached": true
+    }
+  ],
+  "event_path": "D:\\DirFile\\2610\\autel\\logs\\tracerpid-watch-full-green.events.jsonl",
+  "source": {
+    "production_path": "D:\\DirFile\\2610\\autel\\hook_JniEncryptData.js",
+    "production_sha256": "f4137a095d7b3918583af3f0e0043fc0f03854a33f0c7ed598274b9641b00b2d",
+    "loaded_sha256": "160ecdd3c3fb169728a446b4fc74ff54f3b11e24a437b895e5c69b487b8027ab",
+    "transformations": [],
+    "diagnostic_path": null,
+    "diagnostic_sha256": null
+  },
+  "updated_unix": 1792750101.3100886,
+  "pid": 24003,
+  "process_name": "com.autel.update",
+  "attached_unix": 1792750040.5709682,
+  "loaded_unix": 1792750041.107915,
+  "watched_seconds": 60.063,
+  "last_alive": true,
+  "duration_reached": true,
+  "script_errors": [],
+  "script_error_logs": [],
+  "native_hook_ready": true,
+  "java_hook_ready": true,
+  "finished_unix": 1792750101.3100886,
+  "attached_observation_seconds": 60.203
+}

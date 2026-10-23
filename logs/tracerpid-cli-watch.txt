@@ -1,0 +1,5 @@
+[*] TracerPid hook: open
+[*] TracerPid hook: __open_2
+[*] TracerPid hook: openat
+[*] TracerPid hook: __openat_2
+[*] TracerPid hook: fopen

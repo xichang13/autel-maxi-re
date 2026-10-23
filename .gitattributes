@@ -3,3 +3,4 @@
 logs/tracerpid-*.json text eol=lf
 logs/tracerpid-*.txt text eol=lf
 logs/tracerpid-*.jsonl text eol=lf
+tests/tracerpid*.py text eol=lf

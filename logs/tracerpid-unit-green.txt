@@ -1,40 +1,64 @@
 TAP version 13
-# Subtest: 进程状态中的非零追踪者归零并保持字节长度及相邻字段
-ok 1 - 进程状态中的非零追踪者归零并保持字节长度及相邻字段
+# Subtest: 状态文件隐藏防护实际匹配的线程名并保持字节长度
+ok 1 - 状态文件隐藏防护实际匹配的线程名并保持字节长度
   ---
-  duration_ms: 1.387
+  duration_ms: 2.4607
+  type: 'test'
+  ...
+# Subtest: 状态处理不改普通线程名和其他字段中的同名内容
+ok 2 - 状态处理不改普通线程名和其他字段中的同名内容
+  ---
+  duration_ms: 1.4496
+  type: 'test'
+  ...
+# Subtest: 描述符链接仅等长处理已证实的注入关键词
+ok 3 - 描述符链接仅等长处理已证实的注入关键词
+  ---
+  duration_ms: 0.6478
+  type: 'test'
+  ...
+# Subtest: 描述符路径识别限定于 proc 的数字文件描述符
+ok 4 - 描述符路径识别限定于 proc 的数字文件描述符
+  ---
+  duration_ms: 0.6782
+  type: 'test'
+  ...
+# Subtest: 进程状态中的非零追踪者归零并保持字节长度及相邻字段
+ok 5 - 进程状态中的非零追踪者归零并保持字节长度及相邻字段
+  ---
+  duration_ms: 0.6503
   type: 'test'
   ...
 # Subtest: 处理单行、首尾字段、空格及不同数字宽度
-ok 2 - 处理单行、首尾字段、空格及不同数字宽度
+ok 6 - 处理单行、首尾字段、空格及不同数字宽度
   ---
-  duration_ms: 1.0135
+  duration_ms: 0.5671
   type: 'test'
   ...
 # Subtest: 不改动非字段、无效字段及任意其他字节
-ok 3 - 不改动非字段、无效字段及任意其他字节
+ok 7 - 不改动非字段、无效字段及任意其他字节
   ---
-  duration_ms: 1.0448
+  duration_ms: 0.5789
   type: 'test'
   ...
 # Subtest: 识别进程及线程状态文件
-ok 4 - 识别进程及线程状态文件
+ok 8 - 识别进程及线程状态文件
   ---
-  duration_ms: 1.3333
+  duration_ms: 0.5962
   type: 'test'
   ...
 # Subtest: 拒绝无关文件及伪造的状态文件路径
-ok 5 - 拒绝无关文件及伪造的状态文件路径
+ok 9 - 拒绝无关文件及伪造的状态文件路径
   ---
-  duration_ms: 0.6387
+  duration_ms: 0.6665
   type: 'test'
   ...
-1..5
-# tests 5
+1..9
+# tests 9
 # suites 0
-# pass 5
+# pass 9
 # fail 0
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 134.522
+# duration_ms 74.98

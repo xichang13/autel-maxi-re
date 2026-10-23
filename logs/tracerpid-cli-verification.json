@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "target_pid": 25044,
+  "client_pid": 33736,
+  "command": "frida  -H 127.0.0.1:9527 -n com.autel.update -l hook_JniEncryptData.js",
+  "client_started": "2026-10-23T18:10:00.6893210+08:00",
+  "verified_at": "2026-10-23T18:13:23.0169622+08:00",
+  "elapsed_seconds": 202.3276412,
+  "source_sha256": "f4137a095d7b3918583af3f0e0043fc0f03854a33f0c7ed598274b9641b00b2d",
+  "session_id": 35535,
+  "verification": "CLI仍处于交互会话且原目标PID持续存活；测试结束由操作者发送exit"
+}

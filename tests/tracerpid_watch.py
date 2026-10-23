@@ -242,7 +242,7 @@ def run(args):
             if elapsed - last_progress >= 5 or last_progress == 0:
                 print('观察中: mode={}, pid={}, {:.1f}/{:.1f}s'.format(args.mode, report['pid'], elapsed, args.duration), flush=True)
                 last_progress = elapsed
-            if time.monotonic() >= deadline:
+            if elapsed >= args.duration:
                 break
             wake.wait(min(args.poll_interval, max(0, deadline - time.monotonic())))
         report['duration_reached'] = True

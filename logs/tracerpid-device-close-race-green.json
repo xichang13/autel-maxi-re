@@ -1,14 +1,24 @@
 {
-  "host": "127.0.0.1:2199",
+  "host": "127.0.0.1:9527",
   "mode": "cleanup-close-race",
   "frida_version": "12.11.12",
-  "started_unix": 1792748119.3217833,
+  "started_unix": 1792750092.5391634,
   "created_pids": [
-    10150,
-    10156
+    24397,
+    24410
   ],
   "messages": [],
   "logs": [
+    {
+      "script": "production",
+      "level": "info",
+      "text": "[*] TracerPid hook: readlink"
+    },
+    {
+      "script": "production",
+      "level": "info",
+      "text": "[*] TracerPid hook: readlinkat"
+    },
     {
       "script": "production",
       "level": "info",
@@ -61,67 +71,71 @@
   ],
   "cleanup": [
     {
-      "pid": 10156,
+      "pid": 24410,
       "killed": true
     },
     {
-      "pid": 10150,
+      "pid": 24397,
       "killed": true
     }
   ],
   "passed": true,
   "target": {
-    "pid": 10150,
-    "tid": 10155,
+    "pid": 24397,
+    "tid": 24405,
     "arch": "arm64",
     "pointerSize": 8,
     "exports": {
-      "open": "0x73c62b40f0",
-      "openat": "0x73c62b4290",
-      "close": "0x73c62adc6c",
-      "read": "0x73c62f8e30",
-      "pread": "0x73c62f8d30",
-      "lseek": "0x73c62f8ad0",
-      "dup": "0x73c62f84d0",
-      "fcntl": "0x73c62f8610",
-      "fopen": "0x73c6305a00",
-      "fclose": "0x73c6306148",
-      "fileno": "0x73c63063a0",
-      "fgets": "0x73c6307228",
-      "fread": "0x73c6309128",
-      "ferror": "0x73c6306584",
-      "ptrace": "0x73c62b5030",
-      "opendir": "0x73c62abf5c",
-      "readdir": "0x73c62abfdc",
-      "closedir": "0x73c62ac1bc",
-      "__errno": "0x73c62aa004"
+      "open": "0x71abda20f0",
+      "openat": "0x71abda2290",
+      "close": "0x71abd9bc6c",
+      "read": "0x71abde6e30",
+      "pread": "0x71abde6d30",
+      "lseek": "0x71abde6ad0",
+      "dup": "0x71abde64d0",
+      "fcntl": "0x71abde6610",
+      "fopen": "0x71abdf3a00",
+      "fclose": "0x71abdf4148",
+      "fileno": "0x71abdf43a0",
+      "fgets": "0x71abdf5228",
+      "fread": "0x71abdf7128",
+      "ferror": "0x71abdf4584",
+      "ptrace": "0x71abda3030",
+      "opendir": "0x71abd99f5c",
+      "readdir": "0x71abd99fdc",
+      "closedir": "0x71abd9a1bc",
+      "__errno": "0x71abd98004",
+      "readlink": "0x71abda37c8",
+      "readlinkat": "0x71abde6e70"
     }
   },
   "tracer": {
-    "pid": 10156,
-    "tid": 10161,
+    "pid": 24410,
+    "tid": 24419,
     "arch": "arm64",
     "pointerSize": 8,
     "exports": {
-      "open": "0x78112f40f0",
-      "openat": "0x78112f4290",
-      "close": "0x78112edc6c",
-      "read": "0x7811338e30",
-      "pread": "0x7811338d30",
-      "lseek": "0x7811338ad0",
-      "dup": "0x78113384d0",
-      "fcntl": "0x7811338610",
-      "fopen": "0x7811345a00",
-      "fclose": "0x7811346148",
-      "fileno": "0x78113463a0",
-      "fgets": "0x7811347228",
-      "fread": "0x7811349128",
-      "ferror": "0x7811346584",
-      "ptrace": "0x78112f5030",
-      "opendir": "0x78112ebf5c",
-      "readdir": "0x78112ebfdc",
-      "closedir": "0x78112ec1bc",
-      "__errno": "0x78112ea004"
+      "open": "0x74499230f0",
+      "openat": "0x7449923290",
+      "close": "0x744991cc6c",
+      "read": "0x7449967e30",
+      "pread": "0x7449967d30",
+      "lseek": "0x7449967ad0",
+      "dup": "0x74499674d0",
+      "fcntl": "0x7449967610",
+      "fopen": "0x7449974a00",
+      "fclose": "0x7449975148",
+      "fileno": "0x74499753a0",
+      "fgets": "0x7449976228",
+      "fread": "0x7449978128",
+      "ferror": "0x7449975584",
+      "ptrace": "0x7449924030",
+      "opendir": "0x744991af5c",
+      "readdir": "0x744991afdc",
+      "closedir": "0x744991b1bc",
+      "__errno": "0x7449919004",
+      "readlink": "0x74499247c8",
+      "readlinkat": "0x7449967e70"
     }
   },
   "comm_before": {
@@ -143,21 +157,21 @@
   },
   "seize": [
     {
-      "target": 10150,
+      "target": 24397,
       "value": 0,
       "errno": 0,
-      "tracerTid": 10161
+      "tracerTid": 24419
     },
     {
-      "target": 10155,
+      "target": 24405,
       "value": 0,
       "errno": 0,
-      "tracerTid": 10161
+      "tracerTid": 24419
     }
   ],
   "baseline": {
     "/proc/self/status": {
-      "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t10150\nNgid:\t0\nPid:\t10150\nPPid:\t4565\nTracerPid:\t10161\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  149792 kB\nVmSize:\t  149512 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   10956 kB\nVmRSS:\t   10944 kB\nRssAnon:\t    2924 kB\nRssFile:\t    7876 kB\nRssShmem:\t     144 kB\nVmData:\t   23236 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22024 kB\nVmPTE:\t     108 kB\nVmPMD:\t      16 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t1\n",
+      "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t24397\nNgid:\t0\nPid:\t24397\nPPid:\t4565\nTracerPid:\t24419\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  149792 kB\nVmSize:\t  149512 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   10924 kB\nVmRSS:\t   10912 kB\nRssAnon:\t    2924 kB\nRssFile:\t    7844 kB\nRssShmem:\t     144 kB\nVmData:\t   23236 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22024 kB\nVmPTE:\t     112 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t7\n",
       "length": 933,
       "reads": 1,
       "lengths": [
@@ -172,8 +186,8 @@
         "status": 133120
       }
     },
-    "/proc/10150/status": {
-      "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t10150\nNgid:\t0\nPid:\t10150\nPPid:\t4565\nTracerPid:\t10161\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  149792 kB\nVmSize:\t  149512 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   10960 kB\nVmRSS:\t   10960 kB\nRssAnon:\t    2940 kB\nRssFile:\t    7876 kB\nRssShmem:\t     144 kB\nVmData:\t   23236 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22024 kB\nVmPTE:\t     108 kB\nVmPMD:\t      16 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t1\n",
+    "/proc/24397/status": {
+      "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t24397\nNgid:\t0\nPid:\t24397\nPPid:\t4565\nTracerPid:\t24419\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  149792 kB\nVmSize:\t  149512 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   10944 kB\nVmRSS:\t   10944 kB\nRssAnon:\t    2956 kB\nRssFile:\t    7844 kB\nRssShmem:\t     144 kB\nVmData:\t   23236 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22024 kB\nVmPTE:\t     112 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t7\n",
       "length": 933,
       "reads": 1,
       "lengths": [
@@ -189,11 +203,11 @@
       }
     },
     "/proc/thread-self/status": {
-      "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t10150\nNgid:\t0\nPid:\t10155\nPPid:\t4565\nTracerPid:\t10161\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  149792 kB\nVmSize:\t  149512 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   10960 kB\nVmRSS:\t   10960 kB\nRssAnon:\t    2940 kB\nRssFile:\t    7876 kB\nRssShmem:\t     144 kB\nVmData:\t   23236 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22024 kB\nVmPTE:\t     108 kB\nVmPMD:\t      16 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t7\nnonvoluntary_ctxt_switches:\t12\n",
-      "length": 939,
+      "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t24397\nNgid:\t0\nPid:\t24405\nPPid:\t4565\nTracerPid:\t24419\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  149792 kB\nVmSize:\t  149512 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   10952 kB\nVmRSS:\t   10952 kB\nRssAnon:\t    2964 kB\nRssFile:\t    7844 kB\nRssShmem:\t     144 kB\nVmData:\t   23236 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22024 kB\nVmPTE:\t     112 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t5\n",
+      "length": 938,
       "reads": 1,
       "lengths": [
-        939
+        938
       ],
       "flags": {
         "descriptor": 1,
@@ -204,12 +218,12 @@
         "status": 133120
       }
     },
-    "/proc/self/task/10155/status": {
-      "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t10150\nNgid:\t0\nPid:\t10155\nPPid:\t4565\nTracerPid:\t10161\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  149792 kB\nVmSize:\t  149512 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   10960 kB\nVmRSS:\t   10960 kB\nRssAnon:\t    2940 kB\nRssFile:\t    7876 kB\nRssShmem:\t     144 kB\nVmData:\t   23236 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22024 kB\nVmPTE:\t     108 kB\nVmPMD:\t      16 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t30\n",
-      "length": 939,
+    "/proc/self/task/24405/status": {
+      "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t24397\nNgid:\t0\nPid:\t24405\nPPid:\t4565\nTracerPid:\t24419\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  149792 kB\nVmSize:\t  149512 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   10956 kB\nVmRSS:\t   10956 kB\nRssAnon:\t    2968 kB\nRssFile:\t    7844 kB\nRssShmem:\t     144 kB\nVmData:\t   23236 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22024 kB\nVmPTE:\t     112 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t9\nnonvoluntary_ctxt_switches:\t8\n",
+      "length": 938,
       "reads": 1,
       "lengths": [
-        939
+        938
       ],
       "flags": {
         "descriptor": 1,
@@ -220,8 +234,8 @@
         "status": 133120
       }
     },
-    "/proc/10150/task/10155/status": {
-      "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t10150\nNgid:\t0\nPid:\t10155\nPPid:\t4565\nTracerPid:\t10161\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  149792 kB\nVmSize:\t  149512 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   10960 kB\nVmRSS:\t   10960 kB\nRssAnon:\t    2940 kB\nRssFile:\t    7876 kB\nRssShmem:\t     144 kB\nVmData:\t   23236 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22024 kB\nVmPTE:\t     108 kB\nVmPMD:\t      16 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t9\nnonvoluntary_ctxt_switches:\t31\n",
+    "/proc/24397/task/24405/status": {
+      "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t24397\nNgid:\t0\nPid:\t24405\nPPid:\t4565\nTracerPid:\t24419\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  149792 kB\nVmSize:\t  149512 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   10960 kB\nVmRSS:\t   10960 kB\nRssAnon:\t    2972 kB\nRssFile:\t    7844 kB\nRssShmem:\t     144 kB\nVmData:\t   23236 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22024 kB\nVmPTE:\t     112 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t10\nnonvoluntary_ctxt_switches:\t9\n",
       "length": 939,
       "reads": 1,
       "lengths": [
@@ -238,7 +252,7 @@
     }
   },
   "descriptors_before_cases": {
-    "count": 12,
+    "count": 13,
     "descriptors": [
       0,
       1,
@@ -246,7 +260,8 @@
       3,
       4,
       8,
-      11,
+      10,
+      16,
       32,
       33,
       34,
@@ -273,7 +288,7 @@
     }
   },
   "descriptors_after_probe": {
-    "count": 12,
+    "count": 13,
     "descriptors": [
       0,
       1,
@@ -281,7 +296,8 @@
       3,
       4,
       8,
-      11,
+      10,
+      16,
       32,
       33,
       34,
@@ -290,7 +306,7 @@
     ]
   },
   "descriptors_after_cases": {
-    "count": 12,
+    "count": 13,
     "descriptors": [
       0,
       1,
@@ -298,7 +314,8 @@
       3,
       4,
       8,
-      11,
+      10,
+      16,
       32,
       33,
       34,
@@ -306,5 +323,5 @@
       36
     ]
   },
-  "finished_unix": 1792748120.4120479
+  "finished_unix": 1792750093.7713954
 }

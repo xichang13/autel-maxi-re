@@ -85,10 +85,52 @@ def stable_fields(text):
     }
 
 
+def expected_stable_fields(text, hide_names):
+    expected = stable_fields(text)
+    if hide_names and 'Name' in expected:
+        names = {
+            '\tgum-js-loop': '\tpool-worker',
+            '\tgmain': '\tpool0',
+            '\tgdbus': '\tpool1',
+        }
+        expected['Name'] = names.get(expected['Name'], expected['Name'])
+    return expected
+
+
 def tracer_value(text):
     matches = list(TRACER_LINE.finditer(text))
     require(len(matches) == 1, 'status 必须包含且只包含一行十进制 TracerPid')
     return int(matches[0].group(2)), matches[0]
+
+
+def verify_link_buffer(result, expected, capacity, label):
+    require(result['guardBefore'] == 0xa5 and result['guardAfter'] == 0xa5, label + ' 越过缓冲区边界')
+    require(result['tailUntouched'], label + ' 在返回内容之后写入 NUL 或改动哨兵')
+    require(result['value'] == len(expected.encode('ascii')), label + ' 返回长度发生变化')
+    require(result['value'] <= capacity, label + ' 返回长度超过缓冲区容量')
+    require(result['text'] == expected, label + ' 链接文本不符合精确期望')
+
+
+def verify_descriptor_links(result, hide_marker):
+    kernel = result['kernel']
+    require(kernel['value'] > 0 and 'linjector' in kernel['text'], '真实 syscall 基线缺少 linjector')
+    verify_link_buffer(kernel, kernel['text'], 4096, '完整内核链接')
+    for case in result['cases']:
+        require(case['scope'] in ('proc-fd', 'other'), '链接案例缺少明确的作用域')
+        expected_kernel = kernel['text'][:case['capacity']]
+        label = case['path'] + ' ' + case['kind'] + ' capacity=' + str(case['capacity'])
+        verify_link_buffer(case['kernel'], expected_kernel, case['capacity'], label + ' syscall')
+        expected = expected_kernel.replace('linjector', 'cachefile') if hide_marker and case['scope'] == 'proc-fd' else expected_kernel
+        verify_link_buffer(case['result'], expected, case['capacity'], label)
+        if case['scope'] == 'other':
+            require(not case['path'].startswith('/proc/'), '范围外案例意外指向 /proc 路径')
+            require(case['result']['errno'] == case['kernel']['errno'] == case['initialErrno'], label + ' 改变了初始 errno')
+    for case in result['errors']:
+        for source in ('result', 'kernel'):
+            error = case[source]
+            require(error['value'] == -1 and error['errno'] == 2, case['kind'] + ' ENOENT 返回发生变化')
+            require(error['text'] is None, case['kind'] + ' 失败时返回了链接文本')
+            require(error['guardBefore'] == 0xa5 and error['guardAfter'] == 0xa5 and error['tailUntouched'], case['kind'] + ' 失败时改动了输出缓冲区')
 
 
 def invoke(timeout, operation, *args, **kwargs):
@@ -114,6 +156,7 @@ def arguments():
     mode.add_argument('--expect-bypass', action='store_true', help='加载生产脚本并要求所有受测路径归零；默认模式。')
     mode.add_argument('--open-before-trace', action='store_true', help='先加载生产脚本并持有状态文件，再施加真实线程跟踪。')
     mode.add_argument('--cleanup-close-race', action='store_true', help='实际提前关闭首个临时文件，验证生产清理遇到 EBADF 时仍关闭第二个文件。')
+    mode.add_argument('--descriptor-links', action='store_true', help='使用真实 memfd 和内核 readlinkat 验证描述符链接文本及缓冲区语义。')
     args = parser.parse_args()
     require(args.timeout > 0, '--timeout 必须大于零')
     return args
@@ -122,7 +165,7 @@ def arguments():
 def run(args):
     report = {
         'host': args.host,
-        'mode': 'cleanup-close-race' if args.cleanup_close_race else ('open-before-trace' if args.open_before_trace else ('baseline' if args.baseline else 'expect-bypass')),
+        'mode': 'descriptor-links' if args.descriptor_links else ('cleanup-close-race' if args.cleanup_close_race else ('open-before-trace' if args.open_before_trace else ('baseline' if args.baseline else 'expect-bypass'))),
         'frida_version': frida.__version__, 'started_unix': time.time(),
         'created_pids': [], 'messages': [], 'logs': [], 'cases': [], 'cleanup': [], 'passed': False,
     }
@@ -179,124 +222,149 @@ def run(args):
     try:
         device = invoke(args.timeout, frida.get_device_manager().add_remote_device, args.host)
         target_session, target, info = create_helper('target')
-        _, tracer, tracer_info = create_helper('tracer')
-        report['target'] = info
-        report['tracer'] = tracer_info
-        report['comm_before'] = rpc(target, 'read_path', '/proc/self/comm', 'open', 3)
-        held_status = None
-        if args.open_before_trace:
-            untraced = rpc(target, 'read_path', '/proc/self/status', 'syscall', 4096)
-            require(tracer_value(untraced['text'])[0] == 0, '持有文件测试的初始内核 TracerPid 必须为零')
-            report['untraced'] = untraced
-            load_production(target_session)
-            report['descriptors_before_hold'] = rpc(target, 'descriptor_count')
-            held_status = rpc(target, 'hold_status', '/proc/self/status')
-            report['held_before_trace'] = held_status
-        thread_ids = list(dict.fromkeys([info['pid'], info['tid']]))
-        seize = rpc(tracer, 'seize', thread_ids)
-        report['seize'] = seize
-        require(len(seize) == len(thread_ids), 'PTRACE_SEIZE 未完成所有线程，详见 seize 的 errno')
-        for item in seize:
-            require(item['value'] == 0, 'PTRACE_SEIZE 失败: ' + json.dumps(item))
-        tracer_tids = {item['tracerTid'] for item in seize}
-        paths = [
-            '/proc/self/status', '/proc/{}/status'.format(info['pid']),
-            '/proc/thread-self/status', '/proc/self/task/{}/status'.format(info['tid']),
-            '/proc/{}/task/{}/status'.format(info['pid'], info['tid']),
-        ]
-        baselines = {}
-        for path in paths:
-            baseline = rpc(target, 'read_path', path, 'syscall', 4096)
-            actual, _ = tracer_value(baseline['text'])
-            require(actual > 0 and actual in tracer_tids, '内核基线没有真实的测试 tracer: ' + path)
-            baselines[path] = baseline
-        report['baseline'] = baselines
-        print('真实基线通过: target={}, tracer={}, traced_threads={}'.format(info['pid'], tracer_info['pid'], thread_ids), flush=True)
-
-        if held_status is not None:
-            try:
-                held_result = rpc(target, 'read_held_status', held_status['fd'], 7)
-                report['held_after_trace'] = held_result
-                held_value, held_line = tracer_value(held_result['text'])
-                require(held_value == 0, '跟踪前打开并持有的 status fd 在跟踪后泄露 TracerPid={}'.format(held_value))
-                require(stable_fields(held_result['text']) == stable_fields(report['untraced']['text']), '持有文件中的稳定字段发生变化')
-                require(len(held_line.group(2)) == len(tracer_value(report['untraced']['text'])[1].group(2)), '持有快照的 TracerPid 字节宽度发生变化')
-                require(held_result['flags'] == held_status['flags'], '持有文件的描述符标志发生变化')
-            finally:
-                rpc(target, 'close_held_status', held_status['fd'])
-                report['held_closed'] = True
-            report['descriptors_after_hold'] = rpc(target, 'descriptor_count')
-            require(report['descriptors_before_hold']['count'] == report['descriptors_after_hold']['count'], '持有文件测试出现文件描述符泄露')
-            print('跟踪前持有文件通过: 内核非零，持有 fd 仍返回零', flush=True)
-        elif not args.baseline:
+        if args.descriptor_links:
+            report['target'] = info
+            report['descriptors_before_link_baseline'] = rpc(target, 'descriptor_count')
+            baseline = rpc(target, 'descriptor_links')
+            report['descriptor_links_baseline'] = baseline
+            verify_descriptor_links(baseline, False)
+            report['descriptors_after_link_baseline'] = rpc(target, 'descriptor_count')
+            require(report['descriptors_before_link_baseline']['count'] == report['descriptors_after_link_baseline']['count'], '链接基线测试泄露文件描述符')
             production = load_production(target_session)
+            report['descriptors_before_link_hooked'] = rpc(target, 'descriptor_count')
+            hooked = rpc(target, 'descriptor_links')
+            report['descriptor_links_hooked'] = hooked
+            report['cases'] = hooked['cases'] + hooked['errors']
+            report['descriptors_after_link_hooked'] = rpc(target, 'descriptor_count')
+            verify_descriptor_links(hooked, True)
+            require(hooked['kernel']['text'] == baseline['kernel']['text'], '加载 hook 后内核 memfd 链接意外变化')
+            require(report['descriptors_before_link_hooked']['count'] == report['descriptors_after_link_hooked']['count'], '链接 hook 测试泄露文件描述符')
+            validate_logs()
+            require(not any(item['message'].get('type') == 'error' for item in report['messages']), '链接测试脚本出现运行时异常')
+            report['passed'] = True
+        else:
+            _, tracer, tracer_info = create_helper('tracer')
+            report['target'] = info
+            report['tracer'] = tracer_info
+            report['comm_before'] = rpc(target, 'read_path', '/proc/self/comm', 'open', 3)
+            held_status = None
+            if args.open_before_trace:
+                untraced = rpc(target, 'read_path', '/proc/self/status', 'syscall', 4096)
+                require(tracer_value(untraced['text'])[0] == 0, '持有文件测试的初始内核 TracerPid 必须为零')
+                report['untraced'] = untraced
+                load_production(target_session)
+                report['descriptors_before_hold'] = rpc(target, 'descriptor_count')
+                held_status = rpc(target, 'hold_status', '/proc/self/status')
+                report['held_before_trace'] = held_status
+            thread_ids = list(dict.fromkeys([info['pid'], info['tid']]))
+            seize = rpc(tracer, 'seize', thread_ids)
+            report['seize'] = seize
+            require(len(seize) == len(thread_ids), 'PTRACE_SEIZE 未完成所有线程，详见 seize 的 errno')
+            for item in seize:
+                require(item['value'] == 0, 'PTRACE_SEIZE 失败: ' + json.dumps(item))
+            tracer_tids = {item['tracerTid'] for item in seize}
+            paths = [
+                '/proc/self/status', '/proc/{}/status'.format(info['pid']),
+                '/proc/thread-self/status', '/proc/self/task/{}/status'.format(info['tid']),
+                '/proc/{}/task/{}/status'.format(info['pid'], info['tid']),
+            ]
+            baselines = {}
+            for path in paths:
+                baseline = rpc(target, 'read_path', path, 'syscall', 4096)
+                actual, _ = tracer_value(baseline['text'])
+                require(actual > 0 and actual in tracer_tids, '内核基线没有真实的测试 tracer: ' + path)
+                baselines[path] = baseline
+            report['baseline'] = baselines
+            print('真实基线通过: target={}, tracer={}, traced_threads={}'.format(info['pid'], tracer_info['pid'], thread_ids), flush=True)
 
-        report['descriptors_before_cases'] = rpc(target, 'descriptor_count')
-        if args.cleanup_close_race:
-            race_result = rpc(production, 'cleanup_close_race')
-            report['close_race'] = race_result
-            report['cases'].append({'path': '/dev/null', 'kind': 'cleanup-close-race', 'result': race_result})
-            report['descriptors_after_probe'] = rpc(target, 'descriptor_count')
-            require(race_result['initialClose']['value'] == 0, '首个临时文件未实际成功提前关闭')
-            require(race_result['error'] is not None and CLOSE_RACE_ERROR.search(race_result['error']), '未准确捕获生产清理产生的 close(status 快照) errno=9 异常')
-            require(race_result['firstState']['value'] == -1 and race_result['firstState']['errno'] == 9, '首个临时文件并未保持关闭状态')
-            require(race_result['secondState']['value'] == -1 and race_result['secondState']['errno'] == 9, '生产清理在首个 close 失败后仍遗留已打开的第二个文件描述符')
-            require(report['descriptors_before_cases']['count'] == report['descriptors_after_probe']['count'], '真实清理回归出现文件描述符泄露')
+            if held_status is not None:
+                try:
+                    held_result = rpc(target, 'read_held_status', held_status['fd'], 7)
+                    report['held_after_trace'] = held_result
+                    held_value, held_line = tracer_value(held_result['text'])
+                    require(held_value == 0, '跟踪前打开并持有的 status fd 在跟踪后泄露 TracerPid={}'.format(held_value))
+                    require(stable_fields(held_result['text']) == expected_stable_fields(report['untraced']['text'], True), '持有文件中的稳定字段不符合精确期望')
+                    require(len(held_line.group(2)) == len(tracer_value(report['untraced']['text'])[1].group(2)), '持有快照的 TracerPid 字节宽度发生变化')
+                    require(held_result['flags'] == held_status['flags'], '持有文件的描述符标志发生变化')
+                finally:
+                    rpc(target, 'close_held_status', held_status['fd'])
+                    report['held_closed'] = True
+                report['descriptors_after_hold'] = rpc(target, 'descriptor_count')
+                require(report['descriptors_before_hold']['count'] == report['descriptors_after_hold']['count'], '持有文件测试出现文件描述符泄露')
+                print('跟踪前持有文件通过: 内核非零，持有 fd 仍返回零', flush=True)
+            elif not args.baseline:
+                production = load_production(target_session)
 
-        variants = [
-            ('open', 4096), ('open', 1), ('open', 7), ('openat', 13),
-            ('openat-relative', 17), ('dup', 7), ('pread', 3),
-            ('fgets', 2), ('fgets', 11), ('fread', 17),
-        ]
-        for path in ([] if args.cleanup_close_race else paths):
-            for kind, chunk in variants:
-                result = rpc(target, 'read_path', path, kind, chunk)
-                case = {'path': path, 'kind': kind, 'chunk': chunk, 'result': result}
-                report['cases'].append(case)
-                actual, tracer_line = tracer_value(result['text'])
-                baseline_tracer, baseline_line = tracer_value(baselines[path]['text'])
-                require(actual == baseline_tracer if args.baseline else actual == 0,
-                        '{} {} 返回 TracerPid={}，期望 {}'.format(path, kind, actual, baseline_tracer if args.baseline else 0))
-                require(result['length'] == len(result['text'].encode('ascii')), '返回的长度不符合实际 ASCII 字节数')
-                require(sum(result['lengths']) == result['length'], '分块长度之和与总长度不一致')
-                require(all(0 < count <= (chunk - 1 if kind == 'fgets' else chunk) for count in result['lengths']), '分块读取长度不符合接口约束')
-                require(stable_fields(result['text']) == stable_fields(baselines[path]['text']), '非 TracerPid 稳定字段发生变化: ' + path)
-                require(tracer_line.group(1) == baseline_line.group(1), 'TracerPid 字段空白发生变化')
-                require(len(tracer_line.group(2)) == len(baseline_line.group(2)), 'TracerPid 数字字节宽度发生变化')
-                flags = result['flags']
-                require(flags['status'] & 3 == 0, '只读文件的访问模式发生变化')
-                require(flags['descriptor'] & 1 == (0 if kind == 'dup' else 1), 'FD_CLOEXEC 语义发生变化: ' + kind)
-                if kind not in ('fgets', 'fread'):
-                    require(flags['status'] & 0x800 == 0x800, 'O_NONBLOCK 标志丢失')
-            raw = rpc(target, 'read_path', path, 'syscall', 31)
-            raw_value, _ = tracer_value(raw['text'])
-            require(raw_value in tracer_tids and raw_value > 0, '直接 syscall 的内核 TracerPid 意外归零')
-            report.setdefault('kernel_after', {})[path] = raw
-            print('读取路径通过: ' + path, flush=True)
+            report['descriptors_before_cases'] = rpc(target, 'descriptor_count')
+            if args.cleanup_close_race:
+                race_result = rpc(production, 'cleanup_close_race')
+                report['close_race'] = race_result
+                report['cases'].append({'path': '/dev/null', 'kind': 'cleanup-close-race', 'result': race_result})
+                report['descriptors_after_probe'] = rpc(target, 'descriptor_count')
+                require(race_result['initialClose']['value'] == 0, '首个临时文件未实际成功提前关闭')
+                require(race_result['error'] is not None and CLOSE_RACE_ERROR.search(race_result['error']), '未准确捕获生产清理产生的 close(status 快照) errno=9 异常')
+                require(race_result['firstState']['value'] == -1 and race_result['firstState']['errno'] == 9, '首个临时文件并未保持关闭状态')
+                require(race_result['secondState']['value'] == -1 and race_result['secondState']['errno'] == 9, '生产清理在首个 close 失败后仍遗留已打开的第二个文件描述符')
+                require(report['descriptors_before_cases']['count'] == report['descriptors_after_probe']['count'], '真实清理回归出现文件描述符泄露')
 
-        if not args.cleanup_close_race:
-            semantics = rpc(target, 'file_semantics', '/proc/self/status')
-            report['file_semantics'] = semantics
-            require(semantics['seek'] == 7, 'lseek 返回偏移错误')
-            require(semantics['seekCount'] == 19 and semantics['seekText'] == semantics['text'][7:26], 'lseek 后读取内容错误')
-            require(semantics['preadCount'] == 19 and semantics['preadText'] == semantics['text'][7:26], 'pread 偏移读取内容错误')
-            require(semantics['positionBefore'] == semantics['positionAfter'], 'pread 改变了文件偏移')
-            if not args.baseline:
-                require(semantics['rereadText'] == semantics['text'], '同一快照 seek 回零后内容不一致')
+            variants = [
+                ('open', 4096), ('open', 1), ('open', 7), ('openat', 13),
+                ('openat-relative', 17), ('dup', 7), ('pread', 3),
+                ('fgets', 2), ('fgets', 11), ('fread', 17),
+            ]
+            for path in ([] if args.cleanup_close_race else paths):
+                for kind, chunk in variants:
+                    result = rpc(target, 'read_path', path, kind, chunk)
+                    case = {'path': path, 'kind': kind, 'chunk': chunk, 'result': result}
+                    report['cases'].append(case)
+                    expected_fields = expected_stable_fields(baselines[path]['text'], not args.baseline)
+                    case['raw_name'] = stable_fields(baselines[path]['text']).get('Name')
+                    case['expected_name'] = expected_fields.get('Name')
+                    actual, tracer_line = tracer_value(result['text'])
+                    baseline_tracer, baseline_line = tracer_value(baselines[path]['text'])
+                    require(actual == baseline_tracer if args.baseline else actual == 0,
+                            '{} {} 返回 TracerPid={}，期望 {}'.format(path, kind, actual, baseline_tracer if args.baseline else 0))
+                    require(result['length'] == len(result['text'].encode('ascii')), '返回的长度不符合实际 ASCII 字节数')
+                    require(sum(result['lengths']) == result['length'], '分块长度之和与总长度不一致')
+                    require(all(0 < count <= (chunk - 1 if kind == 'fgets' else chunk) for count in result['lengths']), '分块读取长度不符合接口约束')
+                    require(stable_fields(result['text']) == expected_fields, '稳定字段不符合仅允许指定 Name 变化的精确期望: ' + path)
+                    require(tracer_line.group(1) == baseline_line.group(1), 'TracerPid 字段空白发生变化')
+                    require(len(tracer_line.group(2)) == len(baseline_line.group(2)), 'TracerPid 数字字节宽度发生变化')
+                    flags = result['flags']
+                    require(flags['status'] & 3 == 0, '只读文件的访问模式发生变化')
+                    require(flags['descriptor'] & 1 == (0 if kind == 'dup' else 1), 'FD_CLOEXEC 语义发生变化: ' + kind)
+                    if kind not in ('fgets', 'fread'):
+                        require(flags['status'] & 0x800 == 0x800, 'O_NONBLOCK 标志丢失')
+                raw = rpc(target, 'read_path', path, 'syscall', 31)
+                raw_value, _ = tracer_value(raw['text'])
+                require(raw_value in tracer_tids and raw_value > 0, '直接 syscall 的内核 TracerPid 意外归零')
+                require(stable_fields(raw['text']) == stable_fields(baselines[path]['text']), '直接 syscall 的真实 Name 或其他稳定字段发生变化: ' + path)
+                report.setdefault('kernel_after', {})[path] = raw
+                print('读取路径通过: ' + path, flush=True)
 
-            errors = rpc(target, 'errors')
-            report['errors'] = errors
-            for kind in ('open', 'openat'):
-                require(errors[kind]['value'] == -1 and errors[kind]['errno'] == 2, kind + ' 的失败返回或 ENOENT 发生变化')
-            require(errors['fopen']['isNull'] and errors['fopen']['errno'] == 2, 'fopen 的失败返回或 ENOENT 发生变化')
-            report['comm_after'] = rpc(target, 'read_path', '/proc/self/comm', 'open', 3)
-            require(report['comm_after']['text'] == report['comm_before']['text'], '普通 /proc/self/comm 内容发生变化')
-        report['descriptors_after_cases'] = rpc(target, 'descriptor_count')
-        validate_logs()
-        require(report['descriptors_before_cases']['count'] == report['descriptors_after_cases']['count'], '读取测试出现文件描述符泄露')
-        script_errors = [item for item in report['messages'] if item['message'].get('type') == 'error']
-        require(not script_errors, '脚本发生运行时异常: ' + json.dumps(script_errors, ensure_ascii=False))
-        report['passed'] = True
+            if not args.cleanup_close_race:
+                semantics = rpc(target, 'file_semantics', '/proc/self/status')
+                report['file_semantics'] = semantics
+                require(semantics['seek'] == 7, 'lseek 返回偏移错误')
+                require(semantics['seekCount'] == 19 and semantics['seekText'] == semantics['text'][7:26], 'lseek 后读取内容错误')
+                require(semantics['preadCount'] == 19 and semantics['preadText'] == semantics['text'][7:26], 'pread 偏移读取内容错误')
+                require(semantics['positionBefore'] == semantics['positionAfter'], 'pread 改变了文件偏移')
+                if not args.baseline:
+                    require(semantics['rereadText'] == semantics['text'], '同一快照 seek 回零后内容不一致')
+
+                errors = rpc(target, 'errors')
+                report['errors'] = errors
+                for kind in ('open', 'openat'):
+                    require(errors[kind]['value'] == -1 and errors[kind]['errno'] == 2, kind + ' 的失败返回或 ENOENT 发生变化')
+                require(errors['fopen']['isNull'] and errors['fopen']['errno'] == 2, 'fopen 的失败返回或 ENOENT 发生变化')
+                report['comm_after'] = rpc(target, 'read_path', '/proc/self/comm', 'open', 3)
+                require(report['comm_after']['text'] == report['comm_before']['text'], '普通 /proc/self/comm 内容发生变化')
+            report['descriptors_after_cases'] = rpc(target, 'descriptor_count')
+            validate_logs()
+            require(report['descriptors_before_cases']['count'] == report['descriptors_after_cases']['count'], '读取测试出现文件描述符泄露')
+            script_errors = [item for item in report['messages'] if item['message'].get('type') == 'error']
+            require(not script_errors, '脚本发生运行时异常: ' + json.dumps(script_errors, ensure_ascii=False))
+            report['passed'] = True
     except Exception as error:
         report['failure'] = '{}: {}'.format(type(error).__name__, error)
     finally:

@@ -4,7 +4,9 @@
 
 **Goal:** 在 `com.autel.update` 读取进程状态时将 `TracerPid` 数值归零，保留加密函数 hook 和主动调用功能。
 
-**Architecture:** 在 Java 就绪前拦截 libc 的状态文件打开接口。对实际成功打开的 `/proc/.../status` 描述符读取完整内容，仅将 `TracerPid` 十进制数字替换为等长的零；用匿名内存文件替换该描述符，使分块读取、stdio、pread、seek 和 dup 都读取同一份内容。保留访问模式、描述符标志和 errno。使用实际部署的 Frida 12.11.12/Duktape API。
+**Architecture:** 在 Java 就绪前拦截 libc 的状态文件打开接口。对实际成功打开的 `/proc/.../status` 描述符读取完整内容，将 `TracerPid` 十进制数字替换为等长的零；用匿名内存文件替换该描述符，使分块读取、stdio、pread、seek 和 dup 都读取同一份内容。保留访问模式、描述符标志和 errno。使用部署环境的 Frida 12 系列/Duktape API。
+
+状态处理还按已确认的防护条件，等长替换 Name 行的 gum-js-loop/gmain/gdbus。对 `/proc/.../fd/<数字>` 的 readlink/readlinkat 有效返回字节，将 linjector 等长处理为 cachefile；其他链接、返回长度、errno 与终止方式保持原样。服务端实际为 12.11.1，客户端为 12.11.12。
 
 **Tech Stack:** ES5、Frida 12.11.12、Android 10/Bionic、Node 原生测试、Python 3.8 真机测试。
 
@@ -73,3 +75,15 @@ python tests/tracerpid_app.py --java-helper --output logs/tracerpid-java-green.j
 ```
 
 专用 native/Java 测试均清理自己创建的进程。`--cleanup-close-race` 使用真实关闭后的 FD 和真实 fcntl/close 返回值，验证首个关闭失败时仍释放第二个 FD；不模拟系统调用结果。ARM32 分支尚未真机验证。实际加密业务调用不属于本次已执行的检查。
+
+## 持续附加及描述符回归
+
+```powershell
+python tests/tracerpid_device.py --host 127.0.0.1:9527 --descriptor-links --output logs/tracerpid-descriptor-links-scope-green.json
+python tests/tracerpid_watch.py --mode full --duration 60 --output logs/tracerpid-watch-full-green.json
+frida -H 127.0.0.1:9527 -n com.autel.update -l hook_JniEncryptData.js
+```
+
+watch 默认连接主机 9527，要求应用主进程已运行，仅附加一次，不在退出后重附加。通过要求同一 PID 持续存活、原生/Java hook 就绪、无崩溃和非主动分离。诊断可附加 `--diagnostic tests/tracerpid_trace.js`，只记录真实访问、退出调用和异常，不阻止退出；正式通过记录不加载诊断脚本。
+
+本轮正式 watch 已通过 60.063 秒，原 CLI 命令另通过同 PID 202.327 秒。描述符测试 111 项包含 105 个 proc-fd 正常案例、3 个 ENOENT 和 3 个普通链接范围外负例；状态回归仍要求其他稳定字段不变，仅允许定义好的线程名称映射。
