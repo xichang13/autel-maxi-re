@@ -12,6 +12,18 @@ var PRINT_STACK   = true;   // 是否打印 Java 调用栈
 
 var _cachedClass = null;    // 解析到的目标类(含 classloader 兜底)
 
+/* ---------- 进程状态字段与路径 ---------- */
+function maskTracerPid(text) {
+    return text.replace(/(^|\n)(TracerPid:[\t ]*)([0-9]+)(?=[\t ]*(?:\r?\n|$))/g,
+        function (match, start, field, digits) {
+            return start + field + digits.replace(/[0-9]/g, '0');
+        });
+}
+
+function isProcStatusPath(path) {
+    return /^\/proc\/(?:self|thread-self|[0-9]+)(?:\/task\/[0-9]+)?\/status$/.test(path);
+}
+
 /* ---------- byte[] -> hex + ascii ---------- */
 function dumpHex(bytes) {
     if (bytes === null || bytes === undefined) return '<null>';
