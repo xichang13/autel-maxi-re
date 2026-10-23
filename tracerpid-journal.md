@@ -44,6 +44,9 @@
 - 实际应用最终检查 PID 10173，`nativeHooks=5`、`encryptionHookReady=true`、`loaderRestored=true`，成功安装加密 hook；无未预期运行时消息。该检查已对加密 hook 安装状态作强制断言。
 - 所有本次专用 native/Java 测试进程均由 finally 清理。设备重启已结束此前本次创建的 9528 专用服务；当前 9527 服务由 Chang 启动，保留使用。
 - 最终证据保存在 `logs/tracerpid-*-green.json` 和 `logs/tracerpid-unit-green.txt`；先失败的回归证据另有 red 报告。测试构建输出通过 tests/.gitignore 排除，仅跟踪本任务源文件、计划、日志和清单。
+- 提交阶段首次将日志纳入 Git 后发现 Windows CRLF 被 git diff --check 报为尾随空白；命令序列未在该错误处停止，已生成 d5eb874。通过只针对本任务日志的 .gitattributes 和 Git renormalize 修正索引中的文本格式，不手工更改内容；随后重新执行提交检查并核对 JSON 语义一致性。
+- 归一化后的 staged diff 与相对基线 ada48e6 的完整 diff 检查均通过；13 份 JSON 的索引内容与工作区解析结果全部一致。源脚本、测试和诊断内容未受格式修正影响。
+- 本任务交付位于 wip/tracerpid；现有其他代码、逆向数据库、DEX 与历史工具仍未纳入提交。
 
 ## 实际边界
 

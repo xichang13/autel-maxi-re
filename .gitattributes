@@ -1,0 +1,4 @@
+# ABOUTME: 规范本任务测试证据在 Git 中的文本格式。
+# ABOUTME: 使用 Git 行尾归一化保存 JSON 和测试输出日志。
+logs/tracerpid-*.json text eol=lf
+logs/tracerpid-unit-green.txt text eol=lf
