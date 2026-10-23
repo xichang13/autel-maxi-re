@@ -1,0 +1,67 @@
+{
+  "passed": true,
+  "logs": [
+    {
+      "level": "info",
+      "text": "[*] TracerPid hook: open"
+    },
+    {
+      "level": "info",
+      "text": "[*] TracerPid hook: __open_2"
+    },
+    {
+      "level": "info",
+      "text": "[*] TracerPid hook: openat"
+    },
+    {
+      "level": "info",
+      "text": "[*] TracerPid hook: __openat_2"
+    },
+    {
+      "level": "info",
+      "text": "[*] TracerPid hook: fopen"
+    },
+    {
+      "level": "info",
+      "text": "[!] 默认 classloader 未找到, 遍历所有 classloader..."
+    },
+    {
+      "level": "info",
+      "text": "[x] 所有 classloader 都没有 com.autel.test.AbsentTracerPidClass (类尚未加载/不在本进程)"
+    }
+  ],
+  "messages": [],
+  "pid": 10243,
+  "output": [
+    {
+      "pid": 10243,
+      "descriptor": 1,
+      "text": "TRACERPID_JAVA_READY"
+    },
+    {
+      "pid": 10243,
+      "descriptor": 1,
+      "text": "\n"
+    }
+  ],
+  "result": {
+    "javaAvailable": true,
+    "arch": "arm64",
+    "nativeHooks": 5,
+    "encryptionHookReady": false,
+    "absentClass": true,
+    "loaderRestored": true,
+    "loaderBefore": null,
+    "loaderAfter": null,
+    "bytes": [
+      0,
+      127,
+      -128,
+      -1
+    ],
+    "dump": "len=4\n    hex  : 00 7f 80 ff\n    ascii: ....",
+    "oracleAvailable": true
+  },
+  "helper_killed": true,
+  "finished_unix": 1792748123.4435055
+}

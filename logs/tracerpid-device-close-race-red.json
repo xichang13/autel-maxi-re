@@ -1,0 +1,306 @@
+{
+  "host": "127.0.0.1:2199",
+  "mode": "cleanup-close-race",
+  "frida_version": "12.11.12",
+  "started_unix": 1792747861.0224383,
+  "created_pids": [
+    8435,
+    8441
+  ],
+  "messages": [],
+  "logs": [
+    {
+      "script": "production",
+      "level": "info",
+      "text": "[*] TracerPid hook: open"
+    },
+    {
+      "script": "production",
+      "level": "info",
+      "text": "[*] TracerPid hook: __open_2"
+    },
+    {
+      "script": "production",
+      "level": "info",
+      "text": "[*] TracerPid hook: openat"
+    },
+    {
+      "script": "production",
+      "level": "info",
+      "text": "[*] TracerPid hook: __openat_2"
+    },
+    {
+      "script": "production",
+      "level": "info",
+      "text": "[*] TracerPid hook: fopen"
+    }
+  ],
+  "cases": [
+    {
+      "path": "/dev/null",
+      "kind": "cleanup-close-race",
+      "result": {
+        "cleanup": [
+          {
+            "fd": 5,
+            "value": 0,
+            "errno": 9
+          }
+        ],
+        "firstFd": 4,
+        "secondFd": 5,
+        "initialClose": {
+          "value": 0,
+          "errno": 0
+        },
+        "error": "Error: close(status 快照) 失败, errno=9",
+        "firstState": {
+          "value": -1,
+          "errno": 9
+        },
+        "secondState": {
+          "value": 1,
+          "errno": 9
+        }
+      }
+    }
+  ],
+  "cleanup": [
+    {
+      "pid": 8441,
+      "killed": true
+    },
+    {
+      "pid": 8435,
+      "killed": true
+    }
+  ],
+  "passed": false,
+  "target": {
+    "pid": 8435,
+    "tid": 8440,
+    "arch": "arm64",
+    "pointerSize": 8,
+    "exports": {
+      "open": "0x76640650f0",
+      "openat": "0x7664065290",
+      "close": "0x766405ec6c",
+      "read": "0x76640a9e30",
+      "pread": "0x76640a9d30",
+      "lseek": "0x76640a9ad0",
+      "dup": "0x76640a94d0",
+      "fcntl": "0x76640a9610",
+      "fopen": "0x76640b6a00",
+      "fclose": "0x76640b7148",
+      "fileno": "0x76640b73a0",
+      "fgets": "0x76640b8228",
+      "fread": "0x76640ba128",
+      "ferror": "0x76640b7584",
+      "ptrace": "0x7664066030",
+      "opendir": "0x766405cf5c",
+      "readdir": "0x766405cfdc",
+      "closedir": "0x766405d1bc",
+      "__errno": "0x766405b004"
+    }
+  },
+  "tracer": {
+    "pid": 8441,
+    "tid": 8446,
+    "arch": "arm64",
+    "pointerSize": 8,
+    "exports": {
+      "open": "0x7d82cb20f0",
+      "openat": "0x7d82cb2290",
+      "close": "0x7d82cabc6c",
+      "read": "0x7d82cf6e30",
+      "pread": "0x7d82cf6d30",
+      "lseek": "0x7d82cf6ad0",
+      "dup": "0x7d82cf64d0",
+      "fcntl": "0x7d82cf6610",
+      "fopen": "0x7d82d03a00",
+      "fclose": "0x7d82d04148",
+      "fileno": "0x7d82d043a0",
+      "fgets": "0x7d82d05228",
+      "fread": "0x7d82d07128",
+      "ferror": "0x7d82d04584",
+      "ptrace": "0x7d82cb3030",
+      "opendir": "0x7d82ca9f5c",
+      "readdir": "0x7d82ca9fdc",
+      "closedir": "0x7d82caa1bc",
+      "__errno": "0x7d82ca8004"
+    }
+  },
+  "comm_before": {
+    "text": "sleep\n",
+    "length": 6,
+    "reads": 2,
+    "lengths": [
+      3,
+      3
+    ],
+    "flags": {
+      "descriptor": 1,
+      "status": 133120
+    },
+    "originalFlags": {
+      "descriptor": 1,
+      "status": 133120
+    }
+  },
+  "seize": [
+    {
+      "target": 8435,
+      "value": 0,
+      "errno": 0,
+      "tracerTid": 8446
+    },
+    {
+      "target": 8440,
+      "value": 0,
+      "errno": 0,
+      "tracerTid": 8446
+    }
+  ],
+  "baseline": {
+    "/proc/self/status": {
+      "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t8435\nNgid:\t0\nPid:\t8435\nPPid:\t4565\nTracerPid:\t8446\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  149792 kB\nVmSize:\t  149512 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   10984 kB\nVmRSS:\t   10972 kB\nRssAnon:\t    2936 kB\nRssFile:\t    7892 kB\nRssShmem:\t     144 kB\nVmData:\t   23236 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22024 kB\nVmPTE:\t     108 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t0\n",
+      "length": 930,
+      "reads": 1,
+      "lengths": [
+        930
+      ],
+      "flags": {
+        "descriptor": 1,
+        "status": 133120
+      },
+      "originalFlags": {
+        "descriptor": 1,
+        "status": 133120
+      }
+    },
+    "/proc/8435/status": {
+      "text": "Name:\tsleep\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t8435\nNgid:\t0\nPid:\t8435\nPPid:\t4565\nTracerPid:\t8446\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  149792 kB\nVmSize:\t  149512 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   10984 kB\nVmRSS:\t   10984 kB\nRssAnon:\t    2948 kB\nRssFile:\t    7892 kB\nRssShmem:\t     144 kB\nVmData:\t   23236 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22024 kB\nVmPTE:\t     108 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t0\n",
+      "length": 930,
+      "reads": 1,
+      "lengths": [
+        930
+      ],
+      "flags": {
+        "descriptor": 1,
+        "status": 133120
+      },
+      "originalFlags": {
+        "descriptor": 1,
+        "status": 133120
+      }
+    },
+    "/proc/thread-self/status": {
+      "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t8435\nNgid:\t0\nPid:\t8440\nPPid:\t4565\nTracerPid:\t8446\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  149792 kB\nVmSize:\t  149512 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   10988 kB\nVmRSS:\t   10988 kB\nRssAnon:\t    2952 kB\nRssFile:\t    7892 kB\nRssShmem:\t     144 kB\nVmData:\t   23236 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22024 kB\nVmPTE:\t     108 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t1\n",
+      "length": 935,
+      "reads": 1,
+      "lengths": [
+        935
+      ],
+      "flags": {
+        "descriptor": 1,
+        "status": 133120
+      },
+      "originalFlags": {
+        "descriptor": 1,
+        "status": 133120
+      }
+    },
+    "/proc/self/task/8440/status": {
+      "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t8435\nNgid:\t0\nPid:\t8440\nPPid:\t4565\nTracerPid:\t8446\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  149792 kB\nVmSize:\t  149512 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   10988 kB\nVmRSS:\t   10988 kB\nRssAnon:\t    2952 kB\nRssFile:\t    7892 kB\nRssShmem:\t     144 kB\nVmData:\t   23236 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22024 kB\nVmPTE:\t     108 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t9\nnonvoluntary_ctxt_switches:\t1\n",
+      "length": 935,
+      "reads": 1,
+      "lengths": [
+        935
+      ],
+      "flags": {
+        "descriptor": 1,
+        "status": 133120
+      },
+      "originalFlags": {
+        "descriptor": 1,
+        "status": 133120
+      }
+    },
+    "/proc/8435/task/8440/status": {
+      "text": "Name:\tgum-js-loop\nUmask:\t0000\nState:\tR (running)\nTgid:\t8435\nNgid:\t0\nPid:\t8440\nPPid:\t4565\nTracerPid:\t8446\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nVmPeak:\t  149792 kB\nVmSize:\t  149512 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t   10988 kB\nVmRSS:\t   10988 kB\nRssAnon:\t    2952 kB\nRssFile:\t    7892 kB\nRssShmem:\t     144 kB\nVmData:\t   23236 kB\nVmStk:\t     132 kB\nVmExe:\t     436 kB\nVmLib:\t   22024 kB\nVmPTE:\t     108 kB\nVmPMD:\t      12 kB\nVmSwap:\t       0 kB\nThreads:\t6\nSigQ:\t2/13233\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080000000\nSigIgn:\t0000000000000001\nSigCgt:\t0000000c400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000003fffffffff\nCapEff:\t0000003fffffffff\nCapBnd:\t0000003fffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSpeculation_Store_Bypass:\tunknown\nCpus_allowed:\tff\nCpus_allowed_list:\t0-7\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t10\nnonvoluntary_ctxt_switches:\t2\n",
+      "length": 936,
+      "reads": 1,
+      "lengths": [
+        936
+      ],
+      "flags": {
+        "descriptor": 1,
+        "status": 133120
+      },
+      "originalFlags": {
+        "descriptor": 1,
+        "status": 133120
+      }
+    }
+  },
+  "descriptors_before_cases": {
+    "count": 12,
+    "descriptors": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      8,
+      10,
+      32,
+      33,
+      34,
+      35,
+      36
+    ]
+  },
+  "close_race": {
+    "cleanup": [
+      {
+        "fd": 5,
+        "value": 0,
+        "errno": 9
+      }
+    ],
+    "firstFd": 4,
+    "secondFd": 5,
+    "initialClose": {
+      "value": 0,
+      "errno": 0
+    },
+    "error": "Error: close(status 快照) 失败, errno=9",
+    "firstState": {
+      "value": -1,
+      "errno": 9
+    },
+    "secondState": {
+      "value": 1,
+      "errno": 9
+    }
+  },
+  "descriptors_after_probe": {
+    "count": 12,
+    "descriptors": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      8,
+      10,
+      32,
+      33,
+      34,
+      35,
+      36
+    ]
+  },
+  "failure": "AssertionError: 生产清理在首个 close 失败后仍遗留已打开的第二个文件描述符",
+  "finished_unix": 1792747862.0137463
+}

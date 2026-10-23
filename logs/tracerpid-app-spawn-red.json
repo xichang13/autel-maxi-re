@@ -1,0 +1,7 @@
+{
+  "passed": false,
+  "logs": [],
+  "messages": [],
+  "failure": "AssertionError: spawn 测试要求主进程未运行，避免重启现有应用",
+  "finished_unix": 1792746598.4605193
+}

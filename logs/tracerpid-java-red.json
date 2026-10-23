@@ -1,0 +1,68 @@
+{
+  "passed": false,
+  "logs": [
+    {
+      "level": "info",
+      "text": "[*] TracerPid hook: open"
+    },
+    {
+      "level": "info",
+      "text": "[*] TracerPid hook: __open_2"
+    },
+    {
+      "level": "info",
+      "text": "[*] TracerPid hook: openat"
+    },
+    {
+      "level": "info",
+      "text": "[*] TracerPid hook: __openat_2"
+    },
+    {
+      "level": "info",
+      "text": "[*] TracerPid hook: fopen"
+    },
+    {
+      "level": "info",
+      "text": "[!] 默认 classloader 未找到, 遍历所有 classloader..."
+    },
+    {
+      "level": "info",
+      "text": "[x] 所有 classloader 都没有 com.autel.test.AbsentTracerPidClass (类尚未加载/不在本进程)"
+    }
+  ],
+  "messages": [],
+  "pid": 11753,
+  "output": [
+    {
+      "pid": 11753,
+      "descriptor": 1,
+      "text": "TRACERPID_JAVA_READY"
+    },
+    {
+      "pid": 11753,
+      "descriptor": 1,
+      "text": "\n"
+    }
+  ],
+  "result": {
+    "javaAvailable": true,
+    "arch": "arm64",
+    "nativeHooks": 5,
+    "encryptionHookReady": false,
+    "absentClass": true,
+    "loaderRestored": false,
+    "loaderBefore": null,
+    "loaderAfter": "java.lang.BootClassLoader@2b52b2f",
+    "bytes": [
+      0,
+      127,
+      -128,
+      -1
+    ],
+    "dump": "len=4\n    hex  : 00 7f 80 ff\n    ascii: ....",
+    "oracleAvailable": true
+  },
+  "failure": "AssertionError: loaderRestored 未通过",
+  "helper_killed": true,
+  "finished_unix": 1792747089.9172137
+}

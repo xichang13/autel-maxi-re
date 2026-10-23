@@ -1,0 +1,40 @@
+TAP version 13
+# Subtest: 进程状态中的非零追踪者归零并保持字节长度及相邻字段
+ok 1 - 进程状态中的非零追踪者归零并保持字节长度及相邻字段
+  ---
+  duration_ms: 1.387
+  type: 'test'
+  ...
+# Subtest: 处理单行、首尾字段、空格及不同数字宽度
+ok 2 - 处理单行、首尾字段、空格及不同数字宽度
+  ---
+  duration_ms: 1.0135
+  type: 'test'
+  ...
+# Subtest: 不改动非字段、无效字段及任意其他字节
+ok 3 - 不改动非字段、无效字段及任意其他字节
+  ---
+  duration_ms: 1.0448
+  type: 'test'
+  ...
+# Subtest: 识别进程及线程状态文件
+ok 4 - 识别进程及线程状态文件
+  ---
+  duration_ms: 1.3333
+  type: 'test'
+  ...
+# Subtest: 拒绝无关文件及伪造的状态文件路径
+ok 5 - 拒绝无关文件及伪造的状态文件路径
+  ---
+  duration_ms: 0.6387
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 134.522

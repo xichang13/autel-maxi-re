@@ -1,0 +1,7 @@
+{
+  "passed": false,
+  "logs": [],
+  "messages": [],
+  "failure": "NotSupportedError: unable to find a front-door activity",
+  "finished_unix": 1792747149.814484
+}

@@ -45,3 +45,31 @@
 ## 验证边界
 
 直接内联 syscall 的 openat 会绕过 libc hook；脚本无法改变脚本注入前内核观察到的 ptrace 状态，也不能自动处理外部未注入监控进程。匿名文件是在打开时形成的状态快照，反映该次打开时的内容。以上边界须随实际验证结果报告。
+
+## 复现命令
+
+当前设备服务端实际为 Frida 12.11.1，客户端为 12.11.12，设备端口为 9527。
+
+```powershell
+adb -s 5657d281 forward tcp:2199 tcp:9527
+node --test tests/tracerpid.test.js
+node --check hook_JniEncryptData.js
+python tests/tracerpid_device.py --expect-bypass --output logs/tracerpid-device-green.json
+python tests/tracerpid_device.py --open-before-trace --output logs/tracerpid-device-open-before-green.json
+python tests/tracerpid_device.py --cleanup-close-race --output logs/tracerpid-device-close-race-green.json
+python tests/tracerpid_app.py --output logs/tracerpid-app-green.json
+```
+
+应用检查要求 `com.autel.update` 主进程已经运行，只附加该进程并在结束时分离。`--spawn` 为 Frida 的包启动诊断选项；该包没有 LAUNCHER 入口，当前环境的默认启动会报告 front-door activity 不存在，不作为通过条件。
+
+独立 Java 运行时检查可按以下方式复现；必须等待 Java main 的实际就绪信号后再附加，避免在虚拟机初始化过程中调用 JNI。
+
+```powershell
+New-Item -ItemType Directory -Path tests/build/java -Force
+javac --release 17 -d tests/build/java tests/StatusProbe.java
+C:\AndroidSDK\build-tools\36.0.0\d8.bat --min-api 29 --output tests/build/StatusProbe.jar tests/build/java/autel/test/StatusProbe.class
+adb -s 5657d281 push tests/build/StatusProbe.jar /data/local/tmp/tracerpid-StatusProbe.jar
+python tests/tracerpid_app.py --java-helper --output logs/tracerpid-java-green.json
+```
+
+专用 native/Java 测试均清理自己创建的进程。`--cleanup-close-race` 使用真实关闭后的 FD 和真实 fcntl/close 返回值，验证首个关闭失败时仍释放第二个 FD；不模拟系统调用结果。ARM32 分支尚未真机验证。实际加密业务调用不属于本次已执行的检查。

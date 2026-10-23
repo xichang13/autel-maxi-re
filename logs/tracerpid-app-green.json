@@ -1,0 +1,74 @@
+{
+  "passed": true,
+  "logs": [
+    {
+      "level": "info",
+      "text": "[*] TracerPid hook: open"
+    },
+    {
+      "level": "info",
+      "text": "[*] TracerPid hook: __open_2"
+    },
+    {
+      "level": "info",
+      "text": "[*] TracerPid hook: openat"
+    },
+    {
+      "level": "info",
+      "text": "[*] TracerPid hook: __openat_2"
+    },
+    {
+      "level": "info",
+      "text": "[*] TracerPid hook: fopen"
+    },
+    {
+      "level": "info",
+      "text": "[*] 默认 classloader 命中 com.autel.utils.EncryptionJni"
+    },
+    {
+      "level": "info",
+      "text": "[*] com.autel.utils.EncryptionJni.JniEncryptData overload 数量=1"
+    },
+    {
+      "level": "info",
+      "text": "    [overload#0] args=(int, [B) ret=[B"
+    },
+    {
+      "level": "info",
+      "text": "[*] hook 已安装, 等待 JniEncryptData 被调用..."
+    },
+    {
+      "level": "info",
+      "text": "[*] 提示: 在 REPL 里可主动调用, 例如  callEnc(1, \"0102030405\")"
+    },
+    {
+      "level": "info",
+      "text": "[!] 默认 classloader 未找到, 遍历所有 classloader..."
+    },
+    {
+      "level": "info",
+      "text": "[x] 所有 classloader 都没有 com.autel.test.AbsentTracerPidClass (类尚未加载/不在本进程)"
+    }
+  ],
+  "messages": [],
+  "pid": 10173,
+  "result": {
+    "javaAvailable": true,
+    "arch": "arm64",
+    "nativeHooks": 5,
+    "encryptionHookReady": true,
+    "absentClass": true,
+    "loaderRestored": true,
+    "loaderBefore": null,
+    "loaderAfter": null,
+    "bytes": [
+      0,
+      127,
+      -128,
+      -1
+    ],
+    "dump": "len=4\n    hex  : 00 7f 80 ff\n    ascii: ....",
+    "oracleAvailable": true
+  },
+  "finished_unix": 1792748121.6038697
+}
