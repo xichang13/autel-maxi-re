@@ -1,0 +1,18 @@
+{"sequence": 1, "kind": "stage", "unix": 1792749309.2496796, "elapsed_seconds": 0.016, "payload": {"value": "connecting"}}
+{"sequence": 2, "kind": "stage", "unix": 1792749309.311765, "elapsed_seconds": 0.078, "payload": {"value": "attaching"}}
+{"sequence": 3, "kind": "stage", "unix": 1792749309.4382935, "elapsed_seconds": 0.203, "payload": {"value": "loading"}}
+{"sequence": 4, "kind": "script-log", "unix": 1792749309.510329, "elapsed_seconds": 0.266, "payload": {"level": "info", "text": "[*] TracerPid hook: open"}}
+{"sequence": 5, "kind": "script-log", "unix": 1792749309.5185897, "elapsed_seconds": 0.282, "payload": {"level": "info", "text": "[*] TracerPid hook: __open_2"}}
+{"sequence": 6, "kind": "script-log", "unix": 1792749309.523748, "elapsed_seconds": 0.282, "payload": {"level": "info", "text": "[*] TracerPid hook: openat"}}
+{"sequence": 7, "kind": "script-log", "unix": 1792749309.531328, "elapsed_seconds": 0.297, "payload": {"level": "info", "text": "[*] TracerPid hook: __openat_2"}}
+{"sequence": 8, "kind": "script-log", "unix": 1792749309.5362012, "elapsed_seconds": 0.297, "payload": {"level": "info", "text": "[*] TracerPid hook: fopen"}}
+{"sequence": 9, "kind": "script-log", "unix": 1792749309.7082584, "elapsed_seconds": 0.469, "payload": {"level": "info", "text": "[*] 默认 classloader 命中 com.autel.utils.EncryptionJni"}}
+{"sequence": 10, "kind": "script-log", "unix": 1792749309.7092607, "elapsed_seconds": 0.469, "payload": {"level": "info", "text": "[*] com.autel.utils.EncryptionJni.JniEncryptData overload 数量=1"}}
+{"sequence": 11, "kind": "script-log", "unix": 1792749309.7092607, "elapsed_seconds": 0.469, "payload": {"level": "info", "text": "    [overload#0] args=(int, [B) ret=[B"}}
+{"sequence": 12, "kind": "script-log", "unix": 1792749309.7143369, "elapsed_seconds": 0.469, "payload": {"level": "info", "text": "[*] hook 已安装, 等待 JniEncryptData 被调用..."}}
+{"sequence": 13, "kind": "script-log", "unix": 1792749309.7143369, "elapsed_seconds": 0.469, "payload": {"level": "info", "text": "[*] 提示: 在 REPL 里可主动调用, 例如  callEnc(1, \"0102030405\")"}}
+{"sequence": 14, "kind": "stage", "unix": 1792749309.7143369, "elapsed_seconds": 0.469, "payload": {"value": "watching"}}
+{"sequence": 15, "kind": "poll", "unix": 1792749309.734122, "elapsed_seconds": 0.5, "payload": {"unix": 1792749309.734122, "watched_seconds": 0.031, "alive": true, "replacement_processes": []}}
+{"sequence": 16, "kind": "detached", "unix": 1792749310.639919, "elapsed_seconds": 1.407, "payload": {"reason": "process-terminated", "crash": null, "raw_arguments": ["process-terminated", null], "requested_by_harness": false}}
+{"sequence": 17, "kind": "poll", "unix": 1792749310.6621943, "elapsed_seconds": 1.422, "payload": {"unix": 1792749310.6621943, "watched_seconds": 0.953, "alive": false, "replacement_processes": []}}
+{"sequence": 18, "kind": "failure", "unix": 1792749310.6632695, "elapsed_seconds": 1.422, "payload": "RuntimeError: 原目标进程已退出；替代进程仅记录，不重新附加"}

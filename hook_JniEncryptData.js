@@ -8,7 +8,7 @@ var TARGET_CLASS  = 'com.autel.utils.EncryptionJni';
 var TARGET_METHOD = 'JniEncryptData';
 var PREVIEW_CAP   = 1024;   // 单个 byte[] 预览的最大字节数,防刷屏
 var PRINT_STACK   = true;   // 是否打印 Java 调用栈
-var HIDE_TRACERPID = true;   // 是否将进程状态中的 TracerPid 归零
+var HIDE_TRACERPID = true;   // 是否将进程状态中的 TracerPid 归零,含检测线程名处理
 /* ============================================================= */
 
 var _cachedClass = null;    // 解析到的目标类(含 classloader 兜底)
@@ -22,8 +22,24 @@ function maskTracerPid(text) {
         });
 }
 
+function maskStatus(text) {
+    return maskTracerPid(text).replace(/(^|\n)(Name:[\t ]*)([^\r\n]*)/g,
+        function (match, start, field, name) {
+            return start + field + name.replace(/gum-js-loop/g, 'pool-worker')
+                .replace(/gmain/g, 'pool0').replace(/gdbus/g, 'pool1');
+        });
+}
+
 function isProcStatusPath(path) {
     return /^\/proc\/(?:self|thread-self|[0-9]+)(?:\/task\/[0-9]+)?\/status$/.test(path);
+}
+
+function maskDescriptorLink(text) {
+    return text.replace(/linjector/g, 'cachefile');
+}
+
+function isProcDescriptorPath(path) {
+    return /^\/proc\/(?:self|thread-self|[0-9]+)(?:\/task\/[0-9]+)?\/fd\/[0-9]+$/.test(path);
 }
 
 /* ---------- 状态快照的临时文件清理 ---------- */
@@ -96,7 +112,7 @@ function installTracerPidBypass() {
             } finally {
                 value(seek(fd, offset, 0), 'lseek(恢复偏移)');
             }
-            var masked = maskTracerPid(text);
+            var masked = maskStatus(text);
             if (text.length === 0) return;
 
             var temporary = -1, replacement = -1;
@@ -121,7 +137,7 @@ function installTracerPidBypass() {
                 value(duplicate(replacement, fd, (descriptorFlags & 1) ? 0x80000 : 0), 'dup3(status)');
                 if (masked !== text && !reported[path]) {
                     reported[path] = true;
-                    console.log('[*] TracerPid 已归零: ' + path);
+                    console.log('[*] 进程状态已处理: ' + path);
                 }
             } finally {
                 closeStatusFiles(close, replacement, temporary);

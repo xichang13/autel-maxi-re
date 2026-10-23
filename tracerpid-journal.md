@@ -53,3 +53,21 @@
 - 仅对经 libc 打开接口取得的 `/proc/.../status` 建立快照；脚本安装前已打开的 FD、直接内联 syscall 打开、外部未注入进程与注入前检查不在已覆盖范围。
 - 替换后 fd 的 readlink/fstat 元数据可见匿名内存文件，快照保留打开时的其他字段，不宣称完全透明。
 - 真机覆盖 ARM64；ARM32 分支未验证。已验证加密 hook 安装和工具函数，没有主动执行未给定输入的加密业务。
+
+## Chang 反馈：安装成功后仍退出
+
+- Chang 提供 CLI 日志：全部原生和 Java hook 安装成功后出现 Process terminated，没有 TracerPid 改写命中日志。
+- 先前实际应用检查在 RPC 验证后立即 detach，只证明短时加载，没有覆盖持续运行。因此先前交付不足以证明应用已稳定绕过，任务继续。
+- 当前分支和跟踪文件干净；既有未跟踪的逆向产物仍按此前授权不纳入提交。
+- 本轮先记录持续存活、detached reason、退出/信号调用栈和状态文件访问证据，不通过盲目拦截 kill/exit 掩盖根因。
+
+## 持续退出的根因证据
+
+- 空脚本只 send PID/Frida.version，不安装任何 hook，CLI 仍约两秒退出。实际服务端返回 12.11.1，因此原生快照和 Java 业务 hook 不是退出的必要条件。
+- watch 对原脚本持续检查：PID 18513，观察仅 0.953 秒即 process-terminated。该失败与 Chang 所述“几乎马上退出”一致，见 `logs/tracerpid-watch-full-red.json`。
+- 静态 dump 的前 0x12a8f0 字节与既有 native/libdh_history_text.elf 的 .text 逐字节相同，可使用已有 ELF 反汇编定位当前 native 逻辑。
+- libDexHelper RVA 0x9f214 检测函数经 0x9f7dc open 逐字节读各线程 status 首行 Name，匹配栈解密的 gum-js-loop/gmain/gdbus；命中状态 0，进入 0x9f5d8，自毁签名 X8=0xb6a287f1、PC=0x7b0、SP/LR=0。动态诊断已看到调用者 +0x9f7e0 与该链吻合。
+- 同函数经 0x9fa90 readlink(`/proc/self/fd/%s`, ..., 0x100) 扫描返回内容中的 linjector；lstat 仅筛选符号链接类型。命中状态 2，进入 0x9f52c，对应 X8=0xb6a287f2、PC=0x7b0。
+- 独立的 RVA 0xa9a64 检查线程 State 的停止/跟踪状态及 PPid/TracerPid。异常链可自毁到 PC=0x790、X8=0xb6a287d6，或通过 inline kill(SVC #0，x8=129) 发信号9；因此只监听 libc kill/exit 无法收齐退出链。
+- 新增 Name 精确等长处理已先看到两项测试失败，再 Node 7/7 通过。实际应用复测仍在 0.609 秒退出，但这次 Crash 明确 X8=0xb6a287f2 / PC=0x7b0，与 FD 分支一致，见 `logs/tracerpid-watch-full-name.json`。据此继续为 FD 返回内容编写失败回归，而非猜测追加退出拦截。
+- FD 纯函数和路径测试先失败后通过；原生 readlink/readlinkat 处理尚未安装，当前持续存活目标仍未达成。

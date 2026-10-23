@@ -11,11 +11,57 @@ const test = require('node:test');
 
 const source = fs.readFileSync(path.join(__dirname, '..', 'hook_JniEncryptData.js'), 'utf8');
 
-function loadFunction(name) {
+function loadFunction(name, dependencies) {
     const definition = source.match(new RegExp('^function ' + name + '\\([^\\n]*\\) \\{[\\s\\S]*?^\\}', 'm'));
     assert.ok(definition, '生产脚本应提供 ' + name);
-    return vm.runInNewContext('(' + definition[0] + ')');
+    return vm.runInNewContext('(' + definition[0] + ')', dependencies || {});
 }
+
+test('状态文件隐藏防护实际匹配的线程名并保持字节长度', function () {
+    const mask = loadFunction('maskStatus', { maskTracerPid: loadFunction('maskTracerPid') });
+    const cases = [
+        ['Name:\tgum-js-loop\nTracerPid:\t9123\n', 'Name:\tpool-worker\nTracerPid:\t0000\n'],
+        ['Name:\tgmain\nPid:\t42\n', 'Name:\tpool0\nPid:\t42\n'],
+        ['Name:\tgdbus\r\nTracerPid:\t0\r\n', 'Name:\tpool1\r\nTracerPid:\t0\r\n'],
+        ['Name: prefix-gmain', 'Name: prefix-pool0'],
+        ['Name:\tworker-gdbus', 'Name:\tworker-pool1']
+    ];
+    cases.forEach(function (pair) {
+        assert.equal(mask(pair[0]), pair[1]);
+        assert.equal(Buffer.byteLength(mask(pair[0]), 'latin1'), Buffer.byteLength(pair[0], 'latin1'));
+        assert.equal(mask(mask(pair[0])), pair[1]);
+    });
+});
+
+test('状态处理不改普通线程名和其他字段中的同名内容', function () {
+    const mask = loadFunction('maskStatus', { maskTracerPid: loadFunction('maskTracerPid') });
+    const cases = ['Name:\tcom.autel.update\n', 'Name:\tRenderThread\n', 'Name:\tgum-worker\n',
+        'OtherName:\tgmain\n', 'Description:\tgum-js-loop gmain gdbus\n',
+        'name:\tgmain\n', '\xff\x80\x00\nName:\t\xe4\xb8\xad\n'];
+    cases.forEach(function (input) { assert.equal(mask(input), input); });
+});
+
+test('描述符链接仅等长处理已证实的注入关键词', function () {
+    const mask = loadFunction('maskDescriptorLink');
+    const input = '/memfd:linjector-check (deleted)';
+    assert.equal(mask(input), '/memfd:cachefile-check (deleted)');
+    assert.equal(mask('linjector/linjector'), 'cachefile/cachefile');
+    assert.equal(mask(input).length, input.length);
+    ['', '/memfd:status (deleted)', '/dev/null', 'linject', 'Linjector', '\xff\x00\x80'].forEach(function (text) {
+        assert.equal(mask(text), text);
+    });
+});
+
+test('描述符路径识别限定于 proc 的数字文件描述符', function () {
+    const isDescriptor = loadFunction('isProcDescriptorPath');
+    ['/proc/self/fd/0', '/proc/42/fd/17', '/proc/thread-self/fd/9', '/proc/self/task/123/fd/4'].forEach(function (file) {
+        assert.equal(isDescriptor(file), true, file);
+    });
+    ['/proc/self/fd', '/proc/self/fd/abc', '/proc/self/fd/3/extra', '/data/local/tmp/linjector',
+        '/proc/42/maps', '/proc/self/task/abc/fd/4', '/tmp/proc/self/fd/3'].forEach(function (file) {
+        assert.equal(isDescriptor(file), false, file);
+    });
+});
 
 test('进程状态中的非零追踪者归零并保持字节长度及相邻字段', function () {
     const mask = loadFunction('maskTracerPid');
