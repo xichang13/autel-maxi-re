@@ -1,0 +1,25 @@
+# APK 包
+*.apk
+
+# 内存 dump 及其 sidecar(.dump / .dump.info.txt / .dump.i64 / .dump.id? 等)
+*.dump
+*.dump.*
+
+# IDA 数据库
+*.i64
+*.idb
+*.id0
+*.id1
+*.id2
+*.nam
+*.til
+
+# 解包 / 工作产物目录
+com.Autel.maxi/
+dex_dump/
+work-maxi/
+manual_dex_unpack/
+manual_dex_unpack.zip
+
+# 运行日志
+logs/
